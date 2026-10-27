@@ -28,6 +28,12 @@ def health():return jsonify(status='ok',model='Gaussian Process Regression',trai
 @application.get('/api/meta')
 def meta():return jsonify(dates=study.TEST.index.strftime('%Y-%m-%d').tolist(),metrics=study.METRICS,uncertainty=study.UNC,importance=study.IMP,reference_date=study.REF['date'],dataset_doi='10.5281/zenodo.17175212')
 
+@application.get('/api/extension')
+def extension():return jsonify(json.loads((ROOT/'05_experiments/extension/summary.json').read_text()))
+
+@application.get('/api/deployment')
+def deployment():return jsonify(repository='https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml',visibility='Private review repository',hosting='Azure App Service Linux · Free F1',commit=os.environ.get('STUDY_COMMIT','unspecified'),model_sha256=MODEL_HASH)
+
 @application.get('/api/example')
 def example():
  try:

@@ -1,0 +1,130 @@
+{
+  "protocol": "Extension_Protocol.json",
+  "dispatch": {
+    "unit": "MWh",
+    "n_test": 97,
+    "status": "Original six-model study preserved; NGBoost, KNN and gradient boosting are supplementary post-hoc comparisons.",
+    "metrics": [
+      {
+        "model": "Linear regression",
+        "MAE": 2042.924487091086,
+        "RMSE": 2805.146802608357,
+        "R2": 0.421721402289
+      },
+      {
+        "model": "Random forest",
+        "MAE": 1607.303919706722,
+        "RMSE": 2322.076833194161,
+        "R2": 0.603741033977
+      },
+      {
+        "model": "SVR",
+        "MAE": 1534.205165990791,
+        "RMSE": 2406.244073563514,
+        "R2": 0.574494395097
+      },
+      {
+        "model": "GPR",
+        "MAE": 1598.668727997073,
+        "RMSE": 2491.533548484597,
+        "R2": 0.543795663341
+      },
+      {
+        "model": "Persistence",
+        "MAE": 3254.770618556701,
+        "RMSE": 4243.261930393018,
+        "R2": -0.323200366896
+      },
+      {
+        "model": "Seasonal naive",
+        "MAE": 2274.100515463917,
+        "RMSE": 3172.516398026561,
+        "R2": 0.260337362486
+      },
+      {
+        "model": "NGBoost",
+        "MAE": 1623.481302647704,
+        "RMSE": 2338.473636088857,
+        "R2": 0.59812509575
+      },
+      {
+        "model": "KNN",
+        "MAE": 1773.798324897842,
+        "RMSE": 2458.223674866004,
+        "R2": 0.555912320334
+      },
+      {
+        "model": "Gradient boosting",
+        "MAE": 1641.004732828228,
+        "RMSE": 2363.43798095513,
+        "R2": 0.589498875046
+      }
+    ]
+  },
+  "rainfall": {
+    "unit": "mm",
+    "n_test": 72,
+    "status": "Independent Colombo CHIRPS-v2 rainfall task; models refitted, six-dekad input delay, 2024\u20132025 holdout.",
+    "metrics": [
+      {
+        "model": "Linear regression",
+        "MAE": 53.6473448744,
+        "RMSE": 66.430010872633,
+        "R2": 0.141480357569
+      },
+      {
+        "model": "Random forest",
+        "MAE": 53.017889239462,
+        "RMSE": 65.248765829376,
+        "R2": 0.171740946179
+      },
+      {
+        "model": "SVR",
+        "MAE": 48.201024984401,
+        "RMSE": 62.529332964924,
+        "R2": 0.239342449312
+      },
+      {
+        "model": "GPR",
+        "MAE": 51.913965268558,
+        "RMSE": 65.257400837703,
+        "R2": 0.171521708405
+      },
+      {
+        "model": "NGBoost",
+        "MAE": 68.774437053648,
+        "RMSE": 81.319108984494,
+        "R2": -0.286491176174
+      },
+      {
+        "model": "KNN",
+        "MAE": 49.997680248277,
+        "RMSE": 63.484082810621,
+        "R2": 0.215936407865
+      },
+      {
+        "model": "Gradient boosting",
+        "MAE": 69.181597166879,
+        "RMSE": 80.202410755286,
+        "R2": -0.251400817398
+      },
+      {
+        "model": "Seasonal naive",
+        "MAE": 66.890700736111,
+        "RMSE": 87.92165304857,
+        "R2": -0.503880328656
+      },
+      {
+        "model": "Seasonal median",
+        "MAE": 41.064613402778,
+        "RMSE": 58.099917261548,
+        "R2": 0.343291531339
+      }
+    ]
+  },
+  "findings": [
+    "GPR remains the main new algorithm; NGBoost is an additional probabilistic method absent from the supplied notes.",
+    "SVR has the lowest dispatch test MAE; random forest the lowest RMSE.",
+    "Rainfall seasonal median beats all learned models; do not select a deployment model by these already inspected test outcomes."
+  ]
+}
