@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "base_url": "http://127.0.0.1:8766",
+  "UTC": "2026-10-27T21:21:31.963378+00:00",
+  "checks": [
+    "healthy endpoint",
+    "identical model bytes",
+    "historical forecast matches local inference",
+    "edited forecast matches local inference",
+    "edited inputs are labelled and actual stays fixed",
+    "negative input rejected",
+    "nonfinite input rejected",
+    "oversize request rejected",
+    "both task comparisons exposed",
+    "review repository linked"
+  ],
+  "model_sha256": "d71d458270e348197a6ca32627ca642bdaba3d203ae6010e16a39211114e865e",
+  "application_commit": "unspecified",
+  "historical_mean_MWh": 42325.97557366114,
+  "edited_mean_MWh": 44217.78536168519,
+  "tolerance_MWh": 1e-06
+}

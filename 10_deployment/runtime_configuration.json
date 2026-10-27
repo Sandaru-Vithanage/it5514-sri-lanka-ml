@@ -1,0 +1,7 @@
+{
+  "alwaysOn": false,
+  "appCommandLine": "sh startup.sh",
+  "ftpsState": "Disabled",
+  "linuxFxVersion": "PYTHON|3.13",
+  "minTlsVersion": "1.2"
+}

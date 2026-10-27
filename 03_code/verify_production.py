@@ -23,6 +23,7 @@ p['lag1_MWh']=-1;status,_=request('/api/predict',p);check('negative input reject
 p['lag1_MWh']=float('nan');status,_=request('/api/predict',p);check('nonfinite input rejected',status==400)
 status,_=request('/api/predict',{'oversize':'x'*13000});check('oversize request rejected',status==413)
 status,x=request('/api/extension');check('both task comparisons exposed',status==200 and len(x['dispatch']['metrics'])==9 and len(x['rainfall']['metrics'])==9)
+check('published extension matches recorded evidence',x==json.loads((ROOT/'05_experiments/extension/summary.json').read_text()))
 status,d=request('/api/deployment');check('review repository linked',status==200 and d['repository']=='https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml')
 result={'passed':True,'base_url':base,'UTC':__import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat(),'checks':checks,'model_sha256':h['model_sha256'],'application_commit':h['commit'],'historical_mean_MWh':out['mean_MWh'],'edited_mean_MWh':edited['mean_MWh'],'tolerance_MWh':1e-6}
 write_json(ROOT/('10_deployment/remote_verification.json' if base.startswith('https:') else '05_experiments/production_local_verification.json'),result)

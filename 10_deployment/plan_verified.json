@@ -1,0 +1,13 @@
+{
+  "kind": "linux",
+  "location": "East Asia",
+  "name": "plan-it5514-free",
+  "sku": {
+    "capacity": 1,
+    "family": "F",
+    "name": "F1",
+    "size": "F1",
+    "tier": "Free"
+  },
+  "status": null
+}

@@ -1,0 +1,61 @@
+{
+  "dispatch_models": 9,
+  "rainfall_models": 9,
+  "figures": 2,
+  "bootstrap": [
+    {
+      "model_minus": "Seasonal median",
+      "model": "GPR",
+      "block_dekads": 3,
+      "difference_MAE_mm": 10.464859539649707,
+      "CI_lower": 2.307595649040193,
+      "CI_upper": 19.171961273591847,
+      "bootstrap_replicates": 2000
+    },
+    {
+      "model_minus": "Seasonal median",
+      "model": "GPR",
+      "block_dekads": 6,
+      "difference_MAE_mm": 10.464859539649707,
+      "CI_lower": 1.3691314151084133,
+      "CI_upper": 20.92371139149383,
+      "bootstrap_replicates": 2000
+    },
+    {
+      "model_minus": "Seasonal median",
+      "model": "NGBoost",
+      "block_dekads": 3,
+      "difference_MAE_mm": 21.693179221326456,
+      "CI_lower": 10.656313887108876,
+      "CI_upper": 33.330181597210625,
+      "bootstrap_replicates": 2000
+    },
+    {
+      "model_minus": "Seasonal median",
+      "model": "NGBoost",
+      "block_dekads": 6,
+      "difference_MAE_mm": 21.693179221326456,
+      "CI_lower": 8.997636100083758,
+      "CI_upper": 34.33895050384005,
+      "bootstrap_replicates": 2000
+    },
+    {
+      "model_minus": "Seasonal median",
+      "model": "SVR",
+      "block_dekads": 3,
+      "difference_MAE_mm": 6.782071477312103,
+      "CI_lower": 0.2890348681918678,
+      "CI_upper": 13.697240269528237,
+      "bootstrap_replicates": 2000
+    },
+    {
+      "model_minus": "Seasonal median",
+      "model": "SVR",
+      "block_dekads": 6,
+      "difference_MAE_mm": 6.782071477312103,
+      "CI_lower": -0.5899860722361081,
+      "CI_upper": 14.780148044149668,
+      "bootstrap_replicates": 2000
+    }
+  ]
+}

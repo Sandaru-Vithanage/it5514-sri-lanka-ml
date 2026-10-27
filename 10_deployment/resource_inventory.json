@@ -1,0 +1,14 @@
+[
+  {
+    "location": "eastasia",
+    "name": "plan-it5514-free",
+    "sku": "F1",
+    "type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "location": "eastasia",
+    "name": "lanka-dispatch-it5514-sv",
+    "sku": null,
+    "type": "Microsoft.Web/sites"
+  }
+]

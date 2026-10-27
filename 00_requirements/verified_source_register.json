@@ -97,5 +97,45 @@
     "status": 200,
     "content_type": "text/html; charset=UTF-8",
     "bytes": 38497
+  },
+  {
+    "title": "NGBoost ICML paper",
+    "url": "https://proceedings.mlr.press/v119/duan20a.html",
+    "role": "Natural-gradient probabilistic boosting",
+    "status": 200,
+    "bytes": 15718,
+    "checked_local_date": "2026-10-28"
+  },
+  {
+    "title": "Sri Lanka rainfall CKAN metadata",
+    "url": "https://data.humdata.org/api/3/action/package_show?id=lka-rainfall-subnational",
+    "role": "WFP provenance, licence, publication timing and resource URL",
+    "status": 200,
+    "bytes": 47299,
+    "checked_local_date": "2026-10-28"
+  },
+  {
+    "title": "HDX HAPI climate",
+    "url": "https://hdx-hapi.readthedocs.io/en/latest/data_usage_guides/climate/",
+    "role": "CHIRPS-v2 administrative aggregate scope",
+    "status": 200,
+    "bytes": 23946,
+    "checked_local_date": "2026-10-28"
+  },
+  {
+    "title": "Azure plan documentation",
+    "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+    "role": "Free tier, quotas and billing boundary",
+    "status": 200,
+    "bytes": 60094,
+    "checked_local_date": "2026-10-28"
+  },
+  {
+    "title": "Azure Python quickstart",
+    "url": "https://learn.microsoft.com/en-us/azure/app-service/quickstart-python",
+    "role": "Python App Service remote build and startup",
+    "status": 200,
+    "bytes": 119129,
+    "checked_local_date": "2026-10-28"
   }
 ]

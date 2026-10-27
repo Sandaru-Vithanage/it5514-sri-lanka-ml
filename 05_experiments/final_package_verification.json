@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "manifest_files_verified": 180,
+  "zip_CRC_passed": true,
+  "fresh_extracted_copy_checks": [
+    {
+      "script": "validate_project.py",
+      "passed": true,
+      "stdout": "[\n  {\n    \"check\": \"unique chronological daily modelling rows\",\n    \"passed\": true\n  },\n  {\n    \"check\": \"every lag and rolling value uses only prior calendar days\",\n    \"passed\": true\n  },\n  {\n    \"check\": \"chronological split and test held to 2025\",\n    \"passed\": true\n  },\n  {\n    \"check\": \"targets have 96 timestamps and no explicit missing plant values\",\n    \"passed\": true\n  },\n  {\n    \"check\": \"scaler fitted on development features only\",\n    \"passed\": true\n  },\n  {\n    \"check\": \"GPR stores only development labels\",\n    \"passed\": true\n  },\n  {\n    \"check\": \"saved model predictions reproduce\",\n    \"passed\": true\n  },\n  {\n    \"check\": \"prediction rows match test dates and targets\",\n    \"passed\": true\n  },\n  {\n    \"check\": \"every main metric independently recomputed from stored predictions\",\n    \"passed\": true\n  },\n  {\n    \"check\": \"all selected configurations minimize validation MAE only\",\n    \"passed\": true\n  }\n]\n"
+    },
+    {
+      "script": "verify_extension.py",
+      "passed": true,
+      "stdout": "{\n  \"passed\": true,\n  \"checks\": 78\n}\n"
+    },
+    {
+      "script": "verify_probabilistic_extension.py",
+      "passed": true,
+      "stdout": "{'passed': True, 'probabilistic_checks': 9}\n"
+    },
+    {
+      "script": "build_deployment.py",
+      "passed": true,
+      "stdout": "{\n  \"files\": 14,\n  \"bytes\": 1781321\n}\n"
+    },
+    {
+      "script": "packaged WSGI checks",
+      "passed": true,
+      "stdout": "Packaged production wrapper, model and evidence verified.\n"
+    },
+    {
+      "notebook": "269182L_IT5514_Extended_Evidence.ipynb",
+      "executed_cells": 3,
+      "error_outputs": 0
+    },
+    {
+      "notebook": "269182L_IT5514_Study.ipynb",
+      "executed_cells": 8,
+      "error_outputs": 0
+    }
+  ],
+  "credential_paths_excluded": true,
+  "note": "All listed payload hashes were checked before verification scripts wrote only to the separate extracted review copy. The outer deliverable checksums are stored outside the source ZIP to avoid circular hashing."
+}

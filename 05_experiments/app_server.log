@@ -24,3 +24,12 @@ Open http://127.0.0.1:8765 | Local historical research demo
 127.0.0.1 - - [28/Oct/2026 02:11:10] "POST /api/predict HTTP/1.1" 400 -
 127.0.0.1 - - [28/Oct/2026 02:11:10] "POST /api/predict HTTP/1.1" 400 -
 127.0.0.1 - - [28/Oct/2026 02:11:10] "POST /api/predict HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/Users/sandaruvithanage/Downloads/269182L_Advanced_Machine_Learning_Assignment/03_code/app.py", line 69, in <module>
+    parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8765);args=parser.parse_args()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt

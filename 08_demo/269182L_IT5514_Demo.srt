@@ -1,151 +1,179 @@
 1
-00:00:00,000 --> 00:00:05,549
-This walkthrough presents Lanka Dispatch, the Applied Machine Learning prototype prepared for Sandaru
+00:00:00,000 --> 00:00:05,048
+This is the Applied Machine Learning study prepared for Sandaru Rashmika, index number two six nine one
 
 2
-00:00:05,549 --> 00:00:11,099
-Rashmika, index number two six nine one eight two L. It forecasts the next local day of recorded
+00:00:05,048 --> 00:00:10,096
+eight two L. Lanka Dispatch forecasts next day recorded electricity dispatch energy in Sri Lanka. The
 
 3
-00:00:11,099 --> 00:00:16,648
-electricity dispatch energy in Sri Lanka. The source is the Sri Lankan raw subset of a versioned public
+00:00:10,096 --> 00:00:15,144
+source is a versioned public compilation of PUCSL records. We rebuilt daily energy after finding
 
 4
-00:00:16,648 --> 00:00:22,197
-dataset compiled from PUCSL records. The daily target was rebuilt from raw readings after detecting
+00:00:15,144 --> 00:00:20,192
+duplicate plant timestamps and a missing quarter hour conversion in the published daily file. The main
 
 5
-00:00:22,197 --> 00:00:27,746
-duplicate plant and timestamp records and a missing interval conversion in the published daily file. This
+00:00:20,192 --> 00:00:25,241
+unfamiliar algorithm is Gaussian Process Regression. This is historical research, with no live grid
 
 6
-00:00:27,746 --> 00:00:33,296
-is a historical research tool, with no connection to live grid operations.
+00:00:25,241 --> 00:00:30,289
+connection.
 
 7
-00:00:34,875 --> 00:00:40,200
-In the Forecast Lab, select the day to predict and load its recorded inputs. The six editable values
+00:00:31,875 --> 00:00:37,194
+The working interface is deployed to Azure. Select fifteen January twenty twenty five and load recorded
 
 8
-00:00:40,200 --> 00:00:45,525
-describe earlier demand: one, two, seven and fourteen day lags, and the previous week's mean and
+00:00:37,194 --> 00:00:42,514
+inputs. Six history values describe demand lags, the previous week mean, and variability. The date
 
 9
-00:00:45,525 --> 00:00:50,851
-variability. Calendar coordinates come from the selected date. For fifteen January twenty twenty five,
+00:00:42,514 --> 00:00:47,833
+supplies calendar features. The original trained Gaussian process predicts forty two point three three
 
 10
-00:00:50,851 --> 00:00:56,176
-the trained Gaussian process predicts about forty two point three three gigawatt hours. Its nominal
+00:00:47,833 --> 00:00:53,153
+gigawatt hours, with a nominal ninety five percent observation interval from thirty seven point four
 
 11
-00:00:56,176 --> 00:01:01,501
-ninety five percent observation interval runs from thirty seven point four three to forty seven point two
+00:00:53,153 --> 00:00:58,472
+three to forty seven point two three. The historical actual is displayed separately. The browser calls
 
 12
-00:01:01,501 --> 00:01:06,826
-three. The historical observed outcome is displayed separately. The interface calls the saved Python
+00:00:58,472 --> 00:01:03,791
+real Python inference from the saved model.
 
 13
-00:01:06,826 --> 00:01:12,152
-model, rather than a mock formula.
+00:01:05,375 --> 00:01:11,226
+Change only previous day energy to forty two gigawatt hours and generate another forecast. The estimate
 
 14
-00:01:13,750 --> 00:01:19,355
-Next, change only the previous day's energy to forty two gigawatt hours and generate another forecast.
+00:01:11,226 --> 00:01:17,077
+becomes forty four point two two. Hypothetical inputs are clearly labelled and the historical actual
 
 15
-00:01:19,355 --> 00:01:24,960
-The estimate rises to about forty four point two two gigawatt hours. The badge identifies hypothetical
+00:01:17,077 --> 00:01:22,928
+stays fixed. Group replacement bars show separate changes against a representative training day. They are
 
 16
-00:01:24,960 --> 00:01:30,565
-inputs, while the recorded outcome stays unchanged. Below the estimate, three bars show separate group
+00:01:22,928 --> 00:01:28,779
+reference dependent sensitivity checks, not additive contributions or causal explanations. The wider
 
 17
-00:01:30,565 --> 00:01:36,170
-replacement sensitivities against a representative training day. They describe changes in this fitted
+00:01:28,779 --> 00:01:34,630
+study also includes grouped block permutation, partial dependence and retrained feature ablations.
 
 18
-00:01:36,170 --> 00:01:41,775
-model's output. They do not add up to the prediction and they do not prove causal effects. Internally
+00:01:36,250 --> 00:01:42,232
+A negative input produces an error, and the panel is labelled last valid estimate. Backend checks
 
 19
-00:01:41,775 --> 00:01:47,380
-consistent historical inputs remain preferable to arbitrary scenarios.
+00:01:42,232 --> 00:01:48,214
+independently reject negative, non finite and oversized requests. Scenarios outside the evaluated date
 
 20
-00:01:49,000 --> 00:01:54,474
-The interface also checks input validity. Entering a negative energy value produces an error instead of
+00:01:48,214 --> 00:01:54,196
+range receive warnings. These checks also passed against the actual hosted HTTPS service.
 
 21
-00:01:54,474 --> 00:01:59,948
-accepting a new prediction. The prediction panel is explicitly labelled as the last valid estimate. The
+00:01:55,750 --> 00:02:01,203
+Three chronological validation windows selected settings before the original ninety seven day test. GPR
 
 22
-00:01:59,948 --> 00:02:05,421
-backend independently rejects negative, oversized and non finite values. Dates outside the evaluated
+00:02:01,203 --> 00:02:06,656
+has mean absolute error one point five nine nine gigawatt hours, twenty nine point seven percent below
 
 23
-00:02:05,421 --> 00:02:10,895
-historical period receive a warning because no live data feed is available.
+00:02:06,656 --> 00:02:12,109
+weekly naive. It does not dominate: SVR has the lowest test mean absolute error and random forest the
 
 24
-00:02:12,500 --> 00:02:18,131
-The evaluation tab reports the same saved experimental results as the report. Three chronological
+00:02:12,109 --> 00:02:17,562
+lowest root mean squared error. Grouped importance indicates strongest reliance on demand history and
 
 25
-00:02:18,131 --> 00:02:23,761
-validation windows selected hyperparameters before the ninety seven day test. Gaussian process regression
+00:02:17,562 --> 00:02:23,015
+weekly calendar. Nominal ninety five percent intervals cover ninety two point eight percent, so
 
 26
-00:02:23,761 --> 00:02:29,392
-achieves a mean absolute error of one point five nine nine gigawatt hours, improving the weekly naive
+00:02:23,015 --> 00:02:28,468
+uncertainty estimates still need critical interpretation.
 
 27
-00:02:29,392 --> 00:02:35,023
-baseline by twenty nine point seven percent. It does not win every comparison: support vector regression
+00:02:30,000 --> 00:02:35,712
+The extension adds NGBoost, K nearest neighbours and gradient boosting, giving seven learned algorithms
 
 28
-00:02:35,023 --> 00:02:40,653
-has the lowest test mean absolute error, and random forest has the lowest root mean squared error. The
+00:02:35,712 --> 00:02:41,424
+on two Sri Lankan tasks. Added electricity comparisons are explicitly post hoc because the original test
 
 29
-00:02:40,653 --> 00:02:46,284
-global explanation shows greatest reliance on demand history and weekly calendar. Nominal ninety five
+00:02:41,424 --> 00:02:47,136
+was already seen. The separate Colombo rainfall audit uses CHIRPS records, delayed inputs and a training
 
 30
-00:02:46,284 --> 00:02:51,914
-percent intervals cover ninety two point eight percent of test outcomes.
+00:02:47,136 --> 00:02:52,847
+embargo for publication timing. Review corrected a preliminary timing issue; that history is preserved.
 
 31
-00:02:53,500 --> 00:02:59,225
-Finally, replay four February twenty twenty five, Independence Day. The model forecasts about forty four
+00:02:52,847 --> 00:02:58,559
+The seasonal median wins with mean absolute error forty one point three nine millimetres, ahead of SVR
 
 32
-00:02:59,225 --> 00:03:04,951
-point three seven gigawatt hours, while recorded dispatch is only thirty three point seven four. Several
+00:02:58,559 --> 00:03:04,271
+and GPR. Novelty does not guarantee better accuracy.
 
 33
-00:03:04,951 --> 00:03:10,676
-large errors coincide with verified Sri Lankan holidays omitted from the frozen predictors. That
+00:03:05,875 --> 00:03:11,291
+The deployment panel shows the actual Azure HTTPS address, private GitHub repository, application source
 
 34
-00:03:10,676 --> 00:03:16,401
-association suggests a future improvement, but adding holiday features now would require a fresh holdout.
+00:03:11,291 --> 00:03:16,707
+commit and model fingerprint. Azure App Service uses Linux, Python three point thirteen and the free F
 
 35
-00:03:16,401 --> 00:03:22,127
-Recorded dispatch is also a coverage limited proxy for demand. The source package includes data
+00:03:16,707 --> 00:03:22,123
+one plan. Hosted historical and edited predictions match local inference within one millionth of a
 
 36
-00:03:22,127 --> 00:03:27,852
-provenance, code, executed notebook, model artefacts, explanations and independent checks. This video
+00:03:22,123 --> 00:03:27,540
+megawatt hour. The repository remains private as requested; assessors need access or the complete source
 
 37
-00:03:27,852 --> 00:03:33,577
-uses genuine interface captures with panning and synthesized narration. Student review and an accurate
+00:03:27,540 --> 00:03:32,956
+ZIP. The approved ten dollar credit cap is a maximum, not a spending target. Free tier quotas and cold
 
 38
-00:03:33,577 --> 00:03:39,303
-assistance disclosure remain part of submission.
+00:03:32,956 --> 00:03:38,372
+starts limit availability.
+
+39
+00:03:39,875 --> 00:03:45,297
+Four February, Independence Day, is a large failure: the model forecasts about forty four point three
+
+40
+00:03:45,297 --> 00:03:50,719
+seven gigawatt hours against recorded energy thirty three point seven three. Holiday indicators were
+
+41
+00:03:50,719 --> 00:03:56,141
+omitted from the frozen predictors; future redesign needs fresh evaluation. Dispatch coverage and
+
+42
+00:03:56,141 --> 00:04:01,563
+publication timing also constrain interpretation. The package includes reproducible code, pinned data,
+
+43
+00:04:01,563 --> 00:04:06,985
+both notebooks, experiments, report and deployment evidence. This walkthrough uses genuine hosted
+
+44
+00:04:06,985 --> 00:04:12,407
+interface captures, edited panning and synthesized narration. Student review and accurate assistance
+
+45
+00:04:12,407 --> 00:04:17,829
+disclosure remain essential.

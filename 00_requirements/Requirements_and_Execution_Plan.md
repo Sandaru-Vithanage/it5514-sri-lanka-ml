@@ -59,3 +59,12 @@ The guide lists 90 core marks and 10 bonus marks. It does not explain whether th
 ## Student checkpoints
 
 Review and understand the dataset/task choice, method novelty, findings and limitations. Read the AI disclosure and any university declaration before submitting. Do not claim personal data collection, manual execution or unaided authorship if those claims would be inaccurate. Moodle upload and confirmation of the exact cutoff remain student actions.
+
+
+## Authorized extension and bonus deployment, 28 October 2026
+
+The student requested broader algorithms/datasets, a private GitHub review repository, and deployment covered in the video. Authorized Azure for Students spending cap: US$10. The selected service is Azure App Service Linux Free F1 (Python 3.13, one Gunicorn worker/two threads, default HTTPS); no paid SKU or additional paid services are required. Evidence is recorded in `10_deployment/` after live verification.
+
+The primary GPR study remains frozen. Extra electricity algorithms (NGBoost, KNN, gradient boosting) are supplementary post-hoc comparisons. A separate Colombo rainfall task reuses all seven learned algorithms and two seasonal baselines. Timing review corrected a preliminary unavailable-training-label issue by a six-dekad training embargo, in addition to delayed features. Version 1.1 and the invalid preliminary archive preserve that history; final corrected rainfall evaluation is retrospective, not claimed as untouched. Report Sections 13–17 and both notebooks cover the extension. All initial dataset and teaching originals are preserved.
+
+The broader experiment is intended to test robustness and limits, not to accumulate datasets or guarantee marks. The report retains negative findings, separate target units, uncertainty limitations and a complete AI-assistance disclosure. Private repository access and Moodle upload remain student actions; no public repository or invitations are authorized.

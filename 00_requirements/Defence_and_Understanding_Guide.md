@@ -43,3 +43,16 @@ Use these questions to explain the work in your own words. Read the report and e
 3. Open the interface and reproduce 15 January 2025. Change previous-day energy to 42 GWh, and explain why the outcome is hypothetical while the historical actual stays unchanged.
 4. Load 4 February 2025 and explain the large error without claiming certainty about its cause.
 5. Describe one methodological weakness you would fix in a genuinely new experiment, and how you would reserve a new holdout.
+
+
+## Broader experiments and deployment
+
+- Why GPR plus NGBoost? GPR is the focal new method; NGBoost compares conditional distributions through natural-gradient tree boosting. Familiar KNN/gradient boosting test whether the outcome depends on one model family. Novelty is not evidence of superiority.
+- Which algorithms were actually run? Linear regression, random forest, SVR, GPR, NGBoost, KNN and conventional gradient boosting on both tasks. Electricity also has persistence/weekly-naive baselines; rainfall has prior-year naive/training-only seasonal median.
+- Why are extra electricity results post-hoc? Its original holdout had already been inspected before adding algorithms. Settings still use development folds, but its status cannot be reset to untouched.
+- What did rainfall review catch? Delaying features does not make late training labels available at the forecast origin. Final rainfall totals may be published the following month. Version 1.1 leaves November–December out of each preceding training year, in addition to lagging inputs by at least six dekads. The invalid first pass is archived. Since outcomes were already seen, corrected scores are transparently retrospective.
+- What are the corrected rainfall results? Seasonal median MAE 41.39 mm; SVR 48.17; GPR 51.86; NGBoost 63.09. Do not turn a test ranking into a deployment-selection rule. GPR's broad intervals cover 94.4% but 51 lower bounds are negative; NGBoost covers 80.6%. A positive-support distribution is a future hypothesis, not a hidden post-test fix.
+- What proves deployment? Actual HTTPS API responses reproduce local original GPR predictions within 10^-6 MWh; health exposes the identical model SHA-256 and application source commit. The hosted UI accepts edited inputs, labels hypothetical history and rejects invalid values.
+- Why Azure App Service? One Python 3.13 Flask/Gunicorn application hosts the existing CPU model and integrated UI. F1 is free shared compute, sufficient for a small research demo; quotas/cold starts limit reliability. No paid ML endpoint, GPU or database is needed. The authorized US$10 is a maximum, not a spend target.
+- Why a private repo and ZIP? The user requested private review. Repository visibility was verified. A marker requires access, so the source ZIP provides a complete assessment fallback. No collaborators were invited automatically.
+- What does the video show? Genuine captured states of the hosted interface, edited with panning and synthesized narration; not continuous screen recording. It covers real forecasts, edits, validation, original/extended evidence, failures, Azure URL and repository provenance. Read the transcript and rerecord personal narration if required.

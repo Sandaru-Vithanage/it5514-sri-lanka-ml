@@ -41,7 +41,7 @@ def main():
         for block in page['blocks']:
             t=block['type']
             if t=='paragraph':
-                st=styles['ref'] if page['title']=='References' else styles['body'];story.append(Paragraph(block['text'],st));md+=[plain(block['text'].replace('<br/>','\n')),''];words.append(plain(block['text']))
+                st=styles['ref'] if page['title'].startswith('References') else styles['body'];story.append(Paragraph(block['text'],st));md+=[plain(block['text'].replace('<br/>','\n')),''];words.append(plain(block['text']))
             elif t=='subheading':story.append(Paragraph(block['text'],styles['sub']));md+=['### '+block['text'],''];words.append(block['text'])
             elif t=='equation':
                 for line in block['text'].split('\n'):story.append(Paragraph(html.escape(line),ParagraphStyle('eq',parent=styles['body'],fontName='Body',fontSize=9.2,leading=14,backColor=colors.HexColor('#edf6f4'),borderPadding=7,spaceBefore=3,spaceAfter=7)))

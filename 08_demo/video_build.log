@@ -1,0 +1,17 @@
+Render scene 1 duration 31.875
+Render scene 2 duration 33.5
+Render scene 3 duration 30.875
+Render scene 4 duration 19.5
+Render scene 5 duration 34.25
+Render scene 6 duration 35.875
+Render scene 7 duration 34.0
+Render scene 8 duration 39.5
+{
+  "duration_seconds": 259.375,
+  "frames_per_second": 8,
+  "width": 1600,
+  "height": 1000,
+  "narration": "macOS Samantha system voice, 162 words/minute",
+  "format": "captured-interface narrated walkthrough with panning; not continuous live recording",
+  "bytes": 8311396
+}

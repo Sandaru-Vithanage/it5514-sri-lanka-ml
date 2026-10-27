@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "dispatch NGBoost coverage",
+    "dispatch NGBoost width and NLPD",
+    "dispatch NGBoost support violations",
+    "rainfall GPR coverage",
+    "rainfall GPR width and NLPD",
+    "rainfall GPR support violations",
+    "rainfall NGBoost coverage",
+    "rainfall NGBoost width and NLPD",
+    "rainfall NGBoost support violations"
+  ],
+  "check_count": 9
+}

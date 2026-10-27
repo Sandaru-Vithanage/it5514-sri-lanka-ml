@@ -1,5 +1,8 @@
-[2026-10-28 02:40:26 +0530] [37195] [INFO] Starting gunicorn 26.2.0
-[2026-10-28 02:40:26 +0530] [37195] [INFO] Listening at: http://127.0.0.1:8766 (37195)
-[2026-10-28 02:40:26 +0530] [37195] [INFO] Using worker: gthread
-[2026-10-28 02:40:26 +0530] [37474] [INFO] Booting worker with pid: 37474
-[2026-10-28 02:40:26 +0530] [37195] [INFO] Control socket listening at /Users/sandaruvithanage/.gunicorn/gunicorn.ctl
+[2026-10-28 02:51:22 +0530] [48177] [INFO] Starting gunicorn 26.2.0
+[2026-10-28 02:51:22 +0530] [48177] [INFO] Listening at: http://127.0.0.1:8766 (48177)
+[2026-10-28 02:51:22 +0530] [48177] [INFO] Using worker: gthread
+[2026-10-28 02:51:22 +0530] [48382] [INFO] Booting worker with pid: 48382
+[2026-10-28 02:51:22 +0530] [48177] [INFO] Control socket listening at /Users/sandaruvithanage/.gunicorn/gunicorn.ctl
+[2026-10-28 03:14:50 +0530] [48177] [INFO] Handling signal: int
+[2026-10-28 03:14:50 +0530] [48382] [INFO] Worker exiting (pid: 48382)
+[2026-10-28 03:14:51 +0530] [48177] [INFO] Shutting down: Master

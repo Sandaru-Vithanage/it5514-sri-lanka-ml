@@ -25,11 +25,15 @@
         },
         {
           "type": "paragraph",
+          "text": "A supplementary extension compares seven learned algorithms across electricity and an independent Colombo rainfall task. NGBoost is competitive on electricity but its rainfall intervals under-cover; the rainfall seasonal-median baseline outperforms all learned models. The main GPR study is preserved, with post-hoc electricity comparisons identified explicitly. A private source repository and an Azure Free F1 HTTPS application provide reviewable deployment evidence."
+        },
+        {
+          "type": "paragraph",
           "text": "<b>Keywords:</b> Sri Lanka; dispatch energy; Gaussian processes; temporal validation; explainable machine learning; uncertainty."
         },
         {
           "type": "paragraph",
-          "text": "<b>Review status:</b> AI-assisted research draft for student review and defence. Assistance and unresolved institutional-policy checks are disclosed on page 15. This report contains executed experimental results, rather than illustrative performance values."
+          "text": "<b>Review status:</b> AI-assisted research draft for student review and defence. Assistance and unresolved institutional-policy checks are disclosed in the final section. This report contains executed experimental results, rather than illustrative performance values."
         }
       ]
     },
@@ -727,7 +731,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The next study should add verified advance-known Sri Lankan holidays, record actual telemetry publication latency, and obtain forecast weather rather than realized same-day weather. A longer, genuinely untouched future period would test recalibration, seasonal stability and reporting changes. Conditional feature-effect analyses and background-sensitivity checks could strengthen the XAI audit. Local compute already handles this study efficiently; an Azure deployment would add cost and complexity without resolving the central evidence gaps."
+          "text": "A future study should add advance-known Sri Lankan holidays, verify telemetry publication latency and use issued weather forecasts. A longer untouched period should test calibration, seasonal stability and reporting changes. Conditional feature-effect analyses could strengthen XAI. Local compute handles training; the Azure review deployment demonstrates reproducible inference without establishing operational readiness."
         }
       ]
     },
@@ -741,11 +745,11 @@
         },
         {
           "type": "paragraph",
-          "text": "The local “Lanka Dispatch / Forecast Lab” interface accepts a target date and six demand-history summaries, using GWh for readability. Calendar features are derived from the selected date. A Python HTTP service loads the saved GPR pipeline and returns the actual model mean, observation interval, seasonal-naïve comparison and signed group-replacement sensitivities. The browser contains no mock prediction function. Recorded outcomes are displayed separately for historical replay; editing inputs never rewrites the observed outcome."
+          "text": "The “Lanka Dispatch / Forecast Lab” interface accepts a target date and six demand-history summaries, using GWh for readability. Calendar features are derived from the selected date. A Python HTTP service loads the saved GPR pipeline and returns the actual model mean, observation interval, seasonal-naïve comparison and signed group-replacement sensitivities. The browser contains no mock prediction function. Recorded outcomes are displayed separately for historical replay; editing inputs never rewrites the observed outcome."
         },
         {
           "type": "paragraph",
-          "text": "Users can load a historical case, edit values, generate a fresh estimate, inspect evaluation evidence, and read the source/quality notes. Negative, non-finite and out-of-range energy inputs are rejected. Out-of-development energy ranges and dates outside the evaluated period generate warnings. The prototype binds only to localhost and uses no external credentials or paid services. A captured-interface walkthrough accompanies the source; its narration is synthesized and disclosed as assistance."
+          "text": "Users can load a historical case, edit values, generate a fresh estimate, inspect evaluation evidence, and read the source/quality notes. Negative, non-finite and out-of-range energy inputs are rejected. Out-of-development energy ranges and dates outside the evaluated period generate warnings. The original development server binds to localhost; a separate Flask/Gunicorn wrapper supports the verified HTTPS Azure review deployment described in Section 17. Credentials remain outside the source package. A captured-interface walkthrough accompanies the source; its narration is synthesized and disclosed as assistance."
         },
         {
           "type": "subheading",
@@ -799,6 +803,402 @@
       ]
     },
     {
+      "kicker": "IT5514 / EXTENDED EXPERIMENTAL EVIDENCE",
+      "title": "13. Extension design and NGBoost",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The extension responds to a request for broader evidence rather than a change in the primary research question. The original study, selected kernel, saved model and test outcomes remain unchanged. Its test had already been inspected: NGBoost, KNN and gradient boosting results on electricity are therefore <b>supplementary post-hoc comparisons</b>. Their settings still use the original three development folds; the extension must not be described as a newly untouched electricity test. The initial rainfall protocol preceded scoring. A publication-timing review then found unavailable year-end training labels. Version 1.1 removes the six dekads before each January evaluation origin from training. Invalid preliminary results are archived. Since outcomes had already been inspected, corrected rainfall scores are retrospective reanalysis, not newly untouched testing; no score-driven tuning followed."
+        },
+        {
+          "type": "subheading",
+          "text": "13.1 A second unfamiliar probabilistic algorithm"
+        },
+        {
+          "type": "paragraph",
+          "text": "NGBoost models conditional distribution parameters rather than only a point prediction. Here the Normal distribution has a mean and log-scale. A proper logarithmic score evaluates the full predictive distribution. The natural gradient preconditions score derivatives by the distribution’s information geometry, helping coordinate parameters measured on different scales [13]. Weak regression trees fit these adjusted directions, followed by a shared step-size update. This differs from conventional squared-error gradient boosting, which directly targets the conditional mean."
+        },
+        {
+          "type": "equation",
+          "text": "Natural gradient: g_nat(theta) = I(theta)^(-1) grad_theta S(theta, y)\nNormal prediction: Y | x ~ Normal(mu(x), sigma(x)^2)"
+        },
+        {
+          "type": "paragraph",
+          "text": "This project uses the maintained NGBoost implementation, version 0.5.11, Normal/LogScore and natural_gradient=True. Target mean and standard deviation are fitted inside each training fold and reversed for prediction. Six fixed candidates combine tree depth 2/3 with 200/400/600 boosting rounds, learning rate 0.03 and minimum leaf size 10. Negative rainfall support under a Normal family is explicitly checked rather than concealed by clipping."
+        },
+        {
+          "type": "subheading",
+          "text": "13.2 Fair search and course alignment"
+        },
+        {
+          "type": "paragraph",
+          "text": "KNN uses training-only standardization, 5/15/31 neighbours and uniform/distance weights. Conventional gradient boosting uses depths 1/2 and 100/300/600 rounds, learning rate 0.03 and minimum leaf size 10. Each new nonlinear model receives six candidates and three expanding folds; seed 42 is fixed. Rainfall also reuses the original LR, RF, SVR and GPR search definitions. NGBoost and natural-gradient boosting were not found in the supplied lecture extraction; GPR remains the assignment’s focal new method. No classification, deep-learning or image-processing application is introduced."
+        },
+        {
+          "type": "paragraph",
+          "text": "The frozen extension protocol records the snapshot hash, features, folds, candidates and reporting rules. Complete candidate scores, selected-before-test settings, fitted objects, point/probabilistic metrics and execution logs are supplied. Two runs reproduced all extension predictions within 10^-8 in native target units; 78 independent checks passed."
+        }
+      ]
+    },
+    {
+      "kicker": "IT5514 / EXTENDED EXPERIMENTAL EVIDENCE",
+      "title": "14. Expanded electricity comparison",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Table 6 retains every original result and adds the three predeclared extension models. The unit is GWh; all learned models use the same 659 development and 97 test days. Original and added comparisons have different test-inspection histories and are labelled accordingly. Point predictions from probabilistic models are their conditional means."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Model",
+            "Status",
+            "Test MAE",
+            "Test RMSE"
+          ],
+          "rows": [
+            [
+              "SVR",
+              "Original",
+              "1.534",
+              "2.406"
+            ],
+            [
+              "GPR",
+              "Original",
+              "1.599",
+              "2.492"
+            ],
+            [
+              "Random forest",
+              "Original",
+              "1.607",
+              "2.322"
+            ],
+            [
+              "NGBoost",
+              "Added post-hoc",
+              "1.623",
+              "2.338"
+            ],
+            [
+              "Gradient boosting",
+              "Added post-hoc",
+              "1.641",
+              "2.363"
+            ],
+            [
+              "KNN",
+              "Added post-hoc",
+              "1.774",
+              "2.458"
+            ],
+            [
+              "Linear regression",
+              "Original",
+              "2.043",
+              "2.805"
+            ],
+            [
+              "Seasonal naive",
+              "Original",
+              "2.274",
+              "3.173"
+            ],
+            [
+              "Persistence",
+              "Original",
+              "3.255",
+              "4.243"
+            ]
+          ],
+          "widths": [
+            0.31,
+            0.25,
+            0.22,
+            0.22
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "<b>Table 6.</b> Expanded dispatch errors, GWh. Exact unrounded metrics and configurations are in the experiment CSVs. Added models do not replace the original frozen comparison."
+        },
+        {
+          "type": "subheading",
+          "text": "14.1 What the added evidence changes"
+        },
+        {
+          "type": "paragraph",
+          "text": "NGBoost obtains MAE 1.623 GWh and RMSE 2.338 GWh, close to RF on this period. KNN reaches MAE 1.774 GWh; gradient boosting reaches 1.641 GWh. None improves on SVR’s test MAE of 1.534 GWh or RF’s RMSE of 2.322 GWh. Gradient boosting has the lowest validation MAE in the expanded comparison (1.714 GWh), while RF was the best original validation comparator (1.823 GWh). These scopes must not be conflated. Expanded-CV success does not guarantee the best heldout accuracy."
+        },
+        {
+          "type": "subheading",
+          "text": "14.2 Distributional quality matters"
+        },
+        {
+          "type": "paragraph",
+          "text": "NGBoost’s nominal 95% Normal intervals cover 87.6% of electricity outcomes, with mean width 6.224 GWh and Gaussian negative log predictive density (NLPD) 9.622. GPR covers 92.8%, width 9.340 GWh and NLPD 9.274. Lower NLPD is better within the same target units; NGBoost’s narrower intervals lose coverage. Neither nominal level is guaranteed, and cross-dataset NLPD values in different units should not be compared."
+        },
+        {
+          "type": "paragraph",
+          "text": "The evidence supports GPR as a defensible probabilistic research method, not the universal accuracy winner. NGBoost adds a useful alternative and an instructive calibration limitation. The deployed model stays the original GPR so that the demonstration matches the main XAI and uncertainty analyses. No test-directed retuning or holiday-feature insertion is performed."
+        }
+      ]
+    },
+    {
+      "kicker": "IT5514 / EXTENDED EXPERIMENTAL EVIDENCE",
+      "title": "15. Independent Colombo rainfall task",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "To test whether conclusions depend on the electricity domain, models are refitted on WFP/HDX Sri Lanka CHIRPS-v2 dekadal rainfall [14, 15]. This is a separate tabular task, not external validation of the electricity-trained model. The source combines satellite and gauge information into existing administrative aggregates; this project neither processes images nor collects original measurements."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Item",
+            "Prespecified choice"
+          ],
+          "rows": [
+            [
+              "Target and locality",
+              "Final rfh rainfall, mm per dekad; Colombo district, admin level 2, PCODE LK11"
+            ],
+            [
+              "Snapshot",
+              "56,066 country-wide rows; 25 districts + 9 provinces; 1,647 final Colombo records; pinned CSV and metadata retained"
+            ],
+            [
+              "Model period / split",
+              "936 rows, 2000–2025; 858 development (Jan. 2000–Oct. 2023), six embargoed, 72 test (2024–2025)"
+            ],
+            [
+              "Validation",
+              "Train through Oct. 2020 / validate 2021; then Oct. 2021 / 2022; Oct. 2022 / 2023. No shuffled splitting."
+            ],
+            [
+              "Predictors",
+              "Lags 6, 7, 9 and 36 dekads; three-dekad mean/std ending at lag6; annual sine/cosine; trend"
+            ],
+            [
+              "Baselines",
+              "Prior-year same-dekad value; training-only median for each annual dekad"
+            ],
+            [
+              "Quality",
+              "Final-only, nonnegative finite rainfall; complete calendar before shifting; no interpolation or extreme trimming"
+            ]
+          ],
+          "widths": [
+            0.29,
+            0.71
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "15.1 Availability and leakage controls"
+        },
+        {
+          "type": "paragraph",
+          "text": "A year contains 36 dekads beginning on days 1, 11 and 21; the final period of a month has variable length. Features are built on this full calendar. WFP metadata states that final observations are published mid-month after the observed month. A minimum six-dekad input delay conservatively handles final-product latency. Training targets also stop at the preceding October, excluding six November–December dekads before each January evaluation origin. Archived issuance vintages are unavailable, so later revisions remain a retrospective limitation. The target is a future completed dekad relative to the forecast origin, not observed rainfall passed as a predictor."
+        },
+        {
+          "type": "paragraph",
+          "text": "Same-period rolling totals and anomaly ratios are excluded. The supplied climatology is also excluded; the baseline median is recalculated from training rows in each fold and only targets through October 2023 for the final test. Every learned transform uses training data. A calendar lookup independently verifies all lag values. Missing targets are never imputed."
+        },
+        {
+          "type": "paragraph",
+          "text": "The rolling HDX resource may change. Its SHA-256 is pinned in the protocol and acquisition code; the original snapshot is included in the repository and source ZIP. A changed future download is rejected instead of silently changing the experiment. HDX metadata specifies Creative Commons Attribution International; it does not identify a numbered CC version. Full attribution and the original licence metadata are preserved."
+        }
+      ]
+    },
+    {
+      "kicker": "IT5514 / EXTENDED EXPERIMENTAL EVIDENCE",
+      "title": "16. Rainfall results and negative findings",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Model",
+            "CV MAE / mm",
+            "Test MAE / mm",
+            "Test RMSE / mm"
+          ],
+          "rows": [
+            [
+              "Seasonal median",
+              "52.26",
+              "41.39",
+              "58.69"
+            ],
+            [
+              "SVR",
+              "54.30",
+              "48.17",
+              "62.83"
+            ],
+            [
+              "KNN",
+              "52.09",
+              "49.47",
+              "63.41"
+            ],
+            [
+              "GPR",
+              "53.25",
+              "51.86",
+              "65.49"
+            ],
+            [
+              "Random forest",
+              "51.52",
+              "52.28",
+              "64.64"
+            ],
+            [
+              "Linear regression",
+              "53.99",
+              "53.13",
+              "66.17"
+            ],
+            [
+              "Gradient boosting",
+              "54.61",
+              "55.72",
+              "67.36"
+            ],
+            [
+              "NGBoost",
+              "53.68",
+              "63.09",
+              "75.18"
+            ],
+            [
+              "Seasonal naive",
+              "67.52",
+              "66.89",
+              "87.92"
+            ]
+          ],
+          "widths": [
+            0.31,
+            0.23,
+            0.23,
+            0.23
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "<b>Table 7.</b> Independent rainfall comparison. RF has the lowest validation MAE (51.52 mm), while a seasonal median has the lowest heldout error (41.39 mm). SVR is the best learned model on test MAE (48.17 mm). Choosing the test winner for future use would require a new validation study."
+        },
+        {
+          "type": "paragraph",
+          "text": "GPR test MAE is 51.86 mm, exceeding the seasonal median by 10.46 mm. A 2,000-replicate paired circular block bootstrap gives a 95% difference interval [2.31, 19.17] mm for three-dekad blocks and [1.37, 20.92] for six-dekad blocks. With only two test years, these estimates depend on temporal assumptions. The SVR-versus-median six-dekad interval crosses zero; descriptive ordering should not become a universal superiority claim."
+        },
+        {
+          "type": "paragraph",
+          "text": "GPR’s nominal 95% rainfall intervals cover 94.4% but average 257.91 mm wide; 51/72 lower bounds are negative. NGBoost covers only 80.6%, width 196.75 mm, and has four negative lower bounds. Both produce nonnegative test means. Gaussian support and heteroscedastic extremes are limitations, not repaired by silently clipping intervals. A positive-support distribution, weather forecasts or revised features are future hypotheses needing fresh evaluation."
+        },
+        {
+          "type": "paragraph",
+          "text": "This negative finding strengthens the critical conclusion: unfamiliar probabilistic methods can be useful without consistently beating well-matched seasonal baselines. Raw MAE and NLPD across electricity and rainfall have different units and are not averaged into a single ranking."
+        }
+      ]
+    },
+    {
+      "kicker": "IT5514 / EXTENDED EXPERIMENTAL EVIDENCE",
+      "title": "16.1 Visual comparison across tasks",
+      "blocks": [
+        {
+          "type": "figure",
+          "file": "06_figures/10_extended_model_comparison.png",
+          "max_height": 310,
+          "caption": "Figure 10. Full original and supplementary comparison on electricity (left) and corrected rainfall audit (right). Lower MAE is better. Separate units and baselines prevent a meaningful raw-MAE average across tasks."
+        },
+        {
+          "type": "figure",
+          "file": "06_figures/11_rainfall_holdout.png",
+          "caption": "Figure 11. Actual final rainfall and two frozen predictions on 72 heldout dekads. Peaks remain difficult for the learned mean model.",
+          "max_height": 200
+        },
+        {
+          "type": "paragraph",
+          "text": "The electricity plot preserves the original comparison and labels the extension’s status in Section 14. The rainfall plot uses training targets only through October 2023; six late-year dekads are embargoed before the January 2024 origin. Seasonal structure remains useful while peaks challenge mean forecasts. These are recorded results, not evidence that the trained electricity model transfers to rainfall."
+        }
+      ]
+    },
+    {
+      "kicker": "IT5514 / EXTENDED EXPERIMENTAL EVIDENCE",
+      "title": "17. Repository and Azure deployment",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The requested review deployment runs the original saved GPR through a Flask/Gunicorn WSGI wrapper. The same app serves the interface, model API, original evaluation evidence and corrected extension tables. A private GitHub repository contains source, protocols, data instructions and result artefacts. The separate source ZIP remains an accessible assessment alternative when the reviewer has not been granted private-repository access."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Item",
+            "Verified configuration / evidence"
+          ],
+          "rows": [
+            [
+              "Live HTTPS interface",
+              "https://lanka-dispatch-it5514-sv.azurewebsites.net"
+            ],
+            [
+              "Private source repository",
+              "https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml"
+            ],
+            [
+              "Hosting",
+              "Azure App Service Linux, East Asia; Python 3.13; one Gunicorn worker, two threads"
+            ],
+            [
+              "Plan and cost boundary",
+              "F1 / Free, one app. User-approved maximum US$10 of student credit; no paid resources created."
+            ],
+            [
+              "Release provenance",
+              "Application source commit 79d46d9f2c74; exact model SHA-256 is exposed by /api/health and saved in deployment_record.json."
+            ],
+            [
+              "Remote validation",
+              "11 API checks passed, including identical model bytes, forecast agreement, invalid requests and equality of published extension results."
+            ]
+          ],
+          "widths": [
+            0.28,
+            0.72
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "17.1 What deployment establishes"
+        },
+        {
+          "type": "paragraph",
+          "text": "The HTTPS service returns 42,325.975574 MWh for recorded 15 January 2025 inputs and 44,217.785362 MWh after changing only lag1 to 42,000 MWh. Both match local inference within 10^-6 MWh; the historical actual remains fixed. Browser review verifies these interactions, the last-valid-estimate label, original and extended evidence, and the displayed URL, private source link, source commit and model fingerprint. The 3-5 minute video shows genuine hosted interface captures with disclosed editing and synthesized narration."
+        },
+        {
+          "type": "paragraph",
+          "text": "An explicit 14-file bundle excludes raw archives, notebooks, lecture materials, other model pickles and credentials. Per-file hashes and a ZIP checksum are recorded. Runtime dependencies are pinned separately from training/authoring packages. HTTPS-only service, TLS 1.2 minimum and disabled FTP are configured. Azure authentication state stays in an excluded local directory; no password, access token or subscription identifier is included in deliverables."
+        },
+        {
+          "type": "subheading",
+          "text": "17.2 Cost, access and operational limits"
+        },
+        {
+          "type": "paragraph",
+          "text": "The selected F1 tier is free shared compute with CPU quotas and cold starts [16]. The verified resource inventory contains only the free plan and app. This records a free configuration, not a fabricated final invoice or hard budget-enforcement mechanism. No paid monitoring, GPU, Azure ML endpoint, database, registry or custom domain was provisioned. Cleanup instructions are supplied for the dedicated resource group after assessment."
+        },
+        {
+          "type": "paragraph",
+          "text": "Hosting demonstrates reproducible inference, not real-time data availability, an operational SLA or grid suitability. The model was not retrained on the heldout period. The repository remains private by the student’s instruction; marker access requires a deliberate invitation or use of the submitted source ZIP. Durable video and source evidence remain available if free-tier quotas or cold starts interrupt the site."
+        }
+      ]
+    },
+    {
       "title": "References",
       "kicker": "VERIFIED PRIMARY SOURCES / NUMBERED STYLE",
       "blocks": [
@@ -837,7 +1237,13 @@
         {
           "type": "paragraph",
           "text": "[9] Public Utilities Commission of Sri Lanka, Daily Electricity Generation & Cost Estimation Report: 24th December 2024. Available: https://www.pucsl.gov.lk/wp-content/uploads/2024/12/Generation-Cost-24th-Dec_2024-R.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "kicker": "IT5514 / VERIFIED SOURCES",
+      "title": "References (continued)",
+      "blocks": [
         {
           "type": "paragraph",
           "text": "[10] Central Bank of Sri Lanka, “Bank Holidays for 2025.” Available: https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2025"
@@ -849,6 +1255,22 @@
         {
           "type": "paragraph",
           "text": "[12] University of Moratuwa Library, “Plagiarism Support.” Available: https://www.uom.lk/lib/plagiarism-support-0"
+        },
+        {
+          "type": "paragraph",
+          "text": "[13] T. Duan, A. Avati, D. Y. Ding, K. K. Thai, S. Basu, A. Ng and A. Schuler, “NGBoost: Natural Gradient Boosting for Probabilistic Prediction,” Proc. 37th International Conference on Machine Learning, PMLR 119, pp. 2690-2700, 2020. Available: https://proceedings.mlr.press/v119/duan20a.html"
+        },
+        {
+          "type": "paragraph",
+          "text": "[14] World Food Programme, “Sri Lanka - Subnational Rainfall Indicators,” Humanitarian Data Exchange, snapshot accessed 28 Oct. 2026. Available: https://data.humdata.org/dataset/lka-rainfall-subnational . Pinned original CSV, licence metadata and SHA-256 are supplied."
+        },
+        {
+          "type": "paragraph",
+          "text": "[15] United Nations OCHA, “Climate: Rainfall,” HDX HAPI Data Usage Guide. Available: https://hdx-hapi.readthedocs.io/en/latest/data_usage_guides/climate/ . Dataset-level WFP metadata supplies the final-product publication schedule."
+        },
+        {
+          "type": "paragraph",
+          "text": "[16] Microsoft, “What are Azure App Service plans?” and “Quickstart: Deploy a Python web app,” Microsoft Learn. Available: https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans and https://learn.microsoft.com/en-us/azure/app-service/quickstart-python . Accessed 28 Oct. 2026."
         },
         {
           "type": "paragraph",
@@ -866,7 +1288,7 @@
         },
         {
           "type": "paragraph",
-          "text": "OpenAI Codex assisted with reading and extracting the supplied materials, web research and source verification, dataset acquisition, experimental design, Python implementation, local execution, result checking, visualizations, report drafting, the interface and demo preparation. The code was run on the student’s MacBook; reported scores come from the saved experimental outputs. The demo uses a synthesized system voice and captured states of the working interface. These contributions are disclosed so that the work is not represented as unaided authorship."
+          "text": "OpenAI Codex assisted with reading and extracting the supplied materials, web research and source verification, dataset acquisition, experimental design, Python implementation, local execution, the extended rainfall/NGBoost experiments, result checking, visualizations, report drafting, private GitHub repository preparation, Azure deployment, the interface and demo preparation. The code was run on the student’s MacBook; reported scores come from the saved experimental outputs. The demo uses a synthesized system voice and captured states of the working interface. These contributions are disclosed so that the work is not represented as unaided authorship."
         },
         {
           "type": "paragraph",
@@ -890,7 +1312,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The student should also defend the use of temporal baselines, the validation-only selection rule, the absence of a GPR superiority claim over RF, the meaning and limitations of 92.8% interval coverage, the difference between permutation and retrained ablation, and why local group sensitivities are non-additive and non-causal. The accompanying defence guide provides focused questions and code locations for practice."
+          "text": "The student should also explain the NGBoost natural gradient, rainfall publication delay, post-hoc status of added electricity comparisons, and why a seasonal median wins the rainfall task. The student should defend the use of temporal baselines, the validation-only selection rule, the absence of a GPR superiority claim over RF, the meaning and limitations of 92.8% interval coverage, the difference between permutation and retrained ablation, and why local group sensitivities are non-additive and non-causal. The accompanying defence guide provides focused questions and code locations for practice."
         },
         {
           "type": "subheading",

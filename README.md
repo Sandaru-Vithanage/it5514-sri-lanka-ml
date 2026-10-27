@@ -8,7 +8,7 @@ Prepared 28 October 2026. Student-supplied deadline: 1 November 2026; verify the
 
 Read `07_report/269182L_IT5514_Report.pdf`, `00_requirements/Requirements_and_Execution_Plan.md`, and `00_requirements/Final_Verification_and_Submission_Checklist.md`. This is an AI-assisted research package for student review and defence. The assistance disclosure is part of the report and must not be replaced by a false unaided-authorship declaration.
 
-The task forecasts next-local-day **recorded dispatch energy**, using Gaussian Process Regression (GPR). No GPR coverage was found in the supplied lecture corpus; final eligibility against unsupplied teaching is a student/lecturer check. This is a non-deep-learning tabular/time-series study. No Azure resources, paid services, credentials, live grid operations or external hosting are used.
+The task forecasts next-local-day **recorded dispatch energy**, using Gaussian Process Regression (GPR). No GPR coverage was found in the supplied lecture corpus; final eligibility against unsupplied teaching is a student/lecturer check. This is a non-deep-learning tabular/time-series study. The requested bonus review version is hosted on Azure App Service Linux Free F1, with a private GitHub repository. No paid tier, Azure ML endpoint or live grid feed is used. See `10_deployment/README.md` for deployment, cost boundaries and cleanup.
 
 ## Main findings
 
@@ -17,6 +17,17 @@ The task forecasts next-local-day **recorded dispatch energy**, using Gaussian P
 - SVR has the lowest test MAE; RF has the lowest test RMSE. GPR's MAE difference from RF is inconclusive in a paired block bootstrap.
 - Nominal 95% observation intervals cover 90/97 outcomes (92.8%). Demand history and weekly calendar have the greatest grouped feature reliance.
 - Several large errors coincide with public holidays. No test-driven feature redesign is hidden in the results.
+
+## Extended evidence and review deployment
+
+Seven learned algorithms are compared: linear regression, random forest, SVR, GPR, NGBoost, KNN and conventional gradient boosting. GPR remains the main new algorithm; NGBoost adds a second unfamiliar probabilistic method. Taught models provide comparators rather than being misrepresented as new.
+
+The original electricity experiment is frozen. Added electricity comparisons are explicitly supplementary and post-hoc because that holdout was already examined. A separate Colombo CHIRPS-v2 rainfall task uses delayed rainfall features and a training-target embargo before each January evaluation origin. An invalid preliminary rainfall run was preserved after review caught a final-publication timing issue; corrected results are transparently retrospective reanalysis, not newly untouched validation. This correction follows source-availability evidence, not score optimization. No post-test hyperparameter chasing is performed. Full results include failures and seasonal baselines.
+
+- Live historical research demo: https://lanka-dispatch-it5514-sv.azurewebsites.net
+- Private review repository: https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml
+- Deployment source commit and actual model hash: `10_deployment/deployment_record.json` and `/api/health`.
+- The repository requires reviewer permission. The standalone source ZIP avoids access dependence; it also includes the 94 MB raw energy CSV, which Git acquires from the immutable Zenodo release instead.
 
 ## Project layout
 
@@ -33,6 +44,7 @@ The task forecasts next-local-day **recorded dispatch energy**, using Gaussian P
 | `07_report/` | PDF, editable content JSON, Markdown reading copy and build details |
 | `08_demo/` | Actual interface captures, video, transcript and captions |
 | `09_submission/` | Report, source ZIP, demo and upload checklist |
+| `10_deployment/` | Minimal inference wrapper, bundle hashes, Azure evidence and deployment/cleanup instructions |
 | `work/`, `.venv/` | Local intermediates and environment, excluded from submission |
 
 ## Environment
@@ -45,7 +57,7 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-Install `requirements-authoring.txt` as well to execute the notebook or rebuild report/video assets. The source package includes the trained model for convenience. Python joblib/pickle artefacts are only for this trusted project: rebuild from source if provenance is uncertain, and use the pinned scikit-learn version.
+Install `requirements-extension.txt` for NGBoost and the independent rainfall task. The full recorded environment is `05_experiments/environment_extension_freeze.txt`; inference-only pins are `10_deployment/requirements.txt`. Install `requirements-authoring.txt` as well to execute the notebook or rebuild report/video assets. The source package includes the trained model for convenience. Python joblib/pickle artefacts are only for this trusted project: rebuild from source if provenance is uncertain, and use the pinned scikit-learn version.
 
 ## Reproduce the numerical study
 
@@ -60,9 +72,25 @@ python 03_code/validate_project.py
 
 The code detects the project location from its own file path. When the pinned raw subset is present and its SHA-256 matches, preparation works offline. If files are missing, it downloads the original 15.2 MB source archive from Zenodo, verifies the archive checksum and extracts only the required Sri Lankan files. The raw Sri Lankan CSV is approximately 94 MB uncompressed; this is intentional evidence needed to independently reconstruct targets. It compresses well in the source ZIP. No Kaggle account, Azure subscription or API key is required.
 
-Rerunning overwrites derived results in that extracted project. To preserve the original evidence, reproduce in a separate extracted copy. Small numerical differences may occur across numerical libraries or hardware; the saved metrics and reference predictions are the recorded run, while an isolated reproduction comparison is also provided. No model or feature is reselected based on test scores. Data preparation takes additional time beyond the approximately 10-second recorded fitting/evaluation stage.
+Rerunning overwrites derived results in that extracted project. To preserve the original evidence, reproduce in a separate extracted copy. Small numerical differences may occur across numerical libraries or hardware; the saved metrics and reference predictions are the recorded run, while an isolated reproduction comparison is also provided. Original model selection is preserved. Added electricity comparisons and the corrected rainfall audit are labelled retrospective; no model or feature is reselected based on test scores. Data preparation takes additional time beyond the approximately 10-second recorded fitting/evaluation stage.
 
 The notebook `04_notebooks/269182L_IT5514_Study.ipynb` runs these same scripts. Launch Jupyter using the project environment or select its Python kernel. The supplied executed copy is output from an isolated project reproduction, not fabricated notebook cells.
+
+## Reproduce the supplementary experiments
+
+Use a separate extracted copy to preserve recorded evidence:
+
+```bash
+python -m pip install -r requirements-extension.txt
+python 03_code/acquire_rainfall.py
+python 03_code/extension_experiments.py
+python 03_code/summarize_extension.py
+python 03_code/verify_extension.py
+```
+
+The rainfall snapshot is pinned in the repository/source ZIP; its rolling HDX URL may change, and acquisition refuses an unexpected hash. A minimum six-dekad feature delay handles publication latency, while the final model trains through October 2023 and excludes November–December before January 2024. Each CV fit uses the same two-month embargo. The model stays frozen through each annual validation period and the two-year test; lagged inputs update only when available under the stated delay. Archived original vintages are unavailable, so revisions remain a limitation. See the dataset card, protocol v1.1 and preserved availability-review archive.
+
+`04_notebooks/269182L_IT5514_Extended_Evidence.ipynb` is an executed evidence-inspection notebook with independent checks and regeneration commands. It does not pretend its display cells retrain the study. Extension model pickles are included in the source ZIP; the repository provides reproducible training source. Both tasks have seven learned models and two baselines, in different target units. Do not average their raw MAEs.
 
 ## Run the front end
 
@@ -90,4 +118,4 @@ Original producer: Public Utilities Commission of Sri Lanka. Public compilation:
 
 ## Submission boundary
 
-Use the three required submission files in `09_submission/`: report PDF, source ZIP and 3–5 minute MP4. The written brief explicitly permits a source ZIP or GitHub link, so a source ZIP is prepared; no additional all-in-one submission ZIP is necessary. Dataset and instructions are inside the source package. Confirm Moodle size limits, exact cutoff, method eligibility and academic-integrity declarations before upload. The package has not been uploaded to Moodle.
+The private GitHub repository is supplied in addition to the complete code ZIP, and the video covers the hosted interface and repository provenance. Use the three required submission files in `09_submission/`: report PDF, source ZIP and 3–5 minute MP4. The written brief explicitly permits a source ZIP or GitHub link, so a source ZIP is prepared; no additional all-in-one submission ZIP is necessary. Dataset and instructions are inside the source package. Confirm Moodle size limits, exact cutoff, method eligibility and academic-integrity declarations before upload. The package has not been uploaded to Moodle.
