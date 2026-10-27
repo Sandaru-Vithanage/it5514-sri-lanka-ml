@@ -1,0 +1,47 @@
+{
+  "checks": [
+    {
+      "check": "unique chronological daily modelling rows",
+      "passed": true
+    },
+    {
+      "check": "every lag and rolling value uses only prior calendar days",
+      "passed": true
+    },
+    {
+      "check": "chronological split and test held to 2025",
+      "passed": true
+    },
+    {
+      "check": "targets have 96 timestamps and no explicit missing plant values",
+      "passed": true
+    },
+    {
+      "check": "scaler fitted on development features only",
+      "passed": true
+    },
+    {
+      "check": "GPR stores only development labels",
+      "passed": true
+    },
+    {
+      "check": "saved model predictions reproduce",
+      "passed": true
+    },
+    {
+      "check": "prediction rows match test dates and targets",
+      "passed": true
+    },
+    {
+      "check": "every main metric independently recomputed from stored predictions",
+      "passed": true
+    },
+    {
+      "check": "all selected configurations minimize validation MAE only",
+      "passed": true
+    }
+  ],
+  "passed": 10,
+  "status": "passed",
+  "note": "Student review, university AI-policy confirmation and Moodle upload remain human actions."
+}

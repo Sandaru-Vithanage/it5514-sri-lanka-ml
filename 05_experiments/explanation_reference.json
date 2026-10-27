@@ -1,0 +1,17 @@
+{
+  "date": "2024-01-12",
+  "features": {
+    "lag1_MWh": 40120.25,
+    "lag2_MWh": 40736.5,
+    "lag7_MWh": 41245.25,
+    "lag14_MWh": 40119.0,
+    "rolling7_mean_MWh": 39144.67857142857,
+    "rolling7_std_MWh": 2918.893759733618,
+    "dow_sin": -0.433883739117558,
+    "dow_cos": -0.9009688679024191,
+    "year_sin": 0.18810323388925426,
+    "year_cos": 0.9821492622816578,
+    "trend_days": 376
+  },
+  "method": "Actual development row nearest to standardized coordinate-wise median; one shared reference for demo and local sensitivity plots"
+}

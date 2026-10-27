@@ -1,0 +1,26 @@
+Open http://127.0.0.1:8765 | Local historical research demo
+127.0.0.1 - - [28/Oct/2026 01:58:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 01:58:41] "GET /api/meta HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 01:58:41] "GET /api/example?date=2025-01-15 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 01:58:41] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [28/Oct/2026 01:59:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 01:59:14] "GET /api/meta HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 01:59:14] "GET /api/example?date=2025-01-15 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 01:59:14] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 01:59:24] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:01:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:01:52] "GET /api/meta HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:01:52] "GET /api/example?date=2025-01-15 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:01:52] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:09:03] "GET /api/example?date=2025-02-04 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:09:03] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:09:19] "GET /api/example?date=2025-01-15 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:09:19] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:11:10] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:11:10] "GET /api/example?date=2025-01-15 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:11:10] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:11:10] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 02:11:10] "POST /api/predict HTTP/1.1" 400 -
+127.0.0.1 - - [28/Oct/2026 02:11:10] "POST /api/predict HTTP/1.1" 400 -
+127.0.0.1 - - [28/Oct/2026 02:11:10] "POST /api/predict HTTP/1.1" 400 -
+127.0.0.1 - - [28/Oct/2026 02:11:10] "POST /api/predict HTTP/1.1" 200 -

@@ -1,0 +1,6 @@
+{
+  "elapsed_seconds": 27.825777290854603,
+  "n_candidates": 18,
+  "cv_fit_count": 54,
+  "test_policy": "supplementary post-hoc comparison on already examined dispatch holdout"
+}

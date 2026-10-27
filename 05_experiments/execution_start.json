@@ -1,0 +1,11 @@
+{
+  "protocol_sha256": "fa3fa829742502748142a163efec439c51dcd36cce592c3971f3183bc3831fa9",
+  "python": "3.13.1 (main, Dec  3 2024, 17:59:52) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "sklearn": "1.9.1",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "seed": 42,
+  "thread_limit": 1,
+  "start_utc": "2026-10-27T20:25:16.818955+00:00"
+}

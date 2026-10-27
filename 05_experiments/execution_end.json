@@ -1,0 +1,7 @@
+{
+  "elapsed_seconds": 10.293633749941364,
+  "end_utc": "2026-10-27T20:25:27.085279+00:00",
+  "n_development": 659,
+  "n_test": 97,
+  "best_taught_comparator_by_CV": "Random forest"
+}

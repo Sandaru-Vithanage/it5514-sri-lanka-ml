@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "date": "2026-10-28",
+  "reason": "Student requests broader algorithm/data evidence and a deployed repository-backed bonus demo.",
+  "original_study_status": "Frozen and preserved. Its 2025 dispatch holdout has already been examined; newly added model comparisons on it are supplementary post-hoc benchmarking, not a newly untouched final test. No original model is reselected from these scores.",
+  "extra_dispatch_models": ["NGBoost", "KNN", "Gradient boosting"],
+  "independent_dataset": {
+    "publisher": "World Food Programme via HDX",
+    "package_id": "4302257e-5fa6-4c88-b8f7-f78730d8c48b",
+    "resource_id": "afc6a8ca-dc55-4eb4-baf0-4afaa2c6673e",
+    "sha256": "0cbede43ed79c8ac198e64592bd4a2d04da647b06853e9ca7083e3725f0716b5",
+    "district": "Colombo, PCODE LK11, admin level 2",
+    "target": "Final CHIRPS-v2 dekadal rainfall rfh, mm; tabular aggregated data, no image-processing application",
+    "period_modelled": "2000-2025",
+    "features": ["lag6_mm", "lag7_mm", "lag9_mm", "lag36_mm", "rolling3_mean_at_lag6_mm", "rolling3_std_at_lag6_mm", "annual_sin", "annual_cos", "trend_dekads"],
+    "publication_latency_policy": "Use rainfall no newer than six completed dekads before target (about two months). This conservatively precedes documented final-product publication mid-month after the observed month. Do not assume the most recently completed dekad has finalized observations. Historical vintages are not archived here, so final revisions remain a limitation.",
+    "forbidden_predictors": ["same-period r1h/r3h", "all provided anomaly ratios", "published climatology fields of uncertain reference period", "forecasts without an issuance-vintage archive", "any future rainfall"],
+    "quality_policy": "Keep only version=final, one row per district/date, nonnegative finite rfh; reindex on the 36-dekad calendar before lagging; do not interpolate targets or histories; retain extremes.",
+    "folds": [
+      {"train_end": "2020-12-31", "validation_start": "2021-01-01", "validation_end": "2021-12-31"},
+      {"train_end": "2021-12-31", "validation_start": "2022-01-01", "validation_end": "2022-12-31"},
+      {"train_end": "2022-12-31", "validation_start": "2023-01-01", "validation_end": "2023-12-31"}
+    ],
+    "final_train_end": "2023-12-31",
+    "test_start": "2024-01-01",
+    "test_end": "2025-12-31",
+    "baselines": ["lag36 seasonal naive", "training-only median for each of 36 annual dekads"],
+    "learned_models": ["Linear regression", "Random forest", "SVR", "GPR", "NGBoost", "KNN", "Gradient boosting"]
+  },
+  "selection": "Unweighted mean fold MAE; every new nonlinear model gets six fixed configurations; standard comparators reuse original search definitions.",
+  "extra_searches": {
+    "NGBoost": {"distribution": "Normal", "score": "LogScore", "natural_gradient": true, "base_tree_depth": [2,3], "n_estimators": [200,400,600], "min_samples_leaf": 10, "learning_rate": 0.03, "seed": 42, "target_scaling": "training-only mean and standard deviation"},
+    "KNN": {"n_neighbors": [5,15,31], "weights": ["uniform","distance"], "X_scaling": "training only"},
+    "Gradient boosting": {"max_depth": [1,2], "n_estimators": [100,300,600], "learning_rate": 0.03, "min_samples_leaf": 10, "seed": 42}
+  },
+  "evaluation": ["MAE", "RMSE", "R2", "MAE skill versus study-specific seasonal baseline", "95% observation coverage and width for probabilistic models", "negative predicted rainfall/interval frequency as a distribution-support limitation"],
+  "interpretation": "Report all results, not just the best dataset/model. Rainfall is an independent task with refitted models; it is not external validation of the trained electricity model. Different units must not be averaged into a cross-dataset raw-MAE ranking.",
+  "deployment": {"github_visibility": "private", "github_account": "Sandaru-Vithanage", "azure_student_credit_spend_cap_USD": 10, "try_first": "Azure App Service Linux Free F1", "do_not_claim_deployed_before_live_health_and_browser_checks": true}
+}

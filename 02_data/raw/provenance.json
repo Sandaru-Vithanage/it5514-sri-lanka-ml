@@ -1,0 +1,17 @@
+{
+  "dataset_title": "SASEA Electricity Demand Data for 2013-2025",
+  "creators": [
+    "Oliver G. Coombes",
+    "Kieran Hunt",
+    "Hannah Bloomfield"
+  ],
+  "doi": "10.5281/zenodo.17175212",
+  "version": "v1",
+  "licence": "CC-BY-4.0",
+  "url": "https://zenodo.org/api/records/17175212/files/data.zip/content",
+  "retrieved_local_date": "2026-10-28",
+  "original_source": "PUCSL actual system dispatch API, retrieved by dataset authors; not a fresh API collection by the student",
+  "archive_md5": "22921011c0fdabea0df5f926f3372a9e",
+  "archive_sha256": "1264e192171c36fb86a580974c5b0ae64b41917ab7c2330e369f1791532c3e89",
+  "raw_lka_sha256": "7dc4665e317d3fa718cea7845587cc97b7a5c13de110a5bddbd57c524f2b5a97"
+}

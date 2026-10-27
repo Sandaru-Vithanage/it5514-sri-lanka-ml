@@ -1,0 +1,139 @@
+{
+  "protocol_version": "1.0",
+  "locked_before_model_fitting": true,
+  "recorded_local_date": "2026-10-28",
+  "task": "At the end of local calendar day t-1, predict the total recorded dispatch energy during day t; assume t-1 telemetry is complete and available. This is a retrospective one-day-ahead rolling-input forecast with frozen parameters, not a fixed-origin multi-step forecast.",
+  "dataset": "Zenodo 17175212 version 1, Sri Lankan raw PUCSL dispatch subset",
+  "target": "Sum deduplicated plant MW at each 15-minute timestamp, multiply by 0.25 hours and sum over local calendar day, in MWh",
+  "quality_rules": [
+    "Convert UTC to Asia/Colombo before aggregation",
+    "Drop identical timestamp/plant duplicate keys and fail on conflicting values",
+    "Require exactly 96 distinct 15-minute timestamps per target day",
+    "Exclude target days with any explicit missing plant value",
+    "Retain small negative readings as potential net station use; evaluate their aggregate impact",
+    "Retain zero readings and unexplained extremes; do not remove difficult test days",
+    "Do not infer absent plants are verified zero; target is observed dispatch, not national end-use consumption"
+  ],
+  "features": [
+    "lag1_MWh",
+    "lag2_MWh",
+    "lag7_MWh",
+    "lag14_MWh",
+    "rolling7_mean_MWh",
+    "rolling7_std_MWh",
+    "dow_sin",
+    "dow_cos",
+    "year_sin",
+    "year_cos",
+    "trend_days"
+  ],
+  "feature_rules": "All demand features are shifted by at least one day; rolling statistics use only t-7 through t-1. Reindex daily before shifting; drop rows with missing required features rather than interpolating targets. Calendar features describe known target date. Scaling fitted inside every training fold.",
+  "validation_folds": [
+    {
+      "train_end": "2024-03-31",
+      "validation_start": "2024-04-01",
+      "validation_end": "2024-06-30"
+    },
+    {
+      "train_end": "2024-06-30",
+      "validation_start": "2024-07-01",
+      "validation_end": "2024-09-30"
+    },
+    {
+      "train_end": "2024-09-30",
+      "validation_start": "2024-10-01",
+      "validation_end": "2024-12-31"
+    }
+  ],
+  "final_fit_end": "2024-12-31",
+  "test_start": "2025-01-01",
+  "test_end": "2025-04-07",
+  "selection_metric": "Unweighted mean of the three fold MAEs, MWh; lower is better",
+  "report_metrics": [
+    "MAE",
+    "RMSE",
+    "R2",
+    "MAE skill versus lag7 seasonal naive"
+  ],
+  "models": {
+    "Persistence": {
+      "prediction": "lag1_MWh"
+    },
+    "Seasonal naive": {
+      "prediction": "lag7_MWh"
+    },
+    "Linear regression": {
+      "fit_intercept": [
+        true
+      ]
+    },
+    "Random forest": {
+      "n_estimators": 300,
+      "max_depth": [
+        6,
+        null
+      ],
+      "min_samples_leaf": [
+        2,
+        5,
+        10
+      ],
+      "random_state": 42,
+      "n_jobs": 1
+    },
+    "SVR": {
+      "kernel": "rbf",
+      "C_in_scaled_target_units": [
+        1,
+        10,
+        100
+      ],
+      "epsilon_in_scaled_target_units": [
+        0.05,
+        0.15
+      ],
+      "gamma": "scale"
+    },
+    "GPR": {
+      "signal": "ConstantKernel * (RBF or Matern nu=1.5 or Matern nu=2.5)",
+      "noise": "WhiteKernel",
+      "initial_length_scale": [
+        1,
+        5
+      ],
+      "amplitude_bounds": [
+        0.01,
+        100
+      ],
+      "length_bounds": [
+        0.1,
+        100
+      ],
+      "noise_bounds": [
+        0.0001,
+        2
+      ],
+      "alpha_jitter": 1e-06,
+      "normalize_y": true,
+      "n_restarts_optimizer": 0,
+      "optimizer": "L-BFGS-B maxiter=80",
+      "random_state": 42
+    }
+  },
+  "predeclared_diagnostics": [
+    "GPR retrain ablations excluding calendar/trend or excluding demand history, using the selected kernel with no retuning",
+    "Repeat RF final fit with seeds 7,42,2026 and GPR optimized fit with initial length-scale multipliers 0.5,1,2; do not choose a new model using test scores",
+    "95% Gaussian predictive observation interval coverage, mean width, mean Gaussian negative log predictive density",
+    "Paired moving-block bootstrap MAE differences against seasonal naive and the best taught comparator selected on CV; 2000 replicates, block length 7 with sensitivity 14",
+    "Grouped permutation importance of demand history, weekly calendar and annual/trend with 20 random 7-day block permutations, seed 42",
+    "Local signed group-replacement explanations relative to training medians, labelled non-additive and non-causal",
+    "Worst errors, month and weekday/weekend slices, residual autocorrelation"
+  ],
+  "test_policy": "No model choice, tuning, feature redesign or interval recalibration after observing held-out metrics. Diagnostics are descriptive; all configurations and failures retained.",
+  "cloud_spend_limit": 0,
+  "compute": "Local CPU; numerical thread limit 1; no Azure resources",
+  "implementation_notes_before_fit": [
+    "Grouped permutation uses shuffled contiguous seven-day blocks followed by a random 0-6-day circular phase shift; this avoids invariant weekday encodings when blocks align on weekdays.",
+    "Local group replacement uses the actual development row nearest to the standardized median vector, preserving valid cyclic coordinates within groups; simple coordinate-wise calendar medians can be infeasible. These non-additive sensitivity explanations are not SHAP."
+  ]
+}

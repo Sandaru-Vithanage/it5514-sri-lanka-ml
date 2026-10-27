@@ -1,0 +1,10 @@
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{
+  "executed_notebook": "269182L_IT5514_Study.ipynb",
+  "executed_code_cells": 8,
+  "error_outputs": 0,
+  "isolated_reproduction": true,
+  "max_absolute_prediction_difference_MWh": 0.0,
+  "all_predictions_match_within_MWh": 1e-06
+}
+[IPKernelApp] WARNING | Parent appears to have exited, shutting down.

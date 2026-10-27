@@ -1,0 +1,297 @@
+[
+  {
+    "file": "AML_Complete_Open_Book_Final_Study_Guide_2026 (1).pdf",
+    "bytes": 30816657,
+    "sha256": "c52b67e493ac3dd8dce87ef22bc16d16154f98c918b9ea8ccb0135f7748c4fe9",
+    "pages": 656,
+    "extracted_text": "work/extracted/AML_Complete_Open_Book_Final_Study_Guide_2026 (1).pdf.txt",
+    "text_characters": 637587
+  },
+  {
+    "file": "Lecture Notes/Week 1/Linear_regression.ipynb",
+    "bytes": 450881,
+    "sha256": "274947905d9e295ad017ee59c31c1206d3a4080f35d0d9dcb5f729ffa4590b18",
+    "cells": 27,
+    "extracted_text": "work/extracted/Lecture Notes__Week 1__Linear_regression.ipynb.txt",
+    "text_characters": 11285
+  },
+  {
+    "file": "Lecture Notes/Week 1/ML W2_W3.pdf",
+    "bytes": 2154447,
+    "sha256": "9dd1e8a2d909c747e06f69e6db96286581fbb5471243b89b8d703d2577c23d9b",
+    "pages": 38,
+    "extracted_text": "work/extracted/Lecture Notes__Week 1__ML W2_W3.pdf.txt",
+    "text_characters": 10532
+  },
+  {
+    "file": "Lecture Notes/Week 1/ML Week 01_MSC.pdf",
+    "bytes": 4590278,
+    "sha256": "b30229ca3e6630fc4be5f25bb604e7c99d5540e9f7a17875648cf752b51bfdc1",
+    "pages": 65,
+    "extracted_text": "work/extracted/Lecture Notes__Week 1__ML Week 01_MSC.pdf.txt",
+    "text_characters": 5872
+  },
+  {
+    "file": "Lecture Notes/Week 1/Programming Exercise 1 - Linear Regression_Full.ipynb",
+    "bytes": 143678,
+    "sha256": "73fe80cd043255986576b586c3ce94df7bfcaa848d79baf24602b9a8f9f1669c",
+    "cells": 51,
+    "extracted_text": "work/extracted/Lecture Notes__Week 1__Programming Exercise 1 - Linear Regression_Full.ipynb.txt",
+    "text_characters": 11978
+  },
+  {
+    "file": "Lecture Notes/Week 2/Home Work.docx",
+    "bytes": 6671,
+    "sha256": "09b24462b1eee54f10b1a5a0424c770752958ed19574bca0d11b473866af48da",
+    "extracted_text": "work/extracted/Lecture Notes__Week 2__Home Work.docx.txt",
+    "text_characters": 254
+  },
+  {
+    "file": "Lecture Notes/Week 2/Logistic Regression Theory.pdf",
+    "bytes": 128525,
+    "sha256": "d9d543606a42ca611bd1a236e93444b7797174fc5624375da1ac129ce9dc33bb",
+    "pages": 7,
+    "extracted_text": "work/extracted/Lecture Notes__Week 2__Logistic Regression Theory.pdf.txt",
+    "text_characters": 5182
+  },
+  {
+    "file": "Lecture Notes/Week 2/ML W4.pdf",
+    "bytes": 3389127,
+    "sha256": "a4870f4d9dc33c775f05b18a172b9892c4b65cd3436dcb226e17a2f8f73ecfaf",
+    "pages": 55,
+    "extracted_text": "work/extracted/Lecture Notes__Week 2__ML W4.pdf.txt",
+    "text_characters": 12652
+  },
+  {
+    "file": "Lecture Notes/Week 2/logistic_regression_with_missing_values_Feature_Engineering.ipynb",
+    "bytes": 1739883,
+    "sha256": "23bbf8daf30e4f0045f3e17ba5879012004f6127705574418ff7fac41ca98605",
+    "cells": 11,
+    "extracted_text": "work/extracted/Lecture Notes__Week 2__logistic_regression_with_missing_values_Feature_Engineering.ipynb.txt",
+    "text_characters": 8590
+  },
+  {
+    "file": "Lecture Notes/Week 2-2/SVM Lab sheet - modify-2.ipynb",
+    "bytes": 165858,
+    "sha256": "d2b603d3d1dc852c70a211354e3e03455c961f953a75afb26b155ccc8df843a2",
+    "cells": 2,
+    "extracted_text": "work/extracted/Lecture Notes__Week 2-2__SVM Lab sheet - modify-2.ipynb.txt",
+    "text_characters": 2327
+  },
+  {
+    "file": "Lecture Notes/Week 2-2/SVM Lab sheet - modify.ipynb",
+    "bytes": 165858,
+    "sha256": "d2b603d3d1dc852c70a211354e3e03455c961f953a75afb26b155ccc8df843a2",
+    "cells": 2,
+    "extracted_text": "work/extracted/Lecture Notes__Week 2-2__SVM Lab sheet - modify.ipynb.txt",
+    "text_characters": 2327
+  },
+  {
+    "file": "Lecture Notes/Week 2-2/SVM Lab sheet.ipynb",
+    "bytes": 45240,
+    "sha256": "f68f62c160b439bacf5b2db552bb89b6050b7bda71b82d2a88cbacdeec9e947f",
+    "cells": 12,
+    "extracted_text": "work/extracted/Lecture Notes__Week 2-2__SVM Lab sheet.ipynb.txt",
+    "text_characters": 3388
+  },
+  {
+    "file": "Lecture Notes/Week 2-2/Support Vector Machine Revised New.pdf",
+    "bytes": 1142637,
+    "sha256": "1ef175228685f47bbd7ab865f29b89105b9f1d2b05070fe4fe2ba2635be5a4ec",
+    "pages": 43,
+    "extracted_text": "work/extracted/Lecture Notes__Week 2-2__Support Vector Machine Revised New.pdf.txt",
+    "text_characters": 14917
+  },
+  {
+    "file": "Lecture Notes/Week 2-2/Support Vector Machine_W6_W7.pdf",
+    "bytes": 1965486,
+    "sha256": "8667fd3e729f7abe225fb00e2c1350818107f9732ec18b4953cc503103381788",
+    "pages": 39,
+    "extracted_text": "work/extracted/Lecture Notes__Week 2-2__Support Vector Machine_W6_W7.pdf.txt",
+    "text_characters": 2237
+  },
+  {
+    "file": "Lecture Notes/Week 3/Decision_Tree_Lab_15_10_2025.ipynb",
+    "bytes": 699131,
+    "sha256": "c2c4ced2dfb68bf40ced6f79b46ee44c5f95e4b49aae472b1bbc999f424417f0",
+    "cells": 25,
+    "extracted_text": "work/extracted/Lecture Notes__Week 3__Decision_Tree_Lab_15_10_2025.ipynb.txt",
+    "text_characters": 5548
+  },
+  {
+    "file": "Lecture Notes/Week 3/Decision_Trees_Information_Gain_Gini_and_Random_Forest_Lecture_Note.docx",
+    "bytes": 154391,
+    "sha256": "95180a49225f59102a1d08bcf7eebd202979ed9f6c5aee204404e51e2ec541d4",
+    "extracted_text": "work/extracted/Lecture Notes__Week 3__Decision_Trees_Information_Gain_Gini_and_Random_Forest_Lecture_Note.docx.txt",
+    "text_characters": 20612
+  },
+  {
+    "file": "Lecture Notes/Week 3/RANDOM FORESTS [Autosaved].ppt",
+    "bytes": 1524736,
+    "sha256": "17dcb53d40afde51086c96ab612ec395be2c7267c49cc9954d884f59ca1569de",
+    "needs_binary_extraction": true
+  },
+  {
+    "file": "Lecture Notes/Week 3/Random_Forest_Classifier_Dece_2025.ipynb",
+    "bytes": 461295,
+    "sha256": "f0c0975593f7173ec7f8cdda659ed40e62c50607286d8d7c6b993b6cb6974c1a",
+    "cells": 23,
+    "extracted_text": "work/extracted/Lecture Notes__Week 3__Random_Forest_Classifier_Dece_2025.ipynb.txt",
+    "text_characters": 7911
+  },
+  {
+    "file": "Lecture Notes/Week 3/decision trees.pdf",
+    "bytes": 1775420,
+    "sha256": "86bf2ed1351d5bb8262c262aeec6754b8e87cd4f9fe0557eebb47c5112c7c812",
+    "pages": 45,
+    "extracted_text": "work/extracted/Lecture Notes__Week 3__decision trees.pdf.txt",
+    "text_characters": 14187
+  },
+  {
+    "file": "Lecture Notes/Week 4/05_11_K_Means.ipynb",
+    "bytes": 1756688,
+    "sha256": "631cf126c9025a5825277c07f1c6e346b5a4cb916b28edc8d7d94838d4e9f173",
+    "cells": 61,
+    "extracted_text": "work/extracted/Lecture Notes__Week 4__05_11_K_Means.ipynb.txt",
+    "text_characters": 20203
+  },
+  {
+    "file": "Lecture Notes/Week 4/Clustering.pdf",
+    "bytes": 2386748,
+    "sha256": "5ef9a6b268a951e2be041bfe98f5c708f79ca31ada5d52980b42e100c573eac7",
+    "pages": 51,
+    "extracted_text": "work/extracted/Lecture Notes__Week 4__Clustering.pdf.txt",
+    "text_characters": 19971
+  },
+  {
+    "file": "Lecture Notes/Week 4/Clustering_Models_AI.ipynb",
+    "bytes": 7356,
+    "sha256": "f8b3379877bfb021264aebca68f3b972edaf946278737a57bd84cfff61e7fec7",
+    "cells": 1,
+    "extracted_text": "work/extracted/Lecture Notes__Week 4__Clustering_Models_AI.ipynb.txt",
+    "text_characters": 5712
+  },
+  {
+    "file": "Lecture Notes/Week 4/Ensemble_Learning__PraticeI.ipynb",
+    "bytes": 4265,
+    "sha256": "b3aab9154559faccfccb3b6ec30e337a0076aa85312b3e65efe6dfa85f596dd8",
+    "cells": 2,
+    "extracted_text": "work/extracted/Lecture Notes__Week 4__Ensemble_Learning__PraticeI.ipynb.txt",
+    "text_characters": 1652
+  },
+  {
+    "file": "Lecture Notes/Week 4/HandsonProject.jpeg",
+    "bytes": 60992,
+    "sha256": "7a9ce5b30784fad528dd6885240ca7b10422acaad4bf492aca49df9c756ca592",
+    "needs_visual_review": true
+  },
+  {
+    "file": "Lecture Notes/Week 4/ML XG Boost.pdf",
+    "bytes": 2408295,
+    "sha256": "8c4c78722792c8a90e7fc494cccd0e8ff9f52502b0e5e402b1ecf8d8c18584a0",
+    "pages": 18,
+    "extracted_text": "work/extracted/Lecture Notes__Week 4__ML XG Boost.pdf.txt",
+    "text_characters": 106441
+  },
+  {
+    "file": "Lecture Notes/Week 4/RANDOM FORESTS.ppt",
+    "bytes": 2528768,
+    "sha256": "832b8b65174c2b071942faef74daa4974ee6a79c11f3b684aaae506cd8b50a15",
+    "needs_binary_extraction": true
+  },
+  {
+    "file": "Lecture Notes/Week 4/XGBoost Algorithm.pdf",
+    "bytes": 156499,
+    "sha256": "3464fa55dccb9e835afbb5d98e9627346169303dac720952d6d60a33f8f826fd",
+    "pages": 8,
+    "extracted_text": "work/extracted/Lecture Notes__Week 4__XGBoost Algorithm.pdf.txt",
+    "text_characters": 4048
+  },
+  {
+    "file": "Lecture Notes/Week 5/Introduction_to_MLOps_Workshop.pptx",
+    "bytes": 1365775,
+    "sha256": "1cd936fbe0d9c2eeb39936632f5c715fa0255809998f3a8ca7c5e7d63c2dacc9",
+    "extracted_text": "work/extracted/Lecture Notes__Week 5__Introduction_to_MLOps_Workshop.pptx.txt",
+    "text_characters": 15739
+  },
+  {
+    "file": "Lecture Notes/Week 5/MLOps Workshop Sections 1\u20134 Commands.pdf",
+    "bytes": 411127,
+    "sha256": "136d64395a8ebf59e1231c781afcb615652af85bc1bd4f3f150748a0cb08af41",
+    "pages": 8,
+    "extracted_text": "work/extracted/Lecture Notes__Week 5__MLOps Workshop Sections 1\u20134 Commands.pdf.txt",
+    "text_characters": 11056
+  },
+  {
+    "file": "Lecture Notes/Week 5/MLOps Workshop Sections 1\u20138 Commands.pdf",
+    "bytes": 663517,
+    "sha256": "e4645b0d71fd6b95776bb5d04b352d06a93a5393ce210841c9911e7375e2c87e",
+    "pages": 15,
+    "extracted_text": "work/extracted/Lecture Notes__Week 5__MLOps Workshop Sections 1\u20138 Commands.pdf.txt",
+    "text_characters": 21749
+  },
+  {
+    "file": "Lecture Notes/Week 5/MLOps_Workshop_Pre-Setup_Guide.pdf",
+    "bytes": 377304,
+    "sha256": "9a8f32fd70de6e7d4520138bf0cfdc3644756d1a97d992134ff43c7582bc9921",
+    "pages": 5,
+    "extracted_text": "work/extracted/Lecture Notes__Week 5__MLOps_Workshop_Pre-Setup_Guide.pdf.txt",
+    "text_characters": 6064
+  },
+  {
+    "file": "Lecture Notes/Week 6/SHAP Analysis CarnegeMelon.pdf",
+    "bytes": 4129638,
+    "sha256": "748d04b6277d333bca8d4459c7d8408f8020832a646b989ff586113a1ec82f79",
+    "pages": 82,
+    "extracted_text": "work/extracted/Lecture Notes__Week 6__SHAP Analysis CarnegeMelon.pdf.txt",
+    "text_characters": 27437
+  },
+  {
+    "file": "Lecture Notes/Week 6/SHapley_Additive_exPlanations_(SHAP)_Credit_Risk.ipynb",
+    "bytes": 709397,
+    "sha256": "7057215d1c6daa77636974efc2eb3fe1cec3f5525bf2a3cbc6d8caa450aea966",
+    "cells": 42,
+    "extracted_text": "work/extracted/Lecture Notes__Week 6__SHapley_Additive_exPlanations_(SHAP)_Credit_Risk.ipynb.txt",
+    "text_characters": 130498
+  },
+  {
+    "file": "Lecture Notes/Week 7/Explainable_AI_Lecture_Note.pdf",
+    "bytes": 322022,
+    "sha256": "08483aa37c80fa3fd9b107761a67363be6495b998387cb5ef910c0b1b419267a",
+    "pages": 28,
+    "extracted_text": "work/extracted/Lecture Notes__Week 7__Explainable_AI_Lecture_Note.pdf.txt",
+    "text_characters": 62312
+  },
+  {
+    "file": "Lecture Notes/Week 7/LIME XAI Lecture Notes.pdf",
+    "bytes": 1749207,
+    "sha256": "54bf06a28c433491df81267ac17f27726d99cc0754d4369353f4bb7c41733384",
+    "pages": 39,
+    "extracted_text": "work/extracted/Lecture Notes__Week 7__LIME XAI Lecture Notes.pdf.txt",
+    "text_characters": 44895
+  },
+  {
+    "file": "Lecture Notes/Week 7/Student_Dropout_Success_XAI_fixed.ipynb",
+    "bytes": 19574,
+    "sha256": "c71c72e1eb8a15439d101117b35b05cb90cbc0fdf22a925a1d32d881f5446dd4",
+    "cells": 19,
+    "extracted_text": "work/extracted/Lecture Notes__Week 7__Student_Dropout_Success_XAI_fixed.ipynb.txt",
+    "text_characters": 12929
+  },
+  {
+    "file": "Lecture Notes/Week 7/Why Explainability.pdf",
+    "bytes": 4299136,
+    "sha256": "365079753571d7d14180e9796cf5d8ae53c5ef157f0a585ef8030b2a126eeccb",
+    "pages": 10,
+    "extracted_text": "work/extracted/Lecture Notes__Week 7__Why Explainability.pdf.txt",
+    "text_characters": 60492
+  },
+  {
+    "file": "ML_Assignment_GuidelinesMSc in AI.pdf",
+    "bytes": 247034,
+    "sha256": "d67a44ef6dc15c8fd80196157b0398998a66ec385f07de4b5b695951f60d2d8d",
+    "pages": 2,
+    "extracted_text": "work/extracted/ML_Assignment_GuidelinesMSc in AI.pdf.txt",
+    "text_characters": 2910
+  }
+]

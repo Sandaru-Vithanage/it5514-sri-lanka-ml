@@ -1,0 +1,9 @@
+kind,setting,MAE_MWh,RMSE_MWh,R2,kernel
+RF_seed,7,1630.519330299238,2348.273214159001,0.5947498546246566,
+RF_seed,42,1607.3039197067224,2322.0768331941613,0.6037410339772113,
+RF_seed,2026,1633.6051764659574,2344.4594062480296,0.5960651114250033,
+GPR_initialization,0.5,1598.6703353051316,2491.5318042693098,0.5437963020790844,"2.2**2 * Matern(length_scale=8.23, nu=2.5) + WhiteKernel(noise_level=0.185)"
+GPR_initialization,1.0,1598.668727997073,2491.5335484845973,0.5437956633413077,"2.2**2 * Matern(length_scale=8.23, nu=2.5) + WhiteKernel(noise_level=0.185)"
+GPR_initialization,2.0,1598.670325316919,2491.5317548422795,0.5437963201794304,"2.2**2 * Matern(length_scale=8.23, nu=2.5) + WhiteKernel(noise_level=0.185)"
+retrained_ablation,GPR history only,2009.4949744605037,2731.4281790701903,0.45171608927752527,"1.22**2 * Matern(length_scale=2.81, nu=2.5) + WhiteKernel(noise_level=0.203)"
+retrained_ablation,GPR calendar only,2422.5783642763586,3372.9093411578588,0.16394419434961582,"1.48**2 * Matern(length_scale=3.91, nu=2.5) + WhiteKernel(noise_level=0.335)"

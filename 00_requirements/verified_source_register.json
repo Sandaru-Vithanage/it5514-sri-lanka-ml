@@ -1,0 +1,101 @@
+[
+  {
+    "title": "Dataset v1",
+    "url": "https://zenodo.org/records/17175212",
+    "role": "Licence and version; separate API metadata saved",
+    "checked_local_date": "2026-10-28",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 83351
+  },
+  {
+    "title": "Dataset description preprint",
+    "url": "https://essd.copernicus.org/preprints/essd-2026-76/",
+    "role": "Dataset scope; cite as preprint",
+    "checked_local_date": "2026-10-28",
+    "status": 200,
+    "content_type": "text/html",
+    "bytes": 328324
+  },
+  {
+    "title": "Gaussian-process textbook",
+    "url": "https://gaussianprocess.org/gpml/chapters/RW2.pdf",
+    "role": "Regression posterior and assumptions",
+    "checked_local_date": "2026-10-28",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 466925
+  },
+  {
+    "title": "GPR user guide",
+    "url": "https://scikit-learn.org/stable/modules/gaussian_process.html",
+    "role": "Implementation and kernel hyperparameters",
+    "checked_local_date": "2026-10-28",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 90873
+  },
+  {
+    "title": "TimeSeriesSplit",
+    "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html",
+    "role": "Temporal ordering; project uses custom date windows",
+    "checked_local_date": "2026-10-28",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 138409
+  },
+  {
+    "title": "Permutation importance",
+    "url": "https://scikit-learn.org/stable/modules/permutation_importance.html",
+    "role": "Model reliance definition and limitations",
+    "checked_local_date": "2026-10-28",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 61746
+  },
+  {
+    "title": "Permutation extrapolation critique",
+    "url": "https://arxiv.org/abs/1905.03151",
+    "role": "Hooker, Mentch and Zhou v2, 2021",
+    "checked_local_date": "2026-10-28",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 44339
+  },
+  {
+    "title": "PUCSL report",
+    "url": "https://www.pucsl.gov.lk/wp-content/uploads/2024/12/Generation-Cost-24th-Dec_2024-R.pdf",
+    "role": "Energy-scale corroboration; differing telemetry scopes",
+    "checked_local_date": "2026-10-28",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 368843
+  },
+  {
+    "title": "2025 holiday calendar",
+    "url": "https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2025",
+    "role": "Error-date context only; not used to redesign frozen features",
+    "checked_local_date": "2026-10-28",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 128042
+  },
+  {
+    "title": "CEB 2024 data book",
+    "url": "https://www.ceb.lk/front_img/img_reports/1763693550Sales_and_Generation_Data_Book_2024.pdf",
+    "role": "Annual average generation context",
+    "checked_local_date": "2026-10-28",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 7821760
+  },
+  {
+    "title": "Moratuwa plagiarism guidance",
+    "url": "https://www.uom.lk/lib/plagiarism-support-0",
+    "role": "Acknowledgement expectations; no AI-specific module permission inferred",
+    "checked_local_date": "2026-10-28",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 38497
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "elapsed_seconds": 52.26547541609034,
+  "n_candidates": 37,
+  "cv_fit_count": 111,
+  "test_policy": "independent rainfall-task holdout; not a transferred electricity model"
+}

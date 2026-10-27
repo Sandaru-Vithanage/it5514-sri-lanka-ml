@@ -1,0 +1,55 @@
+{
+  "Linear regression": {
+    "config_id": 0,
+    "config": {},
+    "CV_MAE": 54.7582972650535
+  },
+  "Random forest": {
+    "config_id": 4,
+    "config": {
+      "max_depth": null,
+      "min_samples_leaf": 5
+    },
+    "CV_MAE": 51.36261568371356
+  },
+  "SVR": {
+    "config_id": 1,
+    "config": {
+      "C": 1,
+      "epsilon": 0.15
+    },
+    "CV_MAE": 54.47183342274385
+  },
+  "GPR": {
+    "config_id": 4,
+    "config": {
+      "kernel": "Matern2.5",
+      "initial_length_scale": 1.0
+    },
+    "CV_MAE": 53.35373039850948
+  },
+  "NGBoost": {
+    "config_id": 3,
+    "config": {
+      "max_depth": 3,
+      "n_estimators": 200
+    },
+    "CV_MAE": 53.83046869180526
+  },
+  "KNN": {
+    "config_id": 3,
+    "config": {
+      "n_neighbors": 15,
+      "weights": "distance"
+    },
+    "CV_MAE": 52.67475990363217
+  },
+  "Gradient boosting": {
+    "config_id": 4,
+    "config": {
+      "max_depth": 2,
+      "n_estimators": 300
+    },
+    "CV_MAE": 54.8130522232423
+  }
+}

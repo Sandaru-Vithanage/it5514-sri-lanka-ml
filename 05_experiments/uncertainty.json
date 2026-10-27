@@ -1,0 +1,10 @@
+{
+  "nominal_coverage": 0.95,
+  "empirical_coverage": 0.9278350515463918,
+  "mean_width_MWh": 9339.758439632245,
+  "mean_std_MWh": 2382.635220163056,
+  "gaussian_NLPD": 9.274471504840088,
+  "n_test": 97,
+  "includes_white_kernel_observation_noise": true,
+  "interval_recalibrated_on_test": false
+}

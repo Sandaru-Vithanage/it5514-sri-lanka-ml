@@ -1,0 +1,38 @@
+[
+  {
+    "comparator": "Seasonal naive",
+    "mean_difference_MWh": -675.4317874668445,
+    "ci95_lower": -1134.415042597536,
+    "ci95_upper": -221.08597486951962,
+    "block_length": 7,
+    "replicates": 2000,
+    "meaning": "GPR absolute error minus comparator absolute error; negative favours GPR"
+  },
+  {
+    "comparator": "Seasonal naive",
+    "mean_difference_MWh": -675.4317874668445,
+    "ci95_lower": -1084.4236372329617,
+    "ci95_upper": -257.2933622698928,
+    "block_length": 14,
+    "replicates": 2000,
+    "meaning": "GPR absolute error minus comparator absolute error; negative favours GPR"
+  },
+  {
+    "comparator": "Random forest",
+    "mean_difference_MWh": -8.635191709649288,
+    "ci95_lower": -187.75871461540535,
+    "ci95_upper": 181.14474287905358,
+    "block_length": 7,
+    "replicates": 2000,
+    "meaning": "GPR absolute error minus comparator absolute error; negative favours GPR"
+  },
+  {
+    "comparator": "Random forest",
+    "mean_difference_MWh": -8.635191709649288,
+    "ci95_lower": -184.42884598889177,
+    "ci95_upper": 167.60604005640369,
+    "block_length": 14,
+    "replicates": 2000,
+    "meaning": "GPR absolute error minus comparator absolute error; negative favours GPR"
+  }
+]

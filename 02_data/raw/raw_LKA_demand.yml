@@ -1,0 +1,109 @@
+name: "raw_LKA_demand.csv"
+title: "Raw Energy Demand for Sri Lanka (2023–2024)"
+doi: "10.5281/zenodo.XXXXXXX"  # Update upon registration
+version: "1.0.0"
+publication_date: "2025-08-06"
+
+authors:
+  - name: "Oliver Coombes"
+    affiliation: ""
+    orcid: "0009-0005-1426-2890"
+
+description: >
+  This dataset contains raw 15-minute electricity dispatch data for Sri Lanka, as reported by 
+  the Public Utilities Commission of Sri Lanka (PUCSL). Each row represents the power (MW) 
+  dispatched from an individual power plant at a specific timestamp.
+
+  The dataset spans 2023-01-01 to 2024-12-31 and is aligned to UTC timestamps. No aggregation 
+  or transformation has been applied. Zeros may indicate non-operational plants or missing data.
+
+  Total dispatched generation was used as a proxy for national electricity demand.
+  This is a reasonable assumption for Sri Lanka due to limited storage, absence of international interconnections, and the centralized structure of the national grid.
+  This approximation reflects net generation rather than final consumption and may slightly underestimate true end-use demand due to transmission and distribution losses.
+
+keywords:
+  - electricity dispatch
+  - Sri Lanka
+  - power generation
+  - raw data
+  - open data
+  - 15-minute resolution
+
+geographical_coverage:
+  country: "Sri Lanka"
+  coordinates:
+    north: 10.0
+    south: 5.9
+    east: 81.9
+    west: 79.8
+  temporal_coverage:
+    start_date: "2023-01-01"
+    end_date: "2025-04-08"
+
+data_source:
+  name: "Public Utilities Commission of Sri Lanka (PUCSL)"
+  api_url: "https://gendata.pucsl.gov.lk/api/actual-system-dispatch"
+  access_description: >
+    Data were retrieved using the PUCSL open API for actual system dispatch, 
+    accessed programmatically via date queries (e.g., ?dateAggregation=15min&from=YYYY-MM-DD&to=YYYY-MM-DD). 
+    The API provides 15-minute resolution dispatch data by power plant.
+  homepage: "https://www.pucsl.gov.lk"
+
+temporal_coverage:
+  start_date: "2023-01-01"
+  end_date: "2025-04-08"
+  resolution: "15-minute"
+
+spatial_coverage:
+  description: "National coverage including all grid-connected power plants in Sri Lanka"
+  coordinates:
+    north: 10.0
+    south: 5.9
+    east: 81.9
+    west: 79.8
+
+data_columns:
+  - name: "timestamp"
+    type: "string"
+    format: "YYYY-MM-DDTHH:MM:SSZ"
+    description: "UTC timestamp at 15-minute resolution"
+  - name: "powerPlantId"
+    type: "integer"
+    description: "Internal plant identifier for generating unit"
+  - name: "dispatchValueInMW"
+    type: "float"
+    unit: "MW"
+    description: "Dispatched power at the specified timestamp for the plant"
+
+time_reference: "UTC"
+
+processing:
+  description: >
+    No processing or transformation has been applied. The dataset includes 15-minute resolution dispatch values 
+    per power plant as recorded in the original reporting system. Zeros and duplicated timestamps are retained.
+
+license: "CC-BY-4.0"
+
+repository: # To be confirmed
+file_format: "CSV"
+file_size: "TBC"
+number_of_files: 1
+
+related_datasets:
+  - title: "Daily Energy Demand Dataset for Monsoonal South Asia (2014–2025)"
+    relationship: "part_of"
+    doi: "10.5281/zenodo.XXXXXXX"
+
+funding:
+# To be filled
+
+contact:
+  name: "Oliver Coombes"
+  email: "olivergcoombes@gmail.com"
+  institution:
+
+language: "en"
+
+citation:
+  text: >
+    To be completed when DOI is minted.

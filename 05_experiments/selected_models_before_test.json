@@ -1,0 +1,41 @@
+{
+  "Linear regression": {
+    "config_id": 0,
+    "config": {},
+    "CV_MAE_MWh": 2182.098662942792
+  },
+  "Random forest": {
+    "config_id": 4,
+    "config": {
+      "max_depth": null,
+      "min_samples_leaf": 5
+    },
+    "CV_MAE_MWh": 1823.1537438071816
+  },
+  "SVR": {
+    "config_id": 0,
+    "config": {
+      "C": 1,
+      "epsilon": 0.05
+    },
+    "CV_MAE_MWh": 2123.43877208224
+  },
+  "GPR": {
+    "config_id": 5,
+    "config": {
+      "kernel": "Matern2.5",
+      "initial_length_scale": 5.0
+    },
+    "CV_MAE_MWh": 1997.960874269038
+  },
+  "Persistence": {
+    "config_id": 0,
+    "config": {},
+    "CV_MAE_MWh": 2911.4877264492757
+  },
+  "Seasonal naive": {
+    "config_id": 0,
+    "config": {},
+    "CV_MAE_MWh": 3025.2879981884057
+  }
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "model": "NGBoost",
+    "coverage95": 0.8762886597938144,
+    "mean_width": 6224.057405102572,
+    "gaussian_NLPD": 9.622369843529881,
+    "negative_means": 0,
+    "negative_lower95": 0
+  }
+]

@@ -1,0 +1,6 @@
+Original producer: Public Utilities Commission of Sri Lanka (PUCSL).
+Public compilation: Oliver G. Coombes, Kieran Hunt and Hannah Bloomfield, SASEA Electricity Demand Data for 2013-2025, Zenodo v1, 22 September 2025.
+DOI: https://doi.org/10.5281/zenodo.17175212
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0).
+Licence URL: https://creativecommons.org/licenses/by/4.0/
+Adaptation: Sri Lankan raw subset reconstructed by documented deduplication, local-day conversion, MW-to-MWh integration, quality filtering and lag construction for this IT5514 project. Original raw files are unchanged. Attribution is required when sharing. See DATASET_CARD.md and provenance.json.

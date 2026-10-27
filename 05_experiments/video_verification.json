@@ -1,0 +1,21 @@
+{
+  "duration_seconds": 220.88,
+  "resolution": [
+    1600,
+    1000
+  ],
+  "fps": 8.0,
+  "full_decode_exit_code": 0,
+  "decode_errors": "",
+  "required_duration_passed": true,
+  "voice_and_visual_edit_disclosed": true,
+  "sampled_frames_seconds": [
+    3,
+    45,
+    85,
+    125,
+    162,
+    200,
+    218
+  ]
+}

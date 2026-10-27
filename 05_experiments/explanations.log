@@ -1,0 +1,8 @@
+/Users/sandaruvithanage/Downloads/269182L_Advanced_Machine_Learning_Assignment/03_code/explain_and_plot.py:24: UserWarning: AutoDateLocator was unable to pick an appropriate interval for this date range. It may be necessary to add an interval value to the AutoDateLocator's intervald dictionary. Defaulting to 6.
+  plt.savefig(FIG/(name+'.png'),bbox_inches='tight',facecolor='white');plt.close()
+                             mean         std         min          max
+group                                                                 
+Demand history        1491.556076  517.863779  456.498602  2055.380342
+Weekly calendar        915.946209  487.678304    0.000000  1459.526715
+Annual cycle / trend    84.583684   50.072288   -3.111800   165.005476
+FIGURES 9

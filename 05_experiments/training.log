@@ -1,0 +1,30 @@
+Linear regression 0 {} CV MAE 2182.099
+Random forest 0 {'max_depth': 6, 'min_samples_leaf': 2} CV MAE 1876.87
+Random forest 1 {'max_depth': 6, 'min_samples_leaf': 5} CV MAE 1827.817
+Random forest 2 {'max_depth': 6, 'min_samples_leaf': 10} CV MAE 1861.768
+Random forest 3 {'max_depth': None, 'min_samples_leaf': 2} CV MAE 1868.751
+Random forest 4 {'max_depth': None, 'min_samples_leaf': 5} CV MAE 1823.154
+Random forest 5 {'max_depth': None, 'min_samples_leaf': 10} CV MAE 1858.648
+SVR 0 {'C': 1, 'epsilon': 0.05} CV MAE 2123.439
+SVR 1 {'C': 1, 'epsilon': 0.15} CV MAE 2248.267
+SVR 2 {'C': 10, 'epsilon': 0.05} CV MAE 2246.575
+SVR 3 {'C': 10, 'epsilon': 0.15} CV MAE 2283.809
+SVR 4 {'C': 100, 'epsilon': 0.05} CV MAE 3814.08
+SVR 5 {'C': 100, 'epsilon': 0.15} CV MAE 4190.989
+GPR 0 {'kernel': 'RBF', 'initial_length_scale': 1.0} CV MAE 2004.104
+GPR 1 {'kernel': 'RBF', 'initial_length_scale': 5.0} CV MAE 2004.106
+GPR 2 {'kernel': 'Matern1.5', 'initial_length_scale': 1.0} CV MAE 1998.546
+GPR 3 {'kernel': 'Matern1.5', 'initial_length_scale': 5.0} CV MAE 1998.55
+GPR 4 {'kernel': 'Matern2.5', 'initial_length_scale': 1.0} CV MAE 1997.981
+GPR 5 {'kernel': 'Matern2.5', 'initial_length_scale': 5.0} CV MAE 1997.961
+/Users/sandaruvithanage/Downloads/269182L_Advanced_Machine_Learning_Assignment/03_code/train_evaluate.py:105: Pandas4Warning: DatetimeIndex.dayofweek is deprecated and will be removed in a future version. Use DatetimeIndex.day_of_week instead.
+  for name,grp in [('month',predictions.index.strftime('%Y-%m')),('day_type',np.where(predictions.index.dayofweek>=5,'Weekend','Weekday'))]:
+            model     MAE_MWh    RMSE_MWh        R2  CV_MAE_MWh  final_fit_seconds  MAE_skill_vs_seasonal_naive
+Linear regression 2042.924487 2805.146803  0.421721 2182.098663           0.001632                     0.101656
+    Random forest 1607.303920 2322.076833  0.603741 1823.153744           0.368818                     0.293213
+              SVR 1534.205166 2406.244074  0.574494 2123.438772           0.012471                     0.325357
+              GPR 1598.668728 2491.533548  0.543796 1997.960874           0.249619                     0.297011
+      Persistence 3254.770619 4243.261930 -0.323200 2911.487726           0.000000                    -0.431234
+   Seasonal naive 2274.100515 3172.516398  0.260337 3025.287998           0.000000                     0.000000
+UNCERTAINTY {'nominal_coverage': 0.95, 'empirical_coverage': 0.9278350515463918, 'mean_width_MWh': 9339.758439632245, 'mean_std_MWh': 2382.635220163056, 'gaussian_NLPD': 9.274471504840088, 'n_test': 97, 'includes_white_kernel_observation_noise': True, 'interval_recalibrated_on_test': False}
+ELAPSED 10.295152334030718

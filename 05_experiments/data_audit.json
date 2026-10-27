@@ -1,0 +1,37 @@
+{
+  "raw_rows": 2902337,
+  "duplicate_key_rows_removed": 29875,
+  "conflicting_duplicate_keys": 0,
+  "raw_missing_values": 2394,
+  "deduplicated_missing_values": 2376,
+  "raw_negative_values": 1276,
+  "deduplicated_negative_values": 1264,
+  "plants_ever_present": 44,
+  "timestamps": 79489,
+  "calendar_days": 829,
+  "raw_first_local_timestamp": "2023-01-01 05:30:00+05:30",
+  "raw_last_local_timestamp": "2025-04-08 05:30:00+05:30",
+  "partial_days": [
+    "2023-01-01",
+    "2025-04-08"
+  ],
+  "days_with_explicit_nulls": 12,
+  "valid_target_days": 815,
+  "eligible_rows": 756,
+  "development_rows": 659,
+  "test_rows": 97,
+  "published_ratio_median": 4.041427122083192,
+  "published_ratio_min": 4.0,
+  "published_ratio_max": 4.0519368532767315,
+  "zero_system_intervals": 10,
+  "negative_clip_max_daily_difference_MWh": 39.0,
+  "negative_clip_total_difference_MWh": 549.25,
+  "reconstructed_2024_GWh": 15421.75775,
+  "daily_mean_2024_GWh": 42.135950136612024,
+  "unit_corroboration_2024_12_24_MWh": 41668.25,
+  "source_files": {
+    "raw_sha256": "7dc4665e317d3fa718cea7845587cc97b7a5c13de110a5bddbd57c524f2b5a97",
+    "processed_sha256": "73a2ed695d708b494010adee6f86f68aa01317f9aa82a4bb5b36f0e96f015ab7"
+  },
+  "published_vs_unconverted_undeduplicated_MW_sum_max_abs_difference": 0.0
+}

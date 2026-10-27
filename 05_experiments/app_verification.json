@@ -1,0 +1,12 @@
+{
+  "passed": [
+    "health and actual model available",
+    "API historical prediction matches stored model output",
+    "edited input changes model prediction and preserves historical actual",
+    "negative, oversized and non-finite inputs return HTTP 400",
+    "unevaluated future date receives a warning"
+  ],
+  "historical_mean_MWh": 42325.97557366114,
+  "edited_mean_MWh": 44217.78536168519,
+  "browser_check": "CUA verified historical replay, edited value, invalid-input state, evidence and method tabs; no console errors observed"
+}

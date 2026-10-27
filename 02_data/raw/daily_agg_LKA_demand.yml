@@ -1,0 +1,106 @@
+title: "Daily Aggregated Energy Demand for Sri Lanka (2023–2025)"
+doi: "10.5281/zenodo.XXXXXXX"  # Add once registered
+version: "1.0.0"
+publication_date:
+authors:
+  - name: "Oliver Coombes"
+    affiliation: ""
+    orcid: "0009-0005-1426-2890"
+
+description: >
+  This dataset contains daily total electricity demand (in MWh) for Sri Lanka from 2023 to 2025. 
+  Data were derived from 15-minute dispatch values provided by the Public Utilities Commission of Sri Lanka (PUCSL) 
+  through its open API. The dataset supports energy-climate research, grid analysis, and energy system modeling.
+
+keywords:
+  - electricity generation
+  - Sri Lanka
+  - dispatch data
+  - climate services
+  - energy systems
+  - open data
+
+geographical_coverage:
+  regions:
+    - country: "Sri Lanka"
+      coordinates:
+        north: 10.0
+        south: 5.9
+        east: 81.9
+        west: 79.8
+      temporal_coverage:
+        start_date: "2023-01-01"
+        end_date: "2025-04-08"
+
+countries:
+  - code: "LKA"
+    name: "Sri Lanka"
+
+data_source:
+  name: "Public Utilities Commission of Sri Lanka (PUCSL)"
+  api_url: "https://gendata.pucsl.gov.lk/api/actual-system-dispatch"
+  access_description: >
+    Data were retrieved using the PUCSL open API for actual system dispatch, 
+    accessed programmatically via date queries (e.g., ?dateAggregation=15min&from=YYYY-MM-DD&to=YYYY-MM-DD). 
+    The API provides 15-minute resolution dispatch data by power plant.
+  homepage: "https://www.pucsl.gov.lk"
+
+temporal_coverage:
+  start_date: "2023-01-01"
+  end_date: "2025-04-08"
+  resolution: "daily"
+
+spatial_coverage:
+  description: "National coverage for Sri Lanka"
+  coordinates:
+    north: 10.0
+    south: 5.9
+    east: 81.9
+    west: 79.8
+
+data_columns:
+  - name: "date"
+    type: "string"
+    format: "YYYY-MM-DD"
+    description: "Date of observation in ISO format"
+  - name: "demand_MWh"
+    type: "float"
+    unit: "MWh"
+    description: "Total daily electricity demand"
+
+processing:
+  description: >
+    Raw dispatch data were obtained from the PUCSL open API at 15-minute resolution and reported in megawatts (MW) 
+    by power plant. Timestamps were converted from UTC to Sri Lanka Standard Time (SLST), and dispatch values 
+    were summed across all power plant IDs for each time entry. Each value was then multiplied by 0.25 
+    to convert from instantaneous power (MW) to energy (MWh) per 15-minute interval. Duplicate entries 
+    were removed, and daily total demand was obtained by aggregating the MWh values by calendar date.
+
+
+license: "CC-BY-4.0"
+repository:
+file_format: "CSV"
+file_size:
+number_of_files: 1
+
+related_datasets:
+  - title: "Raw Energy Demand for Sri Lanka (2023–2025)"
+    relationship: "derived_from"
+    doi: ""
+  - title: "Daily Energy Demand Dataset for Monsoonal South Asia (2014–2024)"
+    doi: ""
+    relationship: "part_of"
+
+funding:
+# To be completed if applicable
+
+contact:
+  name: "Oliver Coombes"
+  email: "olivergcoombes@gmail.com"
+  institution: ""
+
+language: "en"
+
+citation:
+  text: >
+    To be added once DOI is registered.

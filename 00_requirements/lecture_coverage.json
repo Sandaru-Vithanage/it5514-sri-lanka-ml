@@ -1,0 +1,356 @@
+[
+  {
+    "file": "AML_Complete_Open_Book_Final_Study_Guide_2026 (1).pdf",
+    "topics": [
+      "Linear regression",
+      "Logistic regression",
+      "Decision trees",
+      "Random forests",
+      "SVM/SVR",
+      "k-nearest neighbours",
+      "AdaBoost",
+      "Gradient boosting",
+      "XGBoost",
+      "LightGBM",
+      "CatBoost",
+      "KMeans",
+      "Agglomerative",
+      "DBSCAN",
+      "Gaussian mixture",
+      "GAM/EBM"
+    ],
+    "pages_or_cells_text_chars": 669823
+  },
+  {
+    "file": "Lecture Notes__Week 1__Linear_regression.ipynb",
+    "topics": [
+      "Linear regression"
+    ],
+    "pages_or_cells_text_chars": 11268
+  },
+  {
+    "file": "Lecture Notes__Week 1__ML W2_W3.pdf",
+    "topics": [
+      "Linear regression"
+    ],
+    "pages_or_cells_text_chars": 10554
+  },
+  {
+    "file": "Lecture Notes__Week 1__ML Week 01_MSC.pdf",
+    "topics": [
+      "Linear regression",
+      "Logistic regression",
+      "Decision trees",
+      "Random forests",
+      "SVM/SVR",
+      "Gradient boosting",
+      "XGBoost",
+      "KMeans",
+      "DBSCAN"
+    ],
+    "pages_or_cells_text_chars": 18631
+  },
+  {
+    "file": "Lecture Notes__Week 1__Programming Exercise 1 - Linear Regression_Full.ipynb",
+    "topics": [
+      "Linear regression"
+    ],
+    "pages_or_cells_text_chars": 11976
+  },
+  {
+    "file": "Lecture Notes__Week 2-2__SVM Lab sheet - modify-2.ipynb",
+    "topics": [
+      "SVM/SVR"
+    ],
+    "pages_or_cells_text_chars": 2327
+  },
+  {
+    "file": "Lecture Notes__Week 2-2__SVM Lab sheet - modify.ipynb",
+    "topics": [
+      "SVM/SVR"
+    ],
+    "pages_or_cells_text_chars": 2327
+  },
+  {
+    "file": "Lecture Notes__Week 2-2__SVM Lab sheet.ipynb",
+    "topics": [
+      "Logistic regression",
+      "Decision trees",
+      "SVM/SVR"
+    ],
+    "pages_or_cells_text_chars": 3388
+  },
+  {
+    "file": "Lecture Notes__Week 2-2__Support Vector Machine Revised New.pdf",
+    "topics": [
+      "SVM/SVR"
+    ],
+    "pages_or_cells_text_chars": 16407
+  },
+  {
+    "file": "Lecture Notes__Week 2-2__Support Vector Machine_W6_W7.pdf",
+    "topics": [
+      "SVM/SVR"
+    ],
+    "pages_or_cells_text_chars": 17918
+  },
+  {
+    "file": "Lecture Notes__Week 2__Home Work.docx",
+    "topics": [
+      "Logistic regression"
+    ],
+    "pages_or_cells_text_chars": 254
+  },
+  {
+    "file": "Lecture Notes__Week 2__Logistic Regression Theory.pdf",
+    "topics": [
+      "Linear regression",
+      "Logistic regression"
+    ],
+    "pages_or_cells_text_chars": 5174
+  },
+  {
+    "file": "Lecture Notes__Week 2__ML W4.pdf",
+    "topics": [
+      "Linear regression",
+      "Logistic regression"
+    ],
+    "pages_or_cells_text_chars": 13021
+  },
+  {
+    "file": "Lecture Notes__Week 2__logistic_regression_with_missing_values_Feature_Engineering.ipynb",
+    "topics": [
+      "Logistic regression"
+    ],
+    "pages_or_cells_text_chars": 8590
+  },
+  {
+    "file": "Lecture Notes__Week 3__Decision_Tree_Lab_15_10_2025.ipynb",
+    "topics": [
+      "Decision trees"
+    ],
+    "pages_or_cells_text_chars": 5546
+  },
+  {
+    "file": "Lecture Notes__Week 3__Decision_Trees_Information_Gain_Gini_and_Random_Forest_Lecture_Note.docx",
+    "topics": [
+      "Decision trees",
+      "Random forests",
+      "Gradient boosting"
+    ],
+    "pages_or_cells_text_chars": 20612
+  },
+  {
+    "file": "Lecture Notes__Week 3__RANDOM FORESTS [Autosaved].ppt",
+    "topics": [
+      "Decision trees",
+      "Random forests",
+      "k-nearest neighbours"
+    ],
+    "pages_or_cells_text_chars": 11080
+  },
+  {
+    "file": "Lecture Notes__Week 3__Random_Forest_Classifier_Dece_2025.ipynb",
+    "topics": [
+      "Decision trees",
+      "Random forests",
+      "k-nearest neighbours"
+    ],
+    "pages_or_cells_text_chars": 7901
+  },
+  {
+    "file": "Lecture Notes__Week 3__decision trees.pdf",
+    "topics": [
+      "Linear regression",
+      "Logistic regression",
+      "Decision trees",
+      "Random forests",
+      "SVM/SVR"
+    ],
+    "pages_or_cells_text_chars": 15154
+  },
+  {
+    "file": "Lecture Notes__Week 4__05_11_K_Means.ipynb",
+    "topics": [
+      "Decision trees",
+      "Random forests",
+      "SVM/SVR",
+      "k-nearest neighbours",
+      "KMeans",
+      "DBSCAN",
+      "Gaussian mixture"
+    ],
+    "pages_or_cells_text_chars": 20178
+  },
+  {
+    "file": "Lecture Notes__Week 4__Clustering.pdf",
+    "topics": [
+      "KMeans",
+      "Agglomerative"
+    ],
+    "pages_or_cells_text_chars": 21779
+  },
+  {
+    "file": "Lecture Notes__Week 4__Clustering_Models_AI.ipynb",
+    "topics": [
+      "KMeans",
+      "Agglomerative",
+      "DBSCAN",
+      "Gaussian mixture"
+    ],
+    "pages_or_cells_text_chars": 5712
+  },
+  {
+    "file": "Lecture Notes__Week 4__Ensemble_Learning__PraticeI.ipynb",
+    "topics": [
+      "Logistic regression",
+      "Random forests",
+      "SVM/SVR",
+      "k-nearest neighbours",
+      "Gradient boosting"
+    ],
+    "pages_or_cells_text_chars": 1652
+  },
+  {
+    "file": "Lecture Notes__Week 4__ML XG Boost.pdf",
+    "topics": [
+      "Logistic regression",
+      "Decision trees",
+      "Random forests",
+      "SVM/SVR",
+      "Gradient boosting",
+      "XGBoost"
+    ],
+    "pages_or_cells_text_chars": 105784
+  },
+  {
+    "file": "Lecture Notes__Week 4__RANDOM FORESTS.ppt",
+    "topics": [
+      "Decision trees",
+      "Random forests",
+      "SVM/SVR",
+      "k-nearest neighbours",
+      "AdaBoost",
+      "Gradient boosting",
+      "XGBoost",
+      "LightGBM",
+      "CatBoost"
+    ],
+    "pages_or_cells_text_chars": 13557
+  },
+  {
+    "file": "Lecture Notes__Week 4__XGBoost Algorithm.pdf",
+    "topics": [
+      "Decision trees",
+      "Random forests",
+      "AdaBoost",
+      "Gradient boosting",
+      "XGBoost",
+      "LightGBM",
+      "CatBoost"
+    ],
+    "pages_or_cells_text_chars": 4334
+  },
+  {
+    "file": "Lecture Notes__Week 5__Introduction_to_MLOps_Workshop.pptx",
+    "topics": [
+      "Logistic regression",
+      "Gradient boosting",
+      "XGBoost",
+      "CatBoost"
+    ],
+    "pages_or_cells_text_chars": 15739
+  },
+  {
+    "file": "Lecture Notes__Week 5__MLOps Workshop Sections 1\u20134 Commands.pdf",
+    "topics": [
+      "Logistic regression",
+      "XGBoost",
+      "CatBoost"
+    ],
+    "pages_or_cells_text_chars": 11113
+  },
+  {
+    "file": "Lecture Notes__Week 5__MLOps Workshop Sections 1\u20138 Commands.pdf",
+    "topics": [
+      "Logistic regression",
+      "XGBoost",
+      "CatBoost"
+    ],
+    "pages_or_cells_text_chars": 21635
+  },
+  {
+    "file": "Lecture Notes__Week 5__MLOps_Workshop_Pre-Setup_Guide.pdf",
+    "topics": [],
+    "pages_or_cells_text_chars": 6062
+  },
+  {
+    "file": "Lecture Notes__Week 6__SHAP Analysis CarnegeMelon.pdf",
+    "topics": [
+      "Decision trees",
+      "Random forests"
+    ],
+    "pages_or_cells_text_chars": 28331
+  },
+  {
+    "file": "Lecture Notes__Week 6__SHapley_Additive_exPlanations_(SHAP)_Credit_Risk.ipynb",
+    "topics": [
+      "Random forests",
+      "k-nearest neighbours",
+      "XGBoost"
+    ],
+    "pages_or_cells_text_chars": 130494
+  },
+  {
+    "file": "Lecture Notes__Week 7__Explainable_AI_Lecture_Note.pdf",
+    "topics": [
+      "Logistic regression",
+      "Decision trees",
+      "Random forests",
+      "k-nearest neighbours",
+      "GAM/EBM"
+    ],
+    "pages_or_cells_text_chars": 61826
+  },
+  {
+    "file": "Lecture Notes__Week 7__LIME XAI Lecture Notes.pdf",
+    "topics": [
+      "Decision trees",
+      "Random forests",
+      "SVM/SVR",
+      "Gradient boosting",
+      "GAM/EBM"
+    ],
+    "pages_or_cells_text_chars": 44656
+  },
+  {
+    "file": "Lecture Notes__Week 7__Student_Dropout_Success_XAI_fixed.ipynb",
+    "topics": [
+      "Decision trees",
+      "Random forests",
+      "SVM/SVR",
+      "XGBoost"
+    ],
+    "pages_or_cells_text_chars": 12927
+  },
+  {
+    "file": "Lecture Notes__Week 7__Why Explainability.pdf",
+    "topics": [
+      "Logistic regression",
+      "Decision trees",
+      "Random forests",
+      "SVM/SVR",
+      "k-nearest neighbours"
+    ],
+    "pages_or_cells_text_chars": 59595
+  },
+  {
+    "file": "ML_Assignment_GuidelinesMSc in AI.pdf",
+    "topics": [
+      "Logistic regression",
+      "Decision trees",
+      "k-nearest neighbours"
+    ],
+    "pages_or_cells_text_chars": 2864
+  }
+]
