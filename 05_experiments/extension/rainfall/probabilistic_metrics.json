@@ -2,16 +2,16 @@
   {
     "model": "GPR",
     "coverage95": 0.9444444444444444,
-    "mean_width": 257.5043803883637,
-    "gaussian_NLPD": 5.599294179504636,
+    "mean_width": 257.91320588420535,
+    "gaussian_NLPD": 5.602127602750268,
     "negative_means": 0,
     "negative_lower95": 51
   },
   {
     "model": "NGBoost",
-    "coverage95": 0.7083333333333334,
-    "mean_width": 189.77376394266736,
-    "gaussian_NLPD": 6.296623958161484,
+    "coverage95": 0.8055555555555556,
+    "mean_width": 196.74770187515105,
+    "gaussian_NLPD": 6.047590973561209,
     "negative_means": 0,
     "negative_lower95": 4
   }

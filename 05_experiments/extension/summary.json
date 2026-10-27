@@ -64,49 +64,49 @@
   "rainfall": {
     "unit": "mm",
     "n_test": 72,
-    "status": "Independent Colombo CHIRPS-v2 rainfall task; models refitted, six-dekad input delay, 2024\u20132025 holdout.",
+    "status": "Separate Colombo CHIRPS-v2 rainfall task; refitted models, six-dekad input delay and training embargo. Corrected retrospective 2024\u20132025 audit; holdout previously inspected during timing review.",
     "metrics": [
       {
         "model": "Linear regression",
-        "MAE": 53.6473448744,
-        "RMSE": 66.430010872633,
-        "R2": 0.141480357569
+        "MAE": 53.130075489783,
+        "RMSE": 66.173866808291,
+        "R2": 0.14808823699
       },
       {
         "model": "Random forest",
-        "MAE": 53.017889239462,
-        "RMSE": 65.248765829376,
-        "R2": 0.171740946179
+        "MAE": 52.281706776861,
+        "RMSE": 64.640011691086,
+        "R2": 0.187123737369
       },
       {
         "model": "SVR",
-        "MAE": 48.201024984401,
-        "RMSE": 62.529332964924,
-        "R2": 0.239342449312
+        "MAE": 48.173979546757,
+        "RMSE": 62.827427634783,
+        "R2": 0.232072630944
       },
       {
         "model": "GPR",
-        "MAE": 51.913965268558,
-        "RMSE": 65.257400837703,
-        "R2": 0.171521708405
+        "MAE": 51.856767609094,
+        "RMSE": 65.490255896352,
+        "R2": 0.165598715938
       },
       {
         "model": "NGBoost",
-        "MAE": 68.774437053648,
-        "RMSE": 81.319108984494,
-        "R2": -0.286491176174
+        "MAE": 63.085087290771,
+        "RMSE": 75.184581748206,
+        "R2": -0.099712509144
       },
       {
         "model": "KNN",
-        "MAE": 49.997680248277,
-        "RMSE": 63.484082810621,
-        "R2": 0.215936407865
+        "MAE": 49.471701372451,
+        "RMSE": 63.405471816995,
+        "R2": 0.217876984275
       },
       {
         "model": "Gradient boosting",
-        "MAE": 69.181597166879,
-        "RMSE": 80.202410755286,
-        "R2": -0.251400817398
+        "MAE": 55.722364344065,
+        "RMSE": 67.360258379838,
+        "R2": 0.117267578927
       },
       {
         "model": "Seasonal naive",
@@ -116,9 +116,9 @@
       },
       {
         "model": "Seasonal median",
-        "MAE": 41.064613402778,
-        "RMSE": 58.099917261548,
-        "R2": 0.343291531339
+        "MAE": 41.391908069444,
+        "RMSE": 58.694587133554,
+        "R2": 0.329779522106
       }
     ]
   },

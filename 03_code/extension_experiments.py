@@ -52,11 +52,11 @@ def prepare_rainfall(protocol):
  lookup={d:i for i,d in enumerate(calendar)}
  for date,row in f.iterrows():
   for lag in [6,7,9,36]:assert np.isclose(row[f'lag{lag}_mm'],y.loc[calendar[lookup[date]-lag]])
- facts={'raw_rows':len(raw),'all_admin_units':int(raw.PCODE.nunique()),'districts':int(raw[raw.adm_level==2].PCODE.nunique()),'provinces':int(raw[raw.adm_level==1].PCODE.nunique()),'colombo_final_rows':len(c),'model_rows':len(f),'development_rows':int((f.index<'2024-01-01').sum()),'test_rows':int((f.index>='2024-01-01').sum()),'lag_lookup_checks_passed':True,'forecast_type':'retrospective next-dekad, conservative six-dekad observation lag','final_vintage_revision_limit':True}
+ facts={'raw_rows':len(raw),'all_admin_units':int(raw.PCODE.nunique()),'districts':int(raw[raw.adm_level==2].PCODE.nunique()),'provinces':int(raw[raw.adm_level==1].PCODE.nunique()),'colombo_final_rows':len(c),'model_rows':len(f),'development_rows':int((f.index<='2023-10-31').sum()),'embargo_rows':int(((f.index>'2023-10-31')&(f.index<'2024-01-01')).sum()),'test_rows':int((f.index>='2024-01-01').sum()),'lag_lookup_checks_passed':True,'forecast_type':'retrospective next-dekad, conservative six-dekad observation lag','final_vintage_revision_limit':True}
  write_json(OUT/'rainfall_data_audit.json',facts);return f,cols
 
-def evaluate(study,table,cols,folds,cutoff,models,unit,baseline_specs):
- folder=OUT/study;folder.mkdir(parents=True,exist_ok=True);dev=table.loc[:cutoff];test=table[table.index>pd.Timestamp(cutoff)];cv=[];selected={};start=time.perf_counter()
+def evaluate(study,table,cols,folds,cutoff,models,unit,baseline_specs,test_start=None):
+ folder=OUT/study;folder.mkdir(parents=True,exist_ok=True);dev=table.loc[:cutoff];test=table[table.index>=pd.Timestamp(test_start)] if test_start else table[table.index>pd.Timestamp(cutoff)];cv=[];selected={};start=time.perf_counter()
  for name,configs in models.items():
   scores=[]
   for ci,cfg in enumerate(configs):
@@ -100,7 +100,7 @@ def evaluate(study,table,cols,folds,cutoff,models,unit,baseline_specs):
  if seasonal is not None:
   for m in metrics:m['MAE_skill_vs_seasonal']=1-m['MAE']/seasonal
  pred.to_csv(folder/'test_predictions.csv',index_label='date');pd.DataFrame(metrics).to_csv(folder/'test_metrics.csv',index=False);write_json(folder/'probabilistic_metrics.json',prob)
- write_json(folder/'execution.json',{'elapsed_seconds':time.perf_counter()-start,'n_candidates':sum(len(v) for v in models.values()),'cv_fit_count':3*sum(len(v) for v in models.values()),'test_policy':'supplementary post-hoc comparison on already examined dispatch holdout' if study=='dispatch' else 'independent rainfall-task holdout; not a transferred electricity model'})
+ write_json(folder/'execution.json',{'elapsed_seconds':time.perf_counter()-start,'n_candidates':sum(len(v) for v in models.values()),'cv_fit_count':3*sum(len(v) for v in models.values()),'test_policy':'supplementary post-hoc comparison on already examined dispatch holdout' if study=='dispatch' else 'corrected retrospective rainfall audit; not a transferred electricity model'})
  print(pd.DataFrame(metrics).to_string(index=False),flush=True)
 
 def main():
@@ -110,5 +110,5 @@ def main():
   original=json.loads((ROOT/'00_requirements/Experiment_Protocol.json').read_text());dispatch=pd.read_csv(ROOT/'02_data/processed/modelling_table.csv',parse_dates=['date']).set_index('date').rename(columns={'target_MWh':'target'})
   evaluate('dispatch',dispatch,FEATURES,original['validation_folds'],'2024-12-31',EXTRA,'MWh',{'Seasonal naive':'lag7_MWh'})
   rain,cols=prepare_rainfall(p);search={**configurations(),**EXTRA}
-  evaluate('rainfall',rain,cols,p['independent_dataset']['folds'],'2023-12-31',search,'mm',{'Seasonal naive':'lag36_mm','Seasonal median':'seasonal_median'})
+  evaluate('rainfall',rain,cols,p['independent_dataset']['folds'],p['independent_dataset']['final_train_end'],search,'mm',{'Seasonal naive':'lag36_mm','Seasonal median':'seasonal_median'},test_start='2024-01-01')
 if __name__=='__main__':main()

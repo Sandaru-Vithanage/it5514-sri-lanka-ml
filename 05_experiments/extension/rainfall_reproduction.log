@@ -1,0 +1,47 @@
+rainfall Linear regression 0 CV MAE 53.9861
+rainfall Random forest 0 CV MAE 52.0846
+rainfall Random forest 1 CV MAE 52.1047
+rainfall Random forest 2 CV MAE 51.9228
+rainfall Random forest 3 CV MAE 52.6533
+rainfall Random forest 4 CV MAE 51.5184
+rainfall Random forest 5 CV MAE 51.7072
+rainfall SVR 0 CV MAE 55.7668
+rainfall SVR 1 CV MAE 54.2994
+rainfall SVR 2 CV MAE 63.7507
+rainfall SVR 3 CV MAE 61.5908
+rainfall SVR 4 CV MAE 83.3418
+rainfall SVR 5 CV MAE 80.1618
+rainfall GPR 0 CV MAE 53.3522
+rainfall GPR 1 CV MAE 53.3523
+rainfall GPR 2 CV MAE 53.2505
+rainfall GPR 3 CV MAE 53.2505
+rainfall GPR 4 CV MAE 53.2619
+rainfall GPR 5 CV MAE 53.2616
+rainfall NGBoost 0 CV MAE 54.6537
+rainfall NGBoost 1 CV MAE 54.7016
+rainfall NGBoost 2 CV MAE 55.4231
+rainfall NGBoost 3 CV MAE 53.6809
+rainfall NGBoost 4 CV MAE 54.107
+rainfall NGBoost 5 CV MAE 55.1546
+rainfall KNN 0 CV MAE 55.1518
+rainfall KNN 1 CV MAE 55.319
+rainfall KNN 2 CV MAE 52.1744
+rainfall KNN 3 CV MAE 52.0949
+rainfall KNN 4 CV MAE 52.6005
+rainfall KNN 5 CV MAE 52.3675
+rainfall Gradient boosting 0 CV MAE 56.6856
+rainfall Gradient boosting 1 CV MAE 56.6327
+rainfall Gradient boosting 2 CV MAE 57.1078
+rainfall Gradient boosting 3 CV MAE 54.6066
+rainfall Gradient boosting 4 CV MAE 54.8001
+rainfall Gradient boosting 5 CV MAE 55.6627
+   study             model unit  n_train  n_test    CV_MAE       MAE      RMSE        R2  fit_seconds  MAE_skill_vs_seasonal
+rainfall Linear regression   mm      858      72 53.986064 53.130075 66.173867  0.148088     0.001966               0.205718
+rainfall     Random forest   mm      858      72 51.518399 52.281707 64.640012  0.187124     0.470832               0.218401
+rainfall               SVR   mm      858      72 54.299372 48.173980 62.827428  0.232073     0.021030               0.279811
+rainfall               GPR   mm      858      72 53.250488 51.856768 65.490256  0.165599     0.686978               0.224754
+rainfall           NGBoost   mm      858      72 53.680900 63.085087 75.184582 -0.099713     0.908898               0.056893
+rainfall               KNN   mm      858      72 52.094872 49.471701 63.405472  0.217877     0.002061               0.260410
+rainfall Gradient boosting   mm      858      72 54.606626 55.722364 67.360258  0.117268     0.077404               0.166964
+rainfall    Seasonal naive   mm      858      72 67.524960 66.890701 87.921653 -0.503880     0.000000               0.000000
+rainfall   Seasonal median   mm      858      72 52.255113 41.391908 58.694587  0.329780     0.000000               0.381201

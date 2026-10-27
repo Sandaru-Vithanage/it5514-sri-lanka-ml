@@ -15,6 +15,9 @@ check('frozen protocol matches execution',hashlib.sha256((ROOT/'00_requirements/
 rain,cols=prepare_rainfall(p)
 check('independent dataset row counts and order',len(rain)==936 and rain.index.is_unique and rain.index.is_monotonic_increasing)
 check('rainfall holdout begins after all selection windows',p['independent_dataset']['folds'][-1]['validation_end']<p['independent_dataset']['test_start'])
+check('final rainfall training embargo',p['independent_dataset']['final_train_end']=='2023-10-31' and len(rain.loc[:'2023-10-31'])==858)
+for fold in p['independent_dataset']['folds']:
+ check('rainfall training embargo before '+fold['validation_start'],pd.Timestamp(fold['validation_start'])-pd.Timestamp(fold['train_end'])>=pd.Timedelta(days=60))
 for study in ['dispatch','rainfall']:
  d=ROOT/'05_experiments/extension'/study
  pred=pd.read_csv(d/'test_predictions.csv',index_col='date');metrics=pd.read_csv(d/'test_metrics.csv');cv=pd.read_csv(d/'cv_results.csv');selected=json.loads((d/'selected_before_test.json').read_text())
@@ -26,7 +29,7 @@ for study in ['dispatch','rainfall']:
   vals=cv[cv.model==row.model].groupby('config_id').MAE.mean()
   check(study+' '+row.model+' CV score',np.isclose(row.CV_MAE,vals.min()))
   if row.model in selected:check(study+' '+row.model+' CV selection',int(vals.idxmin())==selected[row.model]['config_id'])
- ref=ROOT/'work/extension_prediction_reference'/study/'test_predictions.csv'
+ ref=d/'reproduction_reference_predictions.csv'
  if ref.exists():
   old=pd.read_csv(ref,index_col='date')
   check(study+' exact repeat of all predictions',np.allclose(old.to_numpy(),pred.to_numpy(),rtol=0,atol=1e-8))

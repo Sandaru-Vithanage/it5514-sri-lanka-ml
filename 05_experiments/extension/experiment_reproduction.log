@@ -1,0 +1,70 @@
+dispatch NGBoost 0 CV MAE 1837.7041
+dispatch NGBoost 1 CV MAE 1858.1853
+dispatch NGBoost 2 CV MAE 1882.6253
+dispatch NGBoost 3 CV MAE 1861.4524
+dispatch NGBoost 4 CV MAE 1910.6909
+dispatch NGBoost 5 CV MAE 1915.9614
+dispatch KNN 0 CV MAE 2197.333
+dispatch KNN 1 CV MAE 2178.6256
+dispatch KNN 2 CV MAE 2236.3374
+dispatch KNN 3 CV MAE 2207.3666
+dispatch KNN 4 CV MAE 2169.5334
+dispatch KNN 5 CV MAE 2150.5083
+dispatch Gradient boosting 0 CV MAE 2305.3993
+dispatch Gradient boosting 1 CV MAE 1822.6403
+dispatch Gradient boosting 2 CV MAE 1713.5964
+dispatch Gradient boosting 3 CV MAE 1974.4513
+dispatch Gradient boosting 4 CV MAE 1833.9961
+dispatch Gradient boosting 5 CV MAE 1891.943
+   study             model unit  n_train  n_test      CV_MAE         MAE        RMSE       R2  fit_seconds  MAE_skill_vs_seasonal
+dispatch           NGBoost  MWh      659      97 1837.704121 1623.481303 2338.473636 0.598125     0.762181               0.286100
+dispatch               KNN  MWh      659      97 2150.508325 1773.798325 2458.223675 0.555912     0.002075               0.220000
+dispatch Gradient boosting  MWh      659      97 1713.596417 1641.004733 2363.437981 0.589499     0.262554               0.278394
+dispatch    Seasonal naive  MWh      659      97 3025.287998 2274.100515 3172.516398 0.260337     0.000000               0.000000
+rainfall Linear regression 0 CV MAE 54.7583
+rainfall Random forest 0 CV MAE 52.004
+rainfall Random forest 1 CV MAE 51.8947
+rainfall Random forest 2 CV MAE 51.9532
+rainfall Random forest 3 CV MAE 52.2438
+rainfall Random forest 4 CV MAE 51.3626
+rainfall Random forest 5 CV MAE 51.6785
+rainfall SVR 0 CV MAE 55.5182
+rainfall SVR 1 CV MAE 54.4718
+rainfall SVR 2 CV MAE 64.8671
+rainfall SVR 3 CV MAE 63.0669
+rainfall SVR 4 CV MAE 82.1193
+rainfall SVR 5 CV MAE 79.0126
+rainfall GPR 0 CV MAE 53.4276
+rainfall GPR 1 CV MAE 53.4276
+rainfall GPR 2 CV MAE 53.355
+rainfall GPR 3 CV MAE 53.3549
+rainfall GPR 4 CV MAE 53.3537
+rainfall GPR 5 CV MAE 53.3538
+rainfall NGBoost 0 CV MAE 54.8844
+rainfall NGBoost 1 CV MAE 54.71
+rainfall NGBoost 2 CV MAE 55.4484
+rainfall NGBoost 3 CV MAE 53.8305
+rainfall NGBoost 4 CV MAE 54.78
+rainfall NGBoost 5 CV MAE 55.3074
+rainfall KNN 0 CV MAE 55.2685
+rainfall KNN 1 CV MAE 55.5336
+rainfall KNN 2 CV MAE 52.7614
+rainfall KNN 3 CV MAE 52.6748
+rainfall KNN 4 CV MAE 53.1436
+rainfall KNN 5 CV MAE 52.9472
+rainfall Gradient boosting 0 CV MAE 57.2567
+rainfall Gradient boosting 1 CV MAE 56.787
+rainfall Gradient boosting 2 CV MAE 56.9887
+rainfall Gradient boosting 3 CV MAE 54.8821
+rainfall Gradient boosting 4 CV MAE 54.8131
+rainfall Gradient boosting 5 CV MAE 55.5254
+   study             model unit  n_train  n_test    CV_MAE       MAE      RMSE        R2  fit_seconds  MAE_skill_vs_seasonal
+rainfall Linear regression   mm      864      72 54.758297 53.647345 66.430011  0.141480     0.001482               0.197985
+rainfall     Random forest   mm      864      72 51.362616 53.017889 65.248766  0.171741     0.474455               0.207395
+rainfall               SVR   mm      864      72 54.471833 48.201025 62.529333  0.239342     0.016882               0.279406
+rainfall               GPR   mm      864      72 53.353730 51.913965 65.257401  0.171522     0.718233               0.223899
+rainfall           NGBoost   mm      864      72 53.830469 68.774437 81.319109 -0.286491     0.876914              -0.028161
+rainfall               KNN   mm      864      72 52.674760 49.997680 63.484083  0.215936     0.001585               0.252547
+rainfall Gradient boosting   mm      864      72 54.813052 69.181597 80.202411 -0.251401     0.231591              -0.034248
+rainfall    Seasonal naive   mm      864      72 66.999195 66.890701 87.921653 -0.503880     0.000000               0.000000
+rainfall   Seasonal median   mm      864      72 52.694848 41.064613 58.099917  0.343292     0.000000               0.386094

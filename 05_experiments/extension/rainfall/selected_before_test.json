@@ -2,7 +2,7 @@
   "Linear regression": {
     "config_id": 0,
     "config": {},
-    "CV_MAE": 54.7582972650535
+    "CV_MAE": 53.98606390454841
   },
   "Random forest": {
     "config_id": 4,
@@ -10,7 +10,7 @@
       "max_depth": null,
       "min_samples_leaf": 5
     },
-    "CV_MAE": 51.36261568371356
+    "CV_MAE": 51.51839948637221
   },
   "SVR": {
     "config_id": 1,
@@ -18,15 +18,15 @@
       "C": 1,
       "epsilon": 0.15
     },
-    "CV_MAE": 54.47183342274385
+    "CV_MAE": 54.29937231359679
   },
   "GPR": {
-    "config_id": 4,
+    "config_id": 3,
     "config": {
-      "kernel": "Matern2.5",
-      "initial_length_scale": 1.0
+      "kernel": "Matern1.5",
+      "initial_length_scale": 5.0
     },
-    "CV_MAE": 53.35373039850948
+    "CV_MAE": 53.25048752438109
   },
   "NGBoost": {
     "config_id": 3,
@@ -34,7 +34,7 @@
       "max_depth": 3,
       "n_estimators": 200
     },
-    "CV_MAE": 53.83046869180526
+    "CV_MAE": 53.6809004158502
   },
   "KNN": {
     "config_id": 3,
@@ -42,14 +42,14 @@
       "n_neighbors": 15,
       "weights": "distance"
     },
-    "CV_MAE": 52.67475990363217
+    "CV_MAE": 52.09487163266769
   },
   "Gradient boosting": {
-    "config_id": 4,
+    "config_id": 3,
     "config": {
       "max_depth": 2,
-      "n_estimators": 300
+      "n_estimators": 100
     },
-    "CV_MAE": 54.8130522232423
+    "CV_MAE": 54.60662629610772
   }
 }
