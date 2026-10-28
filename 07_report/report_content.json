@@ -25,7 +25,7 @@
         },
         {
           "type": "paragraph",
-          "text": "A supplementary extension compares seven learned algorithms across electricity and an independent Colombo rainfall task. NGBoost is competitive on electricity but its rainfall intervals under-cover; the rainfall seasonal-median baseline outperforms all learned models. The main GPR study is preserved, with post-hoc electricity comparisons identified explicitly. A private source repository and an Azure Free F1 HTTPS application provide reviewable deployment evidence."
+          "text": "A supplementary extension compares seven learned algorithms across electricity and an independent Colombo rainfall task. NGBoost is competitive on electricity but its rainfall intervals under-cover; the rainfall seasonal-median baseline outperforms all learned models. The main GPR study is preserved, with post-hoc electricity comparisons identified explicitly. A public source repository and an automatically deployed Azure Free F1 HTTPS application provide reviewable deployment evidence."
         },
         {
           "type": "paragraph",
@@ -1133,7 +1133,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "The requested review deployment runs the original saved GPR through a Flask/Gunicorn WSGI wrapper. The same app serves the interface, model API, original evaluation evidence and corrected extension tables. A private GitHub repository contains source, protocols, data instructions and result artefacts. The separate source ZIP remains an accessible assessment alternative when the reviewer has not been granted private-repository access."
+          "text": "The original saved GPR runs through a Flask/Gunicorn wrapper serving the interface, model API and recorded evidence. The student requested public source and automated deployment on 29 October 2026, superseding the initial private review setup. The GitHub repository and submitted source ZIP contain implementation, protocols, results and reproduction instructions."
         },
         {
           "type": "table",
@@ -1141,60 +1141,60 @@
             "Item",
             "Verified configuration / evidence"
           ],
+          "widths": [
+            0.28,
+            0.72
+          ],
           "rows": [
+            [
+              "Public repository",
+              "https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml"
+            ],
             [
               "Live HTTPS interface",
               "https://lanka-dispatch-it5514-sv.azurewebsites.net"
             ],
             [
-              "Private source repository",
-              "https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml"
-            ],
-            [
-              "Hosting",
-              "Azure App Service Linux, East Asia; Python 3.13; one Gunicorn worker, two threads"
-            ],
-            [
-              "Plan and cost boundary",
-              "F1 / Free, one app. User-approved maximum US$10 of student credit; no paid resources created."
+              "Hosting and boundary",
+              "App Service Linux, East Asia; Python 3.13; F1 / Free; one Gunicorn worker, two threads; authorized maximum US$10."
             ],
             [
               "Release provenance",
-              "Application source commit 79d46d9f2c74; exact model SHA-256 is exposed by /api/health and saved in deployment_record.json."
+              "Source commit fb13708f15b4; embedded release.json and /api/health expose the actual source and model SHA-256."
             ],
             [
-              "Remote validation",
-              "11 API checks passed, including identical model bytes, forecast agreement, invalid requests and equality of published extension results."
+              "Automatic verification",
+              "9 packaged runtime cases, all 97 saved predictions, 15-file bundle and 9 live HTTPS checks passed."
+            ],
+            [
+              "Actions run",
+              "<link href=\"https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/runs/40758348528\" color=\"#126c70\">Successful push run #2 (40758348528)</link>"
             ]
-          ],
-          "widths": [
-            0.28,
-            0.72
           ]
         },
         {
           "type": "subheading",
-          "text": "17.1 What deployment establishes"
+          "text": "17.1 Automated release and reproducibility"
         },
         {
           "type": "paragraph",
-          "text": "The HTTPS service returns 42,325.975574 MWh for recorded 15 January 2025 inputs and 44,217.785362 MWh after changing only lag1 to 42,000 MWh. Both match local inference within 10^-6 MWh; the historical actual remains fixed. Browser review verifies these interactions, the last-valid-estimate label, original and extended evidence, and the displayed URL, private source link, source commit and model fingerprint. The 3-5 minute video shows genuine hosted interface captures with disclosed editing and synthesized narration."
+          "text": "App/model changes pushed to main trigger a pinned GitHub Actions workflow; pull requests validate without Azure access. Validation installs pinned inference dependencies, checks the ZIP allowlist and reproduces every saved mean and standard deviation. Deployment consumes that same validated artifact, confirms F1 and startup settings, then waits for the exact release commit and fingerprint before checking real predictions. Documentation-only changes do not redeploy; a deliberate main-branch workflow dispatch is also available."
         },
         {
           "type": "paragraph",
-          "text": "An explicit 14-file bundle excludes raw archives, notebooks, lecture materials, other model pickles and credentials. Per-file hashes and a ZIP checksum are recorded. Runtime dependencies are pinned separately from training/authoring packages. HTTPS-only service, TLS 1.2 minimum and disabled FTP are configured. Azure authentication state stays in an excluded local directory; no password, access token or subscription identifier is included in deliverables."
+          "text": "GitHub authenticates through OIDC with a managed identity, avoiding stored client passwords [17]. Trust matches the exact main-branch subject including immutable owner/repository IDs. Website Contributor is scoped to this app; Reader is scoped to its plan. Model and source hashes are recorded. The explicit bundle excludes raw archives, teaching materials and credentials. HTTPS-only access, TLS 1.2 minimum and disabled FTP are configured."
+        },
+        {
+          "type": "paragraph",
+          "text": "Recorded 15 January inputs return 42,325.975574 MWh; setting only lag1 to 42,000 MWh returns 44,217.785362 MWh. CI compares these responses with the packaged model within 10^-6 MWh and confirms the historical actual stays fixed. The video uses genuine hosted-interface and successful Actions captures with disclosed panning and synthesized narration. Automatic release does not retrain or reselect the frozen model."
         },
         {
           "type": "subheading",
-          "text": "17.2 Cost, access and operational limits"
+          "text": "17.2 Cost and operational limits"
         },
         {
           "type": "paragraph",
-          "text": "The selected F1 tier is free shared compute with CPU quotas and cold starts [16]. The verified resource inventory contains only the free plan and app. This records a free configuration, not a fabricated final invoice or hard budget-enforcement mechanism. No paid monitoring, GPU, Azure ML endpoint, database, registry or custom domain was provisioned. Cleanup instructions are supplied for the dedicated resource group after assessment."
-        },
-        {
-          "type": "paragraph",
-          "text": "Hosting demonstrates reproducible inference, not real-time data availability, an operational SLA or grid suitability. The model was not retrained on the heldout period. The repository remains private by the student’s instruction; marker access requires a deliberate invitation or use of the submitted source ZIP. Durable video and source evidence remain available if free-tier quotas or cold starts interrupt the site."
+          "text": "F1 is free shared compute with quotas and cold starts [16]. The dedicated group contains the app, free plan and a managed identity, which has no extra charge [18]. No paid ML endpoint, GPU, registry, database or monitoring was created. This verifies configuration, not a final invoice or hard spending enforcement. Hosting is a historical research demo without live telemetry or an SLA; source and video remain durable assessment evidence. Cleanup instructions are supplied."
         }
       ]
     },
@@ -1274,7 +1274,15 @@
         },
         {
           "type": "paragraph",
-          "text": "Online sources were checked on 28 October 2026. The verified source register records URLs, dates, source role and relevant evidence. Supplied lecture notes and the personal open-book guide inform course-coverage checking; their exercises do not replace the official assessment brief. No unverified source DOI or citation placeholder is used."
+          "text": "[17] Microsoft, “Deploy to App Service using GitHub Actions” and Azure/login action documentation. Available: https://learn.microsoft.com/en-us/azure/app-service/deploy-github-actions and https://github.com/Azure/login . Accessed 29 Oct. 2026."
+        },
+        {
+          "type": "paragraph",
+          "text": "[18] Microsoft, “Managed identities for Azure resources.” Available: https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview . Accessed 29 Oct. 2026."
+        },
+        {
+          "type": "paragraph",
+          "text": "Research sources were checked on 28 October 2026; automation sources on 29 October. The source register records URLs, dates and source roles. Supplied teaching materials inform course coverage; their exercises do not replace the official brief. No unverified DOI or citation placeholder is used."
         }
       ]
     },
@@ -1288,7 +1296,7 @@
         },
         {
           "type": "paragraph",
-          "text": "OpenAI Codex assisted with reading and extracting the supplied materials, web research and source verification, dataset acquisition, experimental design, Python implementation, local execution, the extended rainfall/NGBoost experiments, result checking, visualizations, report drafting, private GitHub repository preparation, Azure deployment, the interface and demo preparation. The code was run on the student’s MacBook; reported scores come from the saved experimental outputs. The demo uses a synthesized system voice and captured states of the working interface. These contributions are disclosed so that the work is not represented as unaided authorship."
+          "text": "OpenAI Codex assisted with reading and extracting the supplied materials, web research and source verification, dataset acquisition, experimental design, Python implementation, local execution, the extended rainfall/NGBoost experiments, result checking, visualizations, report drafting, GitHub repository preparation, public release, automated Azure deployment, the interface and demo preparation. The code was run on the student’s MacBook; reported scores come from the saved experimental outputs. The demo uses a synthesized system voice and captured states of the working interface. These contributions are disclosed so that the work is not represented as unaided authorship."
         },
         {
           "type": "paragraph",

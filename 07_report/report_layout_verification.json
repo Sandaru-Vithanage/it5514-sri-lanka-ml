@@ -1,0 +1,8 @@
+{
+  "pdf_pages": 22,
+  "rendered_pages": 22,
+  "body_characters_outside_safe_bounds": 0,
+  "release_commit_verified": "fb13708f15b44e5e51eb5e2d8a263607aa49e402",
+  "public_automation_claims_found": true,
+  "visual_review": "All 22 rendered pages inspected via contact sheets; modified deployment page inspected at full render size. No clipping, overlap or overflow pages found."
+}

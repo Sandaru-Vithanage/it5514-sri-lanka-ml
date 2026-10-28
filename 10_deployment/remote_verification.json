@@ -1,23 +1,20 @@
 {
   "passed": true,
-  "base_url": "https://lanka-dispatch-it5514-sv.azurewebsites.net",
-  "UTC": "2026-10-27T21:34:28.470549+00:00",
-  "checks": [
-    "healthy endpoint",
-    "identical model bytes",
-    "historical forecast matches local inference",
-    "edited forecast matches local inference",
-    "edited inputs are labelled and actual stays fixed",
-    "negative input rejected",
-    "nonfinite input rejected",
-    "oversize request rejected",
-    "both task comparisons exposed",
-    "published extension matches recorded evidence",
-    "review repository linked"
-  ],
+  "url": "https://lanka-dispatch-it5514-sv.azurewebsites.net",
+  "commit": "fb13708f15b44e5e51eb5e2d8a263607aa49e402",
   "model_sha256": "d71d458270e348197a6ca32627ca642bdaba3d203ae6010e16a39211114e865e",
-  "application_commit": "79d46d9f2c74eb3194a4325242e46b048dae43e6",
-  "historical_mean_MWh": 42325.97557366144,
-  "edited_mean_MWh": 44217.78536168469,
+  "checks": [
+    "embedded source commit matches",
+    "model fingerprint matches",
+    "historical forecast and replay label match offline bundle",
+    "edited forecast and replay label match offline bundle",
+    "published experiment evidence matches",
+    "public repository and release identity match",
+    "invalid -1 input rejected",
+    "invalid nan input rejected",
+    "oversize request rejected"
+  ],
+  "readiness_attempts": 3,
+  "elapsed_seconds": 36.92,
   "tolerance_MWh": 1e-06
 }

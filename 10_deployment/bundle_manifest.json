@@ -1,34 +1,23 @@
 {
+  "release_commit": "fb13708f15b44e5e51eb5e2d8a263607aa49e402",
   "files": [
     {
-      "source": "10_deployment/wsgi.py",
-      "deployed_path": "wsgi.py",
-      "bytes": 2813,
-      "sha256": "db00c26f6b2e2101366ecc00c59ee3f3b291a2e18c50452032708ea3c1604e2e"
-    },
-    {
-      "source": "10_deployment/startup.sh",
-      "deployed_path": "startup.sh",
-      "bytes": 126,
-      "sha256": "7aa765da003b59b4ef5e07a2cdc20636cbe85e107e2662f87b10786b3ba54ff5"
-    },
-    {
-      "source": "10_deployment/requirements.txt",
-      "deployed_path": "requirements.txt",
-      "bytes": 126,
-      "sha256": "5c8649dc170ba8613431ae2645768ef3d81a2a9de1cdb4027abf6927f2497b8c"
-    },
-    {
-      "source": "03_code/app.py",
-      "deployed_path": "03_code/app.py",
-      "bytes": 5356,
-      "sha256": "da8d1e3ad05b81517c1b17a2bba9210396d95735f91c36394db415c9915d568f"
+      "source": "02_data/processed/modelling_table.csv",
+      "deployed_path": "02_data/processed/modelling_table.csv",
+      "bytes": 134442,
+      "sha256": "73a2ed695d708b494010adee6f86f68aa01317f9aa82a4bb5b36f0e96f015ab7"
     },
     {
       "source": "03_code/app.html",
       "deployed_path": "03_code/app.html",
-      "bytes": 19874,
-      "sha256": "17d8a53efffec295957efa7c6fa4a90d519f99211c5179d2318adc9e316a966e"
+      "bytes": 19930,
+      "sha256": "ffe2974f063dbd06bff9b0b239c178c850a885096f6a45579144e98b2072cac1"
+    },
+    {
+      "source": "03_code/app.py",
+      "deployed_path": "03_code/app.py",
+      "bytes": 5348,
+      "sha256": "4ed47811e0e4dbe7dd218caff2ed5304a9e275c108f900b64c7638558311ddaf"
     },
     {
       "source": "03_code/models.py",
@@ -43,16 +32,28 @@
       "sha256": "b1e5d5bc8e1bd621bff8979caae38d98b8ed663f7fe85a7b9b4835ff3cf548b6"
     },
     {
-      "source": "05_experiments/models/GPR.joblib",
-      "deployed_path": "05_experiments/models/GPR.joblib",
-      "bytes": 3550713,
-      "sha256": "d71d458270e348197a6ca32627ca642bdaba3d203ae6010e16a39211114e865e"
-    },
-    {
       "source": "05_experiments/explanation_reference.json",
       "deployed_path": "05_experiments/explanation_reference.json",
       "bytes": 547,
       "sha256": "74b660b3b59cfc7beae6f4c219fc27ecadd348987586322bedd35d7e18634ed8"
+    },
+    {
+      "source": "05_experiments/extension/summary.json",
+      "deployed_path": "05_experiments/extension/summary.json",
+      "bytes": 3488,
+      "sha256": "7524880c6302ea24e034f7f3b2039393d799714d5c7b7b730d107551c13a27ec"
+    },
+    {
+      "source": "05_experiments/grouped_permutation_summary.csv",
+      "deployed_path": "05_experiments/grouped_permutation_summary.csv",
+      "bytes": 284,
+      "sha256": "09b05f56303d5c94215262277d780c2d004dcba526ce2685e06eb468eb43ed47"
+    },
+    {
+      "source": "05_experiments/models/GPR.joblib",
+      "deployed_path": "05_experiments/models/GPR.joblib",
+      "bytes": 3550713,
+      "sha256": "d71d458270e348197a6ca32627ca642bdaba3d203ae6010e16a39211114e865e"
     },
     {
       "source": "05_experiments/test_metrics.csv",
@@ -67,26 +68,32 @@
       "sha256": "d2e4a7b529c5e9307b0e97438bf0100f54a9dd6610c1695531b3286fdc4e5fc8"
     },
     {
-      "source": "05_experiments/grouped_permutation_summary.csv",
-      "deployed_path": "05_experiments/grouped_permutation_summary.csv",
-      "bytes": 284,
-      "sha256": "09b05f56303d5c94215262277d780c2d004dcba526ce2685e06eb468eb43ed47"
+      "source": "generated release metadata",
+      "deployed_path": "release.json",
+      "bytes": 294,
+      "sha256": "e4d14bba9de05c751cabab8ae5d2350e3e9b3cddb969d3543a7994e6aa709104"
     },
     {
-      "source": "05_experiments/extension/summary.json",
-      "deployed_path": "05_experiments/extension/summary.json",
-      "bytes": 3488,
-      "sha256": "7524880c6302ea24e034f7f3b2039393d799714d5c7b7b730d107551c13a27ec"
+      "source": "10_deployment/requirements.txt",
+      "deployed_path": "requirements.txt",
+      "bytes": 126,
+      "sha256": "5c8649dc170ba8613431ae2645768ef3d81a2a9de1cdb4027abf6927f2497b8c"
     },
     {
-      "source": "02_data/processed/modelling_table.csv",
-      "deployed_path": "02_data/processed/modelling_table.csv",
-      "bytes": 134442,
-      "sha256": "73a2ed695d708b494010adee6f86f68aa01317f9aa82a4bb5b36f0e96f015ab7"
+      "source": "10_deployment/startup.sh",
+      "deployed_path": "startup.sh",
+      "bytes": 126,
+      "sha256": "7aa765da003b59b4ef5e07a2cdc20636cbe85e107e2662f87b10786b3ba54ff5"
+    },
+    {
+      "source": "10_deployment/wsgi.py",
+      "deployed_path": "wsgi.py",
+      "bytes": 3012,
+      "sha256": "c43d0fb175823b6ab2cbd3f4778bcc654bd4940915820cd86a806240bbe3617b"
     }
   ],
-  "zip_sha256": "3384fa70742ef64df005f5eb262cf51bca456ca0b02988985d0840b8180981e8",
-  "zip_bytes": 1781321,
+  "zip_sha256": "1425c2fe8150849871a998ef92cdf275a807e08231824cfbd3da06e6745fadeb",
+  "zip_bytes": 1781757,
   "excluded": [
     "raw datasets",
     "lecture materials",

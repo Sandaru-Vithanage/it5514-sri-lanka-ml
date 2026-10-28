@@ -1,5 +1,5 @@
 {
-  "duration_seconds": 259.375,
+  "duration_seconds": 273.5,
   "frames_per_second": 8,
   "width": 1600,
   "height": 1000,
@@ -57,19 +57,27 @@
     {
       "scene": 7,
       "start_seconds": 185.875,
-      "duration_seconds": 34.0,
-      "audio_seconds": 32.49678004535147,
+      "duration_seconds": 24.75,
+      "audio_seconds": 23.220408163265308,
       "capture": "13_hosted_extension.png",
-      "narration": "The deployment panel shows the actual Azure HTTPS address, private GitHub repository, application source commit and model fingerprint. Azure App Service uses Linux, Python three point thirteen and the free F one plan. Hosted historical and edited predictions match local inference within one millionth of a megawatt hour. The repository remains private as requested; assessors need access or the complete source ZIP. The approved ten dollar credit cap is a maximum, not a spending target. Free tier quotas and cold starts limit availability."
+      "narration": "The deployment panel shows the actual Azure address, public GitHub repository, source commit and model fingerprint. Anyone can inspect the code. Azure App Service uses Python three point thirteen and the free F one plan. Predictions match local inference within one millionth of a megawatt hour. The approved ten dollar credit cap is a maximum. Free tier quotas and cold starts limit availability."
     },
     {
       "scene": 8,
-      "start_seconds": 219.875,
+      "start_seconds": 210.625,
+      "duration_seconds": 23.375,
+      "audio_seconds": 21.75546485260771,
+      "capture": "14_actions_success.png",
+      "narration": "This successful GitHub Actions run validates the saved model before deployment. App or model changes pushed to main rebuild the explicit bundle, check all ninety seven saved predictions, deploy to Azure, and verify nine HTTPS checks. Pull requests validate only. Short lived federated credentials access this app. Deployment does not retrain the model."
+    },
+    {
+      "scene": 9,
+      "start_seconds": 234.0,
       "duration_seconds": 39.5,
       "audio_seconds": 37.954467120181405,
       "capture": "12_hosted_exceptional_day.png",
       "narration": "Four February, Independence Day, is a large failure: the model forecasts about forty four point three seven gigawatt hours against recorded energy thirty three point seven three. Holiday indicators were omitted from the frozen predictors; future redesign needs fresh evaluation. Dispatch coverage and publication timing also constrain interpretation. The package includes reproducible code, pinned data, both notebooks, experiments, report and deployment evidence. This walkthrough uses genuine hosted interface captures, edited panning and synthesized narration. Student review and accurate assistance disclosure remain essential."
     }
   ],
-  "bytes": 8311396
+  "bytes": 8418885
 }

@@ -58,3 +58,7 @@ The plan remains F1 / Free. Managed identities have no extra charge; no paid pla
 After assessment, inspect and remove the dedicated resource group if no longer needed. This also removes its managed identity and federated credential; disable the workflow or remove its trust to stop future deployments. No deletion has been performed. Keep the source ZIP and demo as durable assessment evidence. Dataset licences and attribution remain applicable to public copies. The repository includes the student's assignment name/index and disclosed AI assistance; copied lecture files and account state are excluded.
 
 Primary references: [Microsoft App Service GitHub deployment](https://learn.microsoft.com/en-us/azure/app-service/deploy-github-actions), [managed identity federation](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-create-trust-user-assigned-managed-identity), [managed identity cost](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview).
+
+## Verified automatic release
+
+[Successful Actions run](https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/runs/40758348528), commit `fb13708f15b44e5e51eb5e2d8a263607aa49e402`, attempt 1. Nine packaged runtime cases check all 97 saved predictions; nine HTTPS checks verify the actual release and model. Durable records: `github_actions_run.json`, `remote_verification.json` and `bundle_manifest.json`.

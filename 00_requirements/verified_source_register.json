@@ -137,5 +137,32 @@
     "status": 200,
     "bytes": 119129,
     "checked_local_date": "2026-10-28"
+  },
+  {
+    "title": "GitHub Actions for Azure App Service",
+    "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-github-actions",
+    "role": "OIDC recommendation, short-lived tokens, automated releases",
+    "checked_local_date": "2026-10-29",
+    "status": 200,
+    "content_type": "text/html",
+    "bytes": 106829
+  },
+  {
+    "title": "Azure login action",
+    "url": "https://github.com/Azure/login",
+    "role": "Official action setup, current release and OIDC",
+    "checked_local_date": "2026-10-29",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 520665
+  },
+  {
+    "title": "Managed identity cost and purpose",
+    "url": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview",
+    "role": "No extra cost for managed identities",
+    "checked_local_date": "2026-10-29",
+    "status": 200,
+    "content_type": "text/html",
+    "bytes": 56938
   }
 ]

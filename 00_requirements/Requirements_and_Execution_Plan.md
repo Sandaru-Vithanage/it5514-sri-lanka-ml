@@ -29,7 +29,7 @@ The student confirms that no additional lecturer/Moodle rules on AI, length, cit
 | R4b | What learned; influential features; domain consistency | included | Examine calendar, recent demand and weekly history; explain correlation and extrapolation limits | Interpretation | Global/local explanation figures; demo |
 | R5 | Model/data limitations, bias, impact, ethics | 10 | Missing dates, supply constraints vs latent demand, temporal shift, national aggregation and uncertainty calibration | Critical discussion | Error and sensitivity analysis |
 | R6 | Report quality and technical clarity | 10 | Coherent original prose, verified sources, explicit assumptions, consistent units and traceable numbers | Entire report | PDF and editable source |
-| R7 | Front-end inputs, predictions and explanations | 10 bonus | Local interactive app using the trained model; input validation; show uncertainty and explanation | Prototype section | App source and launch instructions |
+| R7 | Front-end inputs, predictions and explanations | 10 bonus | Azure-hosted interactive app using the trained model; input validation; show uncertainty and explanation | Prototype section | App source and launch instructions |
 | S1 | Written report PDF | required | Render and inspect every report page | Complete report | 269182L_IT5514_Report.pdf |
 | S2 | Source ZIP or GitHub link | required | Reproduction entry point, exact dependencies, code, notebook and evidence | Reproducibility appendix | 269182L_IT5514_Source_Code.zip |
 | S3 | Shareable dataset or acquisition description | required | Package permitted local subset and download instructions | Data section | CSVs; provenance and attribution |
@@ -42,8 +42,8 @@ The guide lists 90 core marks and 10 bonus marks. It does not explain whether th
 
 - No report template, word/page limit, required font/margins, citation style or filename convention is supplied. Use a readable A4 report, numbered references in IEEE style and index-prefixed filenames. These are project choices, not invented rules.
 - No dataset has been supplied. Locate and retrieve a versioned, documented Sri Lankan dataset. Secondary compilation is permitted by the brief's wording; credit the original producers and compilers accurately.
-- No need for additional datasets unless the primary data fail suitability checks; avoid changing datasets after inspecting holdout results.
-- Azure is not required by the brief. Use local CPU compute and a local demo. Cloud cost budget: zero; no provisioning.
+- The initial plan used one dataset. The later user-requested extension preserves the original experiment, labels added electricity comparisons post-hoc, and adds a separately fitted rainfall task. Its publication-timing correction is explicitly retrospective.
+- Azure is optional for the brief. Training remains on the local CPU; the student authorized a US$10 maximum for the bonus deployment. The current hosted app uses Free F1 with OIDC automation; no paid resources were created.
 - Algorithm novelty is assessed against supplied lecture material, not claimed for all teaching ever delivered. Flag this practical limit to the student.
 
 ## Practical execution plan
@@ -67,4 +67,9 @@ The student requested broader algorithms/datasets, a private GitHub review repos
 
 The primary GPR study remains frozen. Extra electricity algorithms (NGBoost, KNN, gradient boosting) are supplementary post-hoc comparisons. A separate Colombo rainfall task reuses all seven learned algorithms and two seasonal baselines. Timing review corrected a preliminary unavailable-training-label issue by a six-dekad training embargo, in addition to delayed features. Version 1.1 and the invalid preliminary archive preserve that history; final corrected rainfall evaluation is retrospective, not claimed as untouched. Report Sections 13–17 and both notebooks cover the extension. All initial dataset and teaching originals are preserved.
 
-The broader experiment is intended to test robustness and limits, not to accumulate datasets or guarantee marks. The report retains negative findings, separate target units, uncertainty limitations and a complete AI-assistance disclosure. Private repository access and Moodle upload remain student actions; no public repository or invitations are authorized.
+The broader experiment is intended to test robustness and limits, not to accumulate datasets or guarantee marks. The report retains negative findings, separate target units, uncertainty limitations and a complete AI-assistance disclosure. The initial private-review instruction was superseded on 29 October 2026 by the student’s request for a public repository and automatic deployment. Moodle upload remains a student action; no collaborator invitations were sent.
+
+
+## Public release and automatic deployment, 29 October 2026
+
+The user explicitly requested public GitHub source and automated deployment. The repository is now public. Runtime/model changes on main validate the 15-file bundle and all 97 saved predictions, then deploy that tested artifact and verify the live commit, model fingerprint and predictions. Pull requests validate without cloud access. GitHub OIDC uses an exact main-branch subject and an app-scoped role; the free plan has a Reader-only role. Hosting stays Free F1; a user-assigned managed identity has no extra charge. No training or scientific selection is automated. Durable run, release manifest and HTTPS evidence are recorded in `10_deployment/`.

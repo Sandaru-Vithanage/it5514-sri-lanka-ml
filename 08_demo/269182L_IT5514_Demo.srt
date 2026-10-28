@@ -127,53 +127,61 @@ The seasonal median wins with mean absolute error forty one point three nine mil
 and GPR. Novelty does not guarantee better accuracy.
 
 33
-00:03:05,875 --> 00:03:11,291
-The deployment panel shows the actual Azure HTTPS address, private GitHub repository, application source
+00:03:05,875 --> 00:03:11,680
+The deployment panel shows the actual Azure address, public GitHub repository, source commit and model
 
 34
-00:03:11,291 --> 00:03:16,707
-commit and model fingerprint. Azure App Service uses Linux, Python three point thirteen and the free F
+00:03:11,680 --> 00:03:17,485
+fingerprint. Anyone can inspect the code. Azure App Service uses Python three point thirteen and the free
 
 35
-00:03:16,707 --> 00:03:22,123
-one plan. Hosted historical and edited predictions match local inference within one millionth of a
+00:03:17,485 --> 00:03:23,290
+F one plan. Predictions match local inference within one millionth of a megawatt hour. The approved ten
 
 36
-00:03:22,123 --> 00:03:27,540
-megawatt hour. The repository remains private as requested; assessors need access or the complete source
+00:03:23,290 --> 00:03:29,095
+dollar credit cap is a maximum. Free tier quotas and cold starts limit availability.
 
 37
-00:03:27,540 --> 00:03:32,956
-ZIP. The approved ten dollar credit cap is a maximum, not a spending target. Free tier quotas and cold
+00:03:30,625 --> 00:03:36,064
+This successful GitHub Actions run validates the saved model before deployment. App or model changes
 
 38
-00:03:32,956 --> 00:03:38,372
-starts limit availability.
+00:03:36,064 --> 00:03:41,503
+pushed to main rebuild the explicit bundle, check all ninety seven saved predictions, deploy to Azure,
 
 39
-00:03:39,875 --> 00:03:45,297
-Four February, Independence Day, is a large failure: the model forecasts about forty four point three
+00:03:41,503 --> 00:03:46,942
+and verify nine HTTPS checks. Pull requests validate only. Short lived federated credentials access this
 
 40
-00:03:45,297 --> 00:03:50,719
-seven gigawatt hours against recorded energy thirty three point seven three. Holiday indicators were
+00:03:46,942 --> 00:03:52,380
+app. Deployment does not retrain the model.
 
 41
-00:03:50,719 --> 00:03:56,141
-omitted from the frozen predictors; future redesign needs fresh evaluation. Dispatch coverage and
+00:03:54,000 --> 00:03:59,422
+Four February, Independence Day, is a large failure: the model forecasts about forty four point three
 
 42
-00:03:56,141 --> 00:04:01,563
-publication timing also constrain interpretation. The package includes reproducible code, pinned data,
+00:03:59,422 --> 00:04:04,844
+seven gigawatt hours against recorded energy thirty three point seven three. Holiday indicators were
 
 43
-00:04:01,563 --> 00:04:06,985
-both notebooks, experiments, report and deployment evidence. This walkthrough uses genuine hosted
+00:04:04,844 --> 00:04:10,266
+omitted from the frozen predictors; future redesign needs fresh evaluation. Dispatch coverage and
 
 44
-00:04:06,985 --> 00:04:12,407
-interface captures, edited panning and synthesized narration. Student review and accurate assistance
+00:04:10,266 --> 00:04:15,688
+publication timing also constrain interpretation. The package includes reproducible code, pinned data,
 
 45
-00:04:12,407 --> 00:04:17,829
+00:04:15,688 --> 00:04:21,110
+both notebooks, experiments, report and deployment evidence. This walkthrough uses genuine hosted
+
+46
+00:04:21,110 --> 00:04:26,532
+interface captures, edited panning and synthesized narration. Student review and accurate assistance
+
+47
+00:04:26,532 --> 00:04:31,954
 disclosure remain essential.

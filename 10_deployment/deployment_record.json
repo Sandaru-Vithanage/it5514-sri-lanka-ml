@@ -1,9 +1,9 @@
 {
-  "verified_UTC": "2026-10-27T21:34:28.470549+00:00",
+  "verified_UTC": "2026-10-28T19:56:04Z",
   "live_url": "https://lanka-dispatch-it5514-sv.azurewebsites.net",
   "repository_url": "https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml",
-  "repository_visibility": "private",
-  "application_source_commit": "79d46d9f2c74eb3194a4325242e46b048dae43e6",
+  "repository_visibility": "public",
+  "application_source_commit": "fb13708f15b44e5e51eb5e2d8a263607aa49e402",
   "model_sha256": "d71d458270e348197a6ca32627ca642bdaba3d203ae6010e16a39211114e865e",
   "region": "East Asia",
   "service": "Azure App Service Linux",
@@ -16,20 +16,41 @@
   "https_only": true,
   "min_tls": "1.2",
   "ftp": "disabled",
-  "inference_checks_passed": 11,
+  "inference_checks_passed": 9,
   "browser_verified": true,
   "browser_checks": [
-    "hosted historical replay",
-    "edited input produces 44.22 GWh and unchanged actual",
-    "invalid input gives last-valid-estimate label",
-    "original evaluation tab",
-    "corrected 9-model task tables",
-    "actual HTTPS origin, private repository URL, commit and model fingerprint displayed",
-    "Independence Day large miss"
+    "public repository accessible without signing in",
+    "successful validation and HTTPS deployment jobs visible publicly",
+    "public source link, release commit and model fingerprint displayed",
+    "original historical/edited/failure interactions previously verified; inference regression checked by CI"
   ],
   "bundle_manifest": "bundle_manifest.json",
   "no_live_grid_feed": true,
   "deployment_does_not_retrain_model": true,
   "cleanup_instructions": "README.md",
-  "availability_limit": "Free shared CPU quota and cold starts; keep source ZIP and demo as durable assessment evidence."
+  "availability_limit": "Free shared CPU quota and cold starts; keep source ZIP and demo as durable assessment evidence.",
+  "deployment_method": "GitHub Actions validates, uploads and verifies the same inference ZIP",
+  "workflow_url": "https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/runs/40758348528",
+  "workflow_run_attempt": 1,
+  "oidc_configuration": "oidc_configuration.json",
+  "resource_inventory": [
+    {
+      "name": "plan-it5514-free",
+      "type": "Microsoft.Web/serverFarms",
+      "sku": "F1"
+    },
+    {
+      "name": "lanka-dispatch-it5514-sv",
+      "type": "Microsoft.Web/sites"
+    },
+    {
+      "name": "id-it5514-github",
+      "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
+      "additional_cost": "No extra charge for managed identity"
+    }
+  ],
+  "historical_records": [
+    "manual_deployment_2026-10-28.json",
+    "manual_verification_2026-10-28.json"
+  ]
 }

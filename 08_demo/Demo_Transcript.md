@@ -28,8 +28,12 @@ The extension adds NGBoost, K nearest neighbours and gradient boosting, giving s
 
 ## 7. Inspect deployment and source
 
-The deployment panel shows the actual Azure HTTPS address, private GitHub repository, application source commit and model fingerprint. Azure App Service uses Linux, Python three point thirteen and the free F one plan. Hosted historical and edited predictions match local inference within one millionth of a megawatt hour. The repository remains private as requested; assessors need access or the complete source ZIP. The approved ten dollar credit cap is a maximum, not a spending target. Free tier quotas and cold starts limit availability.
+The deployment panel shows the actual Azure address, public GitHub repository, source commit and model fingerprint. Anyone can inspect the code. Azure App Service uses Python three point thirteen and the free F one plan. Predictions match local inference within one millionth of a megawatt hour. The approved ten dollar credit cap is a maximum. Free tier quotas and cold starts limit availability.
 
-## 8. Keep failure and limitations visible
+## 8. Deploy automatically after validation
+
+This successful GitHub Actions run validates the saved model before deployment. App or model changes pushed to main rebuild the explicit bundle, check all ninety seven saved predictions, deploy to Azure, and verify nine HTTPS checks. Pull requests validate only. Short lived federated credentials access this app. Deployment does not retrain the model.
+
+## 9. Keep failure and limitations visible
 
 Four February, Independence Day, is a large failure: the model forecasts about forty four point three seven gigawatt hours against recorded energy thirty three point seven three. Holiday indicators were omitted from the frozen predictors; future redesign needs fresh evaluation. Dispatch coverage and publication timing also constrain interpretation. The package includes reproducible code, pinned data, both notebooks, experiments, report and deployment evidence. This walkthrough uses genuine hosted interface captures, edited panning and synthesized narration. Student review and accurate assistance disclosure remain essential.
