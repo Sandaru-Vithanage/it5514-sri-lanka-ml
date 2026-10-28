@@ -1,0 +1,34 @@
+{
+  "checked_UTC": "2026-10-28T20:43:08.218022+00:00",
+  "passed": true,
+  "selected_displayed_option": 1,
+  "source": "reference-option-1.png",
+  "desktop_viewport": [
+    1440,
+    1024
+  ],
+  "phone_viewports": [
+    [
+      390,
+      844
+    ],
+    [
+      320,
+      740
+    ]
+  ],
+  "horizontal_overflow_on_final_all_320px_views": false,
+  "original_model_and_numerical_results_unchanged": true,
+  "historical_mean_GWh_display": "42.33",
+  "edited_mean_GWh_display": "44.22",
+  "historical_actual_unchanged_GWh_display": "42.07",
+  "invalid_input_keeps_labelled_last_valid_estimate": true,
+  "dirty_input_immediately_labels_last_estimate": true,
+  "keyboard_tabs_passed": true,
+  "extension_table_rows_each": 9,
+  "actual_chart_marker_order": "actual < forecast < weekly naive",
+  "browser_warnings_or_errors": [],
+  "npm_audit_reported_vulnerabilities": 0,
+  "QA_report": "../design-qa.md",
+  "scope": "Local browser verification before deploying the UI revision; remote release evidence is recorded separately."
+}

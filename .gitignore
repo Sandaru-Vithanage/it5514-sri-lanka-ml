@@ -26,3 +26,6 @@ __pycache__/
 /release/
 10_deployment/smoke_expected.json
 /release_verification.json
+
+03_code/frontend/node_modules/
+03_code/frontend/.build/

@@ -47,6 +47,7 @@ The original electricity experiment is frozen. Added electricity comparisons are
 | `08_demo/` | Actual interface captures, video, transcript and captions |
 | `09_submission/` | Report, source ZIP, demo and upload checklist |
 | `10_deployment/` | Minimal inference wrapper, bundle hashes, Azure evidence and deployment/cleanup instructions |
+| `11_design/` | Selected UI reference, real browser captures and design QA evidence |
 | `work/`, `.venv/` | Local intermediates and environment, excluded from submission |
 
 ## Environment
@@ -134,3 +135,10 @@ Authentication uses GitHub OIDC and `id-it5514-github`, a user-assigned managed 
 Azure loads the release commit from `release.json` inside the uploaded ZIP. The workflow waits for that commit and the correct model fingerprint, then checks actual historical/edited predictions and invalid-input behaviour over HTTPS. This prevents a successful response from an older release being mistaken for a successful rollout. Logs and downloadable release/verification artifacts are available under **Actions** (7-day artifact retention). The app's **Extended study & deployment** tab and `/api/health` expose the active commit and model fingerprint.
 
 Hosting stays on Free F1. The additional managed identity has no extra Azure charge. No paid hosting tier, registry or ML endpoint is introduced. The original private/manual deployment is preserved as historical evidence; this section and `10_deployment/README.md` describe the current public, automated setup.
+
+
+## Ocean Observatory interface revision
+
+The selected Option 1 design is implemented with compiled Tailwind CSS/daisyUI, ECharts, Motion, Inter and Phosphor icons. Editable sources, exact npm lockfile, licences and build instructions are in `03_code/frontend/`. The generated `03_code/app.html` bundles browser assets and requires no runtime CDN access. The real Python GPR/API remains unchanged; chart positions use actual returned GWh values. Historical, hypothetical, stale and error states remain explicit.
+
+CI uses Node 24 to rebuild and check the frontend, verifies that committed HTML matches that build, then runs the existing saved-model validation and Azure deployment. Azure still runs Python/Gunicorn on Free F1; no Node server or paid service is added. `design-qa.md` and `11_design/` record the visual/interaction checks. UI concept imagery is not experimental evidence.
