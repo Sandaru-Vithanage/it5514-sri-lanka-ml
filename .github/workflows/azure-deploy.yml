@@ -105,6 +105,9 @@ jobs:
           path: release
       - name: Authenticate using the main-branch federated identity
         uses: Azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3.1.0
+        env:
+          # Azure/login parses `az version`; keep JSON enabled for this step.
+          AZURE_CORE_OUTPUT: json
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}

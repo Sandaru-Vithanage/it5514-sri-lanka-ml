@@ -26,7 +26,7 @@ The Actions run stores `validated-inference-release` and `azure-deployment-evide
 
 ## Scoped authentication
 
-Authentication uses **GitHub OIDC** with the user-assigned managed identity `id-it5514-github`. Its federated subject is exactly `repo:Sandaru-Vithanage/it5514-sri-lanka-ml:ref:refs/heads/main`, issuer `https://token.actions.githubusercontent.com`, audience `api://AzureADTokenExchange`.
+Authentication uses **GitHub OIDC** with the user-assigned managed identity `id-it5514-github`. GitHub includes immutable owner/repository IDs in the observed token. Its federated subject is exactly `repo:Sandaru-Vithanage@92751836/it5514-sri-lanka-ml@1436283939:ref:refs/heads/main`, issuer `https://token.actions.githubusercontent.com`, audience `api://AzureADTokenExchange`.
 
 Azure roles are **Website Contributor at this app only** and **Reader at this F1 plan only**. The workflow verifies F1 before uploading; it cannot provision or scale the plan with those roles. Azure credentials are granted only to the deploy job, which is excluded from pull-request runs. The validation job has repository read permission. Checkout does not persist credentials. Public PRs use hosted runners, not the student's laptop.
 

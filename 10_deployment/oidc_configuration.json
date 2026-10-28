@@ -1,7 +1,7 @@
 {
   "identity_name": "id-it5514-github",
   "issuer": "https://token.actions.githubusercontent.com",
-  "subject": "repo:Sandaru-Vithanage/it5514-sri-lanka-ml:ref:refs/heads/main",
+  "subject": "repo:Sandaru-Vithanage@92751836/it5514-sri-lanka-ml@1436283939:ref:refs/heads/main",
   "audience": "api://AzureADTokenExchange",
   "authentication": "OIDC short-lived tokens; no client secret or publish-profile password",
   "authorization": [
@@ -20,5 +20,6 @@
     "AZURE_SUBSCRIPTION_ID"
   ],
   "plan": "Existing F1 unchanged",
-  "user_authorization": "Public repository and automated deployment requested 29 October 2026"
+  "user_authorization": "Public repository and automated deployment requested 29 October 2026",
+  "subject_verification": "Matched to actual GitHub-issued subject and verified owner/repository IDs; immutable IDs prevent name-reuse ambiguity."
 }
