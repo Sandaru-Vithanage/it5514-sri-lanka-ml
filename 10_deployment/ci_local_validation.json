@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "runtime_tests": 9,
+  "recorded_predictions_checked": 97,
+  "bundle_files": 15,
+  "context": "Local preflight before first public GitHub Actions deployment; no claim of a completed remote workflow in this record.",
+  "workflow_YAML_and_gate_checks_passed": true
+}

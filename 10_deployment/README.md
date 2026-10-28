@@ -1,36 +1,60 @@
-# Azure review deployment
+# Public source and automated Azure deployment
 
-The user approved a private GitHub repository and a maximum US$10 of Azure for Students credit on 28 October 2026. The service uses **Azure App Service Linux Free F1**, one Python 3.13 application, one Gunicorn worker/two threads, default HTTPS hostname. No paid Azure ML endpoint, VM, database, registry, custom domain or paid monitoring was created. Free shared compute has quotas and cold starts; availability is not guaranteed. This is an academic historical demonstration, not a production grid service.
+Current setup, 29 October 2026: the student explicitly requested a public repository and automatic deployment. The original 28 October private/manual deployment is preserved as historical evidence. The existing Azure for Students spending cap remains US$10; hosting stays on **Azure App Service Linux Free F1**, East Asia, Python 3.13, one Gunicorn worker/two threads.
 
-- Review app: https://lanka-dispatch-it5514-sv.azurewebsites.net
-- Private source: https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml
-- Region: East Asia. The subscription policy rejected Southeast Asia; the allowed-region policy was read before selecting East Asia.
-- Resource group: `rg-it5514-lanka-review`
-- Plan: `plan-it5514-free`, SKU F1 / Free (verified with plan-show).
-- App: `lanka-dispatch-it5514-sv`
+- Public source: https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml
+- Workflow and runs: https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/workflows/azure-deploy.yml
+- Live model: https://lanka-dispatch-it5514-sv.azurewebsites.net
+- Live release identity: https://lanka-dispatch-it5514-sv.azurewebsites.net/api/health
+- Resource group: `rg-it5514-lanka-review`; app: `lanka-dispatch-it5514-sv`; plan: `plan-it5514-free`.
 
-## Build and deploy
+## What triggers deployment
 
-Install Azure CLI from Microsoft's official instructions and authenticate interactively (`az login`). Keep all tokens and account state outside the repository. The current local session uses a task-local credential directory in the excluded `work/azure_state`; it is not distributed. These commands assume your own selected subscription and reuse the named resources.
+Push reviewed application, model or inference-evidence changes to `main`. The workflow first builds and tests, then uploads the validated ZIP and verifies the active HTTPS release. A pull request runs validation only. Documentation-only changes do not deploy. To redeploy deliberately, open Actions, select **Validate and deploy Azure model**, choose **Run workflow**, and select `main`.
+
+This automates deployment of a saved model. It does not retrain models, choose new hyperparameters, add test-driven features or alter the frozen research protocol. A changed model must be accompanied by appropriate reviewed experimental evidence and compatible dependencies.
+
+## Build, tests and provenance
+
+`03_code/build_deployment.py` uses an explicit allowlist. The 15-file ZIP includes runtime source, pinned inference requirements, the GPR pipeline, historical feature/reference data, saved evidence and generated `release.json`. Raw data archives, lecture material, notebooks, other model pickles and all account state are excluded. ZIP entry timestamps are fixed so identical inputs and commit yield identical archives.
+
+The build job installs `10_deployment/requirements.txt`, validates the packaged app, compares all 97 saved GPR predictions/std deviations, and checks nine runtime cases including changed inputs, preserved actuals, invalid/nonfinite/oversized requests, public source metadata and experiment tables. Only the validated artifact reaches deployment.
+
+`release.json` embeds the actual GitHub source SHA and model SHA-256. The app reads it from the deployed package at startup. The smoke verifier waits for that exact SHA and model hash, then compares real HTTPS predictions/evidence with the offline tested bundle. It does not trust an environment variable changed before the new code is uploaded. A failed build or live verification fails the run; no automatic rollback is claimed. Revert the problematic main-branch commit and push to restore a reviewed earlier implementation.
+
+The Actions run stores `validated-inference-release` and `azure-deployment-evidence` for seven days. The latter includes manifest and live verification JSON. Durable verification for the first successful automated rollout is recorded in this folder after the run completes.
+
+## Scoped authentication
+
+Authentication uses **GitHub OIDC** with the user-assigned managed identity `id-it5514-github`. Its federated subject is exactly `repo:Sandaru-Vithanage/it5514-sri-lanka-ml:ref:refs/heads/main`, issuer `https://token.actions.githubusercontent.com`, audience `api://AzureADTokenExchange`.
+
+Azure roles are **Website Contributor at this app only** and **Reader at this F1 plan only**. The workflow verifies F1 before uploading; it cannot provision or scale the plan with those roles. Azure credentials are granted only to the deploy job, which is excluded from pull-request runs. The validation job has repository read permission. Checkout does not persist credentials. Public PRs use hosted runners, not the student's laptop.
+
+GitHub Actions secrets hold the three identity identifiers `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`. They are identifiers used with federation, not password credentials. No client secret or publish-profile password was created. Local Azure CLI/MSAL state remains in excluded `work/azure_state` and is never uploaded. Actions are pinned to verified release SHAs; review newer patched release SHAs when maintaining the workflow.
+
+For a fresh installation, create a user-assigned managed identity, add the exact federated subject above, grant the two scoped roles, and configure those three GitHub Actions secrets. The non-secret trust/role design is recorded in `oidc_configuration.json`. Do not grant subscription-wide Contributor to solve an app deployment error.
+
+## Local reproduction and deliberate manual deployment
 
 ```bash
-python 03_code/build_deployment.py
-az appservice plan show -g rg-it5514-lanka-review -n plan-it5514-free --query sku
-# Verify F1 / Free before continuing. Do not silently upgrade to a paid tier.
-az webapp config appsettings set -g rg-it5514-lanka-review -n lanka-dispatch-it5514-sv --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true STUDY_COMMIT=YOUR_VERIFIED_SOURCE_COMMIT
-az webapp config set -g rg-it5514-lanka-review -n lanka-dispatch-it5514-sv --startup-file 'sh startup.sh' --min-tls-version 1.2 --ftps-state Disabled
-az webapp deploy -g rg-it5514-lanka-review -n lanka-dispatch-it5514-sv --src-path 10_deployment/deployment.zip --type zip
-python 03_code/verify_production.py https://lanka-dispatch-it5514-sv.azurewebsites.net
+python -m pip install -r 10_deployment/requirements.txt
+python 03_code/build_deployment.py --commit YOUR_FULL_40_CHARACTER_REVIEWED_GIT_SHA
+python 03_code/ci_validate.py
 ```
 
-`build_deployment.py` writes a 14-file inference bundle from an explicit allowlist; it records hashes in `bundle_manifest.json`. It includes the original GPR pipeline, feature table needed for historical replay/reference ranges, explanations and recorded scores. It excludes raw datasets, lecture files, other model pickles, notebooks and credentials. The Flask/Gunicorn runtime pins only inference dependencies. The health endpoint exposes a non-secret model fingerprint and source commit to connect the deployed application with its provenance. Root HTML omits the student's full name/index; the private academic report retains them.
+Use the automatic workflow for the production app. A manual deployment remains possible for recovery after interactive `az login`, verification that `plan-it5514-free` is still F1, and review of the bundle:
 
-See `remote_verification.json` and `deployment_record.json` for actual completed verification. Creation is not considered successful inference until those checks pass. The report and video refer to that evidence.
+```bash
+az webapp deploy -g rg-it5514-lanka-review -n lanka-dispatch-it5514-sv --src-path 10_deployment/deployment.zip --type zip
+python 03_code/ci_verify_deployment.py --expected 10_deployment/smoke_expected.json --output work/manual_release_verification.json
+```
 
-## Review access, cost and cleanup
+A public repository does not require a local model registry or Azure ML workspace. The fitted scaler and GPR object are inside `05_experiments/models/GPR.joblib`; Python loads that file with `joblib.load`. GitHub stores the source/model, and Actions builds/uploads a copy to Azure. The laptop can be offline during automated deployments.
 
-The repository is private by instruction. A marker needs collaborator access or the standalone source ZIP. No invitations or public-visibility change have been performed. The source ZIP includes both pinned datasets; Git excludes the 94 MB energy CSV and provides the immutable Zenodo acquisition method instead.
+## Cost, availability and cleanup
 
-The selected F1 plan is the free tier, rather than a spend target of US$10. A paid-resource budget is not a hard Azure spending stop. Do not add a paid service or change SKU without reviewing the resulting cost. Cost reporting can lag: configured free resources are evidence of configuration, not a fabricated invoice total. No future monitoring job is implied.
+The plan remains F1 / Free. Managed identities have no extra charge; no paid plan, GPU, Azure ML endpoint, database, registry, custom domain or paid monitoring was created. Free shared compute has quotas and cold starts, so uptime is not guaranteed. The US$10 credit cap is a maximum, not a spending target or an enforceable Azure hard stop. Posted billing may lag; no invoice balance is invented.
 
-After assessment, remove the dedicated resource group in the Azure portal, or consciously run `az group delete --name rg-it5514-lanka-review` after checking that it contains only this assignment's resources. Deletion is not run by this package. Stopping an application is not a universal way to remove charges if someone later changes to a paid plan. Keep the source ZIP and demo as durable assessment evidence even if cloud availability ends.
+After assessment, inspect and remove the dedicated resource group if no longer needed. This also removes its managed identity and federated credential; disable the workflow or remove its trust to stop future deployments. No deletion has been performed. Keep the source ZIP and demo as durable assessment evidence. Dataset licences and attribution remain applicable to public copies. The repository includes the student's assignment name/index and disclosed AI assistance; copied lecture files and account state are excluded.
+
+Primary references: [Microsoft App Service GitHub deployment](https://learn.microsoft.com/en-us/azure/app-service/deploy-github-actions), [managed identity federation](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-create-trust-user-assigned-managed-identity), [managed identity cost](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview).

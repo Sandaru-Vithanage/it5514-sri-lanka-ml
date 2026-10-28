@@ -1,5 +1,7 @@
 # IT5514 Applied Machine Learning: Sri Lankan dispatch forecasting
 
+[![Validate and deploy Azure model](https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/workflows/azure-deploy.yml/badge.svg)](https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/workflows/azure-deploy.yml)
+
 D.V.S Sandaru Rashmika — 269182L  
 MSc in Artificial Intelligence, University of Moratuwa, Sri Lanka  
 Prepared 28 October 2026. Student-supplied deadline: 1 November 2026; verify the exact Moodle cutoff.
@@ -8,7 +10,7 @@ Prepared 28 October 2026. Student-supplied deadline: 1 November 2026; verify the
 
 Read `07_report/269182L_IT5514_Report.pdf`, `00_requirements/Requirements_and_Execution_Plan.md`, and `00_requirements/Final_Verification_and_Submission_Checklist.md`. This is an AI-assisted research package for student review and defence. The assistance disclosure is part of the report and must not be replaced by a false unaided-authorship declaration.
 
-The task forecasts next-local-day **recorded dispatch energy**, using Gaussian Process Regression (GPR). No GPR coverage was found in the supplied lecture corpus; final eligibility against unsupplied teaching is a student/lecturer check. This is a non-deep-learning tabular/time-series study. The requested bonus review version is hosted on Azure App Service Linux Free F1, with a private GitHub repository. No paid tier, Azure ML endpoint or live grid feed is used. See `10_deployment/README.md` for deployment, cost boundaries and cleanup.
+The task forecasts next-local-day **recorded dispatch energy**, using Gaussian Process Regression (GPR). No GPR coverage was found in the supplied lecture corpus; final eligibility against unsupplied teaching is a student/lecturer check. This is a non-deep-learning tabular/time-series study. The requested bonus review version is hosted on Azure App Service Linux Free F1, with a public GitHub repository. No paid tier, Azure ML endpoint or live grid feed is used. See `10_deployment/README.md` for deployment, cost boundaries and cleanup.
 
 ## Main findings
 
@@ -25,9 +27,9 @@ Seven learned algorithms are compared: linear regression, random forest, SVR, GP
 The original electricity experiment is frozen. Added electricity comparisons are explicitly supplementary and post-hoc because that holdout was already examined. A separate Colombo CHIRPS-v2 rainfall task uses delayed rainfall features and a training-target embargo before each January evaluation origin. An invalid preliminary rainfall run was preserved after review caught a final-publication timing issue; corrected results are transparently retrospective reanalysis, not newly untouched validation. This correction follows source-availability evidence, not score optimization. No post-test hyperparameter chasing is performed. Full results include failures and seasonal baselines.
 
 - Live historical research demo: https://lanka-dispatch-it5514-sv.azurewebsites.net
-- Private review repository: https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml
+- Public source repository: https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml
 - Deployment source commit and actual model hash: `10_deployment/deployment_record.json` and `/api/health`.
-- The repository requires reviewer permission. The standalone source ZIP avoids access dependence; it also includes the 94 MB raw energy CSV, which Git acquires from the immutable Zenodo release instead.
+- The repository is public and assessors can browse the source without collaborator access. The standalone source ZIP avoids access dependence; it also includes the 94 MB raw energy CSV, which Git acquires from the immutable Zenodo release instead.
 
 ## Project layout
 
@@ -118,4 +120,17 @@ Original producer: Public Utilities Commission of Sri Lanka. Public compilation:
 
 ## Submission boundary
 
-The private GitHub repository is supplied in addition to the complete code ZIP, and the video covers the hosted interface and repository provenance. Use the three required submission files in `09_submission/`: report PDF, source ZIP and 3–5 minute MP4. The written brief explicitly permits a source ZIP or GitHub link, so a source ZIP is prepared; no additional all-in-one submission ZIP is necessary. Dataset and instructions are inside the source package. Confirm Moodle size limits, exact cutoff, method eligibility and academic-integrity declarations before upload. The package has not been uploaded to Moodle.
+The public GitHub repository is supplied in addition to the complete code ZIP, and the video covers the hosted interface and repository provenance. Use the three required submission files in `09_submission/`: report PDF, source ZIP and 3–5 minute MP4. The written brief explicitly permits a source ZIP or GitHub link, so a source ZIP is prepared; no additional all-in-one submission ZIP is necessary. Dataset and instructions are inside the source package. Confirm Moodle size limits, exact cutoff, method eligibility and academic-integrity declarations before upload. The package has not been uploaded to Moodle.
+
+
+## Automatic deployment (added 29 October 2026)
+
+The repository is public by the student's explicit request. `.github/workflows/azure-deploy.yml` validates app/model changes on pull requests and main-branch pushes. A successful main-branch validation builds one explicit 15-file inference ZIP, then deploys that same artifact to the existing Azure app. Documentation-only changes do not redeploy; **Actions → Validate and deploy Azure model → Run workflow → main** supports a manual rerun.
+
+The build checks all 97 recorded GPR holdout predictions, nine runtime test cases, model/manifest hashes, edited-input behaviour, invalid input rejection and recorded evidence. This is continuous deployment of the frozen model, not automatic retraining or test-driven model selection. A changed model requires matching reviewed experiment artefacts.
+
+Authentication uses GitHub OIDC and `id-it5514-github`, a user-assigned managed identity. The exact `main` branch can obtain short-lived tokens. Its write role is **Website Contributor on this one web app**; it has **Reader on the existing F1 plan** to enforce a tier check. Pull requests never enter the Azure deployment job. No publish-profile password or client-secret credential is stored. Third-party actions are pinned to verified release commit SHAs and need deliberate updates when patched releases appear.
+
+Azure loads the release commit from `release.json` inside the uploaded ZIP. The workflow waits for that commit and the correct model fingerprint, then checks actual historical/edited predictions and invalid-input behaviour over HTTPS. This prevents a successful response from an older release being mistaken for a successful rollout. Logs and downloadable release/verification artifacts are available under **Actions** (7-day artifact retention). The app's **Extended study & deployment** tab and `/api/health` expose the active commit and model fingerprint.
+
+Hosting stays on Free F1. The additional managed identity has no extra Azure charge. No paid hosting tier, registry or ML endpoint is introduced. The original private/manual deployment is preserved as historical evidence; this section and `10_deployment/README.md` describe the current public, automated setup.

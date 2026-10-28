@@ -1,0 +1,140 @@
+name: Validate and deploy Azure model
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/azure-deploy.yml"
+      - "03_code/app.py"
+      - "03_code/app.html"
+      - "03_code/models.py"
+      - "03_code/prepare_data.py"
+      - "03_code/build_deployment.py"
+      - "03_code/ci_*.py"
+      - "10_deployment/wsgi.py"
+      - "10_deployment/startup.sh"
+      - "10_deployment/requirements.txt"
+      - "05_experiments/models/GPR.joblib"
+      - "05_experiments/explanation_reference.json"
+      - "05_experiments/test_metrics.csv"
+      - "05_experiments/uncertainty.json"
+      - "05_experiments/grouped_permutation_summary.csv"
+      - "05_experiments/extension/summary.json"
+      - "02_data/processed/modelling_table.csv"
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/azure-deploy.yml"
+      - "03_code/app.py"
+      - "03_code/app.html"
+      - "03_code/models.py"
+      - "03_code/prepare_data.py"
+      - "03_code/build_deployment.py"
+      - "03_code/ci_*.py"
+      - "10_deployment/wsgi.py"
+      - "10_deployment/startup.sh"
+      - "10_deployment/requirements.txt"
+      - "05_experiments/models/GPR.joblib"
+      - "05_experiments/explanation_reference.json"
+      - "05_experiments/test_metrics.csv"
+      - "05_experiments/uncertainty.json"
+      - "05_experiments/grouped_permutation_summary.csv"
+      - "05_experiments/extension/summary.json"
+      - "02_data/processed/modelling_table.csv"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: azure-lanka-dispatch-${{ github.event.pull_request.number || 'main' }}
+  cancel-in-progress: false
+
+env:
+  AZURE_WEBAPP_NAME: lanka-dispatch-it5514-sv
+  AZURE_RESOURCE_GROUP: rg-it5514-lanka-review
+  AZURE_CORE_OUTPUT: none
+
+jobs:
+  validate:
+    name: Validate frozen model and deployment bundle
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: 10_deployment/requirements.txt
+      - name: Install pinned inference dependencies
+        run: python -m pip install -r 10_deployment/requirements.txt
+      - name: Build versioned inference bundle
+        run: python 03_code/build_deployment.py --commit "$GITHUB_SHA"
+      - name: Validate bundle, saved predictions and input handling
+        run: python 03_code/ci_validate.py
+      - name: Stage release inputs
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        run: |
+          mkdir -p release
+          cp 10_deployment/deployment.zip 10_deployment/bundle_manifest.json 10_deployment/smoke_expected.json 03_code/ci_verify_deployment.py release/
+      - name: Store the validated release
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: validated-inference-release
+          path: release/
+          retention-days: 7
+          if-no-files-found: error
+
+  deploy:
+    name: Deploy and verify HTTPS inference
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: validated-inference-release
+          path: release
+      - name: Authenticate using the main-branch federated identity
+        uses: Azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3.1.0
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Confirm free plan and declared startup configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          plan_sku=$(az appservice plan show -g "$AZURE_RESOURCE_GROUP" -n plan-it5514-free --query sku.name -o tsv)
+          test "$plan_sku" = "F1"
+          az webapp config appsettings set -g "$AZURE_RESOURCE_GROUP" -n "$AZURE_WEBAPP_NAME" --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true --output none
+          az webapp config set -g "$AZURE_RESOURCE_GROUP" -n "$AZURE_WEBAPP_NAME" --startup-file 'sh startup.sh' --min-tls-version 1.2 --ftps-state Disabled --output none
+      - name: Upload the validated ZIP to the existing app
+        run: az webapp deploy -g "$AZURE_RESOURCE_GROUP" -n "$AZURE_WEBAPP_NAME" --src-path release/deployment.zip --type zip --async true --track-status false --output none
+      - name: Wait for this release and verify real model inference
+        run: python3 release/ci_verify_deployment.py --expected release/smoke_expected.json --timeout 600 --output release/verification.json
+      - name: Publish deployment evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: azure-deployment-evidence
+          path: |
+            release/bundle_manifest.json
+            release/verification.json
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Add review links
+        if: success()
+        run: |
+          echo '### Azure deployment verified' >> "$GITHUB_STEP_SUMMARY"
+          echo 'https://lanka-dispatch-it5514-sv.azurewebsites.net' >> "$GITHUB_STEP_SUMMARY"
+          echo "Source commit: $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Saved model fingerprints and historical/edited predictions matched the tested bundle.' >> "$GITHUB_STEP_SUMMARY"

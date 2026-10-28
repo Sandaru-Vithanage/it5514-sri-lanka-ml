@@ -55,7 +55,7 @@ class Handler(BaseHTTPRequestHandler):
             except (KeyError,ValueError,TypeError):self.reply(400,{'error':'No eligible historical record for this date.'})
         elif parsed.path=='/api/health':self.reply(200,{'status':'ok','model':'Gaussian Process Regression','trained_through':'2024-12-31'})
         elif parsed.path=='/api/extension':self.reply(200,json.loads((EXP/'extension/summary.json').read_text()))
-        elif parsed.path=='/api/deployment':self.reply(200,{'repository':'https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml','visibility':'Private review repository','hosting':'Local development server; Azure wrapper available','commit':'local','model_sha256':'See deployment health endpoint'})
+        elif parsed.path=='/api/deployment':self.reply(200,{'repository':'https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml','visibility':'Public repository','hosting':'Local development server; Azure wrapper available','commit':'local','model_sha256':'See deployment health endpoint'})
         else:self.reply(404,{'error':'Not found'})
     def do_POST(self):
         if self.path!='/api/predict':return self.reply(404,{'error':'Not found'})

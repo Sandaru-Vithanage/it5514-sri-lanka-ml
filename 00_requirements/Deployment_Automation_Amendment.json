@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-29",
+  "authorized_change": "Student requested the repository be public and deployment automated.",
+  "repository_visibility": "public",
+  "deployment_trigger": "Validated application/model changes on main or explicit workflow_dispatch on main",
+  "pull_request_policy": "Validation only; no Azure deployment job",
+  "authentication": "GitHub OIDC, exact repository/main subject, user-assigned managed identity",
+  "roles": ["Website Contributor on the existing app", "Reader on the existing F1 plan"],
+  "credit_cap_USD": 10,
+  "paid_hosting_change": false,
+  "research_changes": "None: data, model, experimental protocols, saved scores and scientific conclusions are unchanged. This is an operational amendment to the initial private/manual deployment."
+}

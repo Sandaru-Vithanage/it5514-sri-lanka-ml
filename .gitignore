@@ -22,3 +22,7 @@ __pycache__/
 08_demo/*.mp4
 10_deployment/*.zip
 10_deployment/bundle/
+
+/release/
+10_deployment/smoke_expected.json
+/release_verification.json

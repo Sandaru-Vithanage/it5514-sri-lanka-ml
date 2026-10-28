@@ -10,6 +10,9 @@ sys.path.insert(0,str(ROOT/'03_code'))
 import app as study
 application=Flask(__name__);application.config['MAX_CONTENT_LENGTH']=12000
 MODEL_HASH=hashlib.sha256((ROOT/'05_experiments/models/GPR.joblib').read_bytes()).hexdigest()
+RELEASE=json.loads((ROOT/'release.json').read_text()) if (ROOT/'release.json').exists() else {}
+COMMIT=RELEASE.get('commit',os.environ.get('STUDY_COMMIT','unspecified'))
+if RELEASE and RELEASE.get('model_sha256')!=MODEL_HASH:raise RuntimeError('Release model fingerprint mismatch.')
 
 @application.after_request
 def headers(response):
@@ -23,7 +26,7 @@ def index():
  return Response(text,mimetype='text/html')
 
 @application.get('/api/health')
-def health():return jsonify(status='ok',model='Gaussian Process Regression',trained_through='2024-12-31',evaluation_through='2025-04-07',model_sha256=MODEL_HASH,commit=os.environ.get('STUDY_COMMIT','unspecified'),historical_research_demo=True)
+def health():return jsonify(status='ok',model='Gaussian Process Regression',trained_through='2024-12-31',evaluation_through='2025-04-07',model_sha256=MODEL_HASH,commit=COMMIT,historical_research_demo=True)
 
 @application.get('/api/meta')
 def meta():return jsonify(dates=study.TEST.index.strftime('%Y-%m-%d').tolist(),metrics=study.METRICS,uncertainty=study.UNC,importance=study.IMP,reference_date=study.REF['date'],dataset_doi='10.5281/zenodo.17175212')
@@ -32,7 +35,7 @@ def meta():return jsonify(dates=study.TEST.index.strftime('%Y-%m-%d').tolist(),m
 def extension():return jsonify(json.loads((ROOT/'05_experiments/extension/summary.json').read_text()))
 
 @application.get('/api/deployment')
-def deployment():return jsonify(repository='https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml',visibility='Private review repository',hosting='Azure App Service Linux · Free F1',commit=os.environ.get('STUDY_COMMIT','unspecified'),model_sha256=MODEL_HASH)
+def deployment():return jsonify(repository='https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml',visibility='Public repository',hosting='Azure App Service Linux · Free F1',commit=COMMIT,model_sha256=MODEL_HASH)
 
 @application.get('/api/example')
 def example():
