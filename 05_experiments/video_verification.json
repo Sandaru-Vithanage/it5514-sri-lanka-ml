@@ -1,7 +1,7 @@
 {
   "full_decode_passed": true,
   "ffmpeg_errors": [],
-  "duration_seconds": 273.5,
+  "duration_seconds": 274.625,
   "within_3_to_5_minutes": true,
   "scene_midpoints_extracted": 9,
   "format": "H264/AAC, narrated genuine hosted-interface captures with disclosed panning and system voice"

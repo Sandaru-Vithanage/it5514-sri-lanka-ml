@@ -1,9 +1,9 @@
 {
-  "verified_UTC": "2026-10-28T19:56:04Z",
+  "verified_UTC": "2026-10-28T20:47:25Z",
   "live_url": "https://lanka-dispatch-it5514-sv.azurewebsites.net",
   "repository_url": "https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml",
   "repository_visibility": "public",
-  "application_source_commit": "fb13708f15b44e5e51eb5e2d8a263607aa49e402",
+  "application_source_commit": "dda533466157754e643561756534748e3abd3d3e",
   "model_sha256": "d71d458270e348197a6ca32627ca642bdaba3d203ae6010e16a39211114e865e",
   "region": "East Asia",
   "service": "Azure App Service Linux",
@@ -19,10 +19,13 @@
   "inference_checks_passed": 9,
   "browser_verified": true,
   "browser_checks": [
-    "public repository accessible without signing in",
-    "successful validation and HTTPS deployment jobs visible publicly",
-    "public source link, release commit and model fingerprint displayed",
-    "original historical/edited/failure interactions previously verified; inference regression checked by CI"
+    "Local selected-design comparison and responsive/keyboard checks passed",
+    "Hosted historical mean42.33GWh; edited mean44.22GWh with actual42.07GWh fixed",
+    "Hosted invalid input labels last valid estimate",
+    "Hosted original/extended evidence and method tabs",
+    "Hosted Independence Day miss44.37GWh versus33.73GWh",
+    "Current public source commit and original model fingerprint verified",
+    "Successful main-push workflow visible publicly"
   ],
   "bundle_manifest": "bundle_manifest.json",
   "no_live_grid_feed": true,
@@ -30,7 +33,7 @@
   "cleanup_instructions": "README.md",
   "availability_limit": "Free shared CPU quota and cold starts; keep source ZIP and demo as durable assessment evidence.",
   "deployment_method": "GitHub Actions validates, uploads and verifies the same inference ZIP",
-  "workflow_url": "https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/runs/40758348528",
+  "workflow_url": "https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/runs/40765918835",
   "workflow_run_attempt": 1,
   "oidc_configuration": "oidc_configuration.json",
   "resource_inventory": [
@@ -51,6 +54,10 @@
   ],
   "historical_records": [
     "manual_deployment_2026-10-28.json",
-    "manual_verification_2026-10-28.json"
-  ]
+    "manual_verification_2026-10-28.json",
+    "automation_before_ui_deployment_record.json",
+    "automation_before_ui_remote_verification.json"
+  ],
+  "interface": "Ocean Observatory / selected Option 1; pinned frontend build and real numeric uncertainty plotting",
+  "frontend_QA": "../design-qa.md"
 }

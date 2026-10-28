@@ -16,7 +16,7 @@ Prepared for D.V.S Sandaru Rashmika, 269182L, IT5514 Applied Machine Learning. R
 | S1 | Report PDF | Prepared | `269182L_IT5514_Report.pdf` |
 | S2 | Source ZIP or GitHub link | ZIP and public repository prepared | `269182L_IT5514_Source_Code.zip` |
 | S3 | Dataset or acquisition instructions | Included in source | CC-BY-4.0 Sri Lankan subset, provenance, hashes and acquisition script |
-| S4 | Front-end video, 3-5 minutes | Prepared and decoded | `269182L_IT5514_Demo.mp4`; 273.5 seconds (approximately 4 min 34 sec) |
+| S4 | Front-end video, 3-5 minutes | Prepared and decoded | `269182L_IT5514_Demo.mp4`; 274.625 seconds (approximately 4 min 35 sec) |
 | S5 | Moodle upload | Student action, not performed | Confirm exact cutoff and upload limits |
 
 The official marking items total 90 core marks plus 10 bonus. No mark, grade guarantee, lecturer approval or platform acceptance is asserted.
@@ -50,7 +50,7 @@ The official marking items total 90 core marks plus 10 bonus. No mark, grade gua
 - Review the PDF, play the whole video and open the source ZIP. If a presenter or personal narration is required, rerecord using the transcript and working interface.
 - Upload the PDF, source ZIP and MP4 from `09_submission/`; verify Moodle acknowledges successful submission. The dataset and instructions are included within the source ZIP.
 
-The report uses an index-prefixed naming convention and numbered IEEE-style references because the supplied brief specifies no names or style. The report is approximately 6,972 words including tables, references and captions; there is no supplied word limit.
+The report uses an index-prefixed naming convention and numbered IEEE-style references because the supplied brief specifies no names or style. The report is approximately 7,030 words including tables, references and captions; there is no supplied word limit.
 
 
 ## Verified extension and deployment
@@ -64,7 +64,7 @@ The report uses an index-prefixed naming convention and numbered IEEE-style refe
 - Public repository: https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml . The student explicitly requested public release and automation on 29 October, superseding private review. Anonymous browser access was verified; original teaching files and credentials are excluded.
 - Live app: https://lanka-dispatch-it5514-sv.azurewebsites.net . Azure App Service Linux, East Asia, Python 3.13, Free F1. The dedicated group contains one free plan, one app and a user-assigned managed identity for OIDC (no extra identity charge). No paid resources were created; the US$10 authorized cap is not treated as a spending target or a final invoice claim.
 - The main-push Actions run passed validation and deployment. Nine packaged runtime cases check all 97 saved means/standard deviations, the 15-file ZIP and invalid inputs. Nine HTTPS checks verify the actual release commit, model hash, historical/edited forecasts, fixed actual, extension tables and request rejection within 10^-6 MWh tolerance. Browser captures show public source, release provenance and both successful jobs. Historical manual checks are archived separately.
-- Report Sections 13–17 and the approximately 4 min 34 sec video cover the extension and deployed repository-backed prototype. All 22 final PDF pages were rendered and visually checked; character bounds show zero out-of-margin characters. Source/test/video checks do not imply lecturer approval or Moodle upload.
+- Report Sections 13–17 and the approximately 4 min 35 sec video cover the extension and deployed repository-backed prototype. All 22 final PDF pages were rendered and visually checked; character bounds show zero out-of-margin characters. Source/test/video checks do not imply lecturer approval or Moodle upload.
 
 Cloud limitations: free shared-compute quotas and cold starts may interrupt access. The source ZIP and captured demo provide durable evidence. `10_deployment/README.md` records reproduction, access, budget boundaries and cleanup. The repository is publicly reviewable; the submitted source ZIP pins a complete assessment snapshot.
 
@@ -73,7 +73,17 @@ Fresh extraction verification also passed: all payload hashes and ZIP CRC, the m
 
 ## Automated release evidence
 
-- Successful push run: https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/runs/40758348528 . Commit `fb13708f15b44e5e51eb5e2d8a263607aa49e402`; first attempt succeeded.
+- Successful push run: https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/runs/40765918835 . Commit `dda533466157754e643561756534748e3abd3d3e`; first attempt succeeded.
 - App/model pushes to main validate, deploy the same artifact, and verify HTTPS inference. Pull requests validate without Azure permissions. Documentation-only changes do not deploy. Training and model selection remain separate from deployment.
 - OIDC trust matches the exact main-branch claim including immutable owner/repository IDs. Website Contributor is app-scoped; Reader is plan-scoped. No long-lived client secret or publish-profile password was created.
 - Current durable records: `10_deployment/github_actions_run.json`, `remote_verification.json`, `bundle_manifest.json`, `oidc_configuration.json`. Source ZIP includes `.github/workflows/azure-deploy.yml`. Original private/manual records remain historical, clearly dated.
+
+
+## Selected frontend revision
+
+- The student selected displayed Option 1 (Ocean Observatory). The real deployed app now follows that navy/cyan design, with the original Python GPR and unchanged numerical results.
+- Tailwind/daisyUI, ECharts, Motion, Inter and Phosphor are bundled into the generated HTML; dependency versions, integrity lockfile, editable sources and licences are included. Node 24 is used during CI build, while Azure continues to run Python/Gunicorn on Free F1.
+- Source-versus-rendered QA passed after fixing spacing, chart-label resize, 320px overflow and input alignment issues. Four views were checked at 320px; desktop and 390px phone captures are included. Browser warnings/errors returned no entries.
+- Hosted replay 42.33 GWh, edited input 44.22 GWh with the actual fixed, negative rejection, original/extended evidence, publication provenance and the Independence Day miss were verified. The chart's actual marker is correctly left of the forecast; generated concept coordinates are not used as data.
+- Current UI run: https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/runs/40765918835 . Both frontend and model validation passed, followed by nine HTTPS checks. Previous release records are clearly historical.
+- Report Sections 12/17 and the refreshed video describe the actual selected UI. The disclosure identifies AI-generated concept exploration and student selection. Dataset splits, models, scores and scientific conclusions remain unchanged.

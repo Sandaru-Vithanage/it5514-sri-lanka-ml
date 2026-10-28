@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "manifest_files_verified": 194,
+  "manifest_files_verified": 224,
   "zip_CRC_passed": true,
   "fresh_extracted_copy_checks": [
     {
@@ -21,13 +21,18 @@
     {
       "script": "build_deployment.py",
       "passed": true,
-      "stdout": "{\n  \"files\": 15,\n  \"bytes\": 1781745,\n  \"commit\": \"local-working-tree\"\n}\n"
+      "stdout": "{\n  \"files\": 15,\n  \"bytes\": 2172611,\n  \"commit\": \"local-working-tree\"\n}\n"
     },
     {
       "script": "ci_validate.py",
       "passed": true,
       "stdout": "{\n  \"tests_passed\": 9,\n  \"recorded_predictions_checked\": 97,\n  \"bundle_files\": 15,\n  \"release_commit\": \"local-working-tree\"\n}\n",
-      "stderr": "test_changed_input_and_fixed_actual (__main__.InferenceBundleTests.test_changed_input_and_fixed_actual) ... ok\ntest_historical_case (__main__.InferenceBundleTests.test_historical_case) ... ok\ntest_historical_lookup (__main__.InferenceBundleTests.test_historical_lookup) ... ok\ntest_invalid_request_shape_and_size (__main__.InferenceBundleTests.test_invalid_request_shape_and_size) ... ok\ntest_invalid_values (__main__.InferenceBundleTests.test_invalid_values) ... ok\ntest_public_repository_and_headers (__main__.InferenceBundleTests.test_public_repository_and_headers) ... ok\ntest_published_evidence (__main__.InferenceBundleTests.test_published_evidence) ... ok\ntest_recorded_holdout_predictions (__main__.InferenceBundleTests.test_recorded_holdout_predictions) ... ok\ntest_release_identity (__main__.InferenceBundleTests.test_release_identity) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.065s\n\nOK\n"
+      "stderr": "test_changed_input_and_fixed_actual (__main__.InferenceBundleTests.test_changed_input_and_fixed_actual) ... ok\ntest_historical_case (__main__.InferenceBundleTests.test_historical_case) ... ok\ntest_historical_lookup (__main__.InferenceBundleTests.test_historical_lookup) ... ok\ntest_invalid_request_shape_and_size (__main__.InferenceBundleTests.test_invalid_request_shape_and_size) ... ok\ntest_invalid_values (__main__.InferenceBundleTests.test_invalid_values) ... ok\ntest_public_repository_and_headers (__main__.InferenceBundleTests.test_public_repository_and_headers) ... ok\ntest_published_evidence (__main__.InferenceBundleTests.test_published_evidence) ... ok\ntest_recorded_holdout_predictions (__main__.InferenceBundleTests.test_recorded_holdout_predictions) ... ok\ntest_release_identity (__main__.InferenceBundleTests.test_release_identity) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.049s\n\nOK\n"
+    },
+    {
+      "script": "frontend/check.mjs",
+      "passed": true,
+      "stdout": "Frontend checks passed: GWh conversion, true marker order, outlying actual, missing actual, bundled browser assets.\n"
     },
     {
       "script": "packaged WSGI checks",

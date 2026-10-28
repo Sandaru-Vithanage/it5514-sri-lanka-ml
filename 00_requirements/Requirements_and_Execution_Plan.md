@@ -73,3 +73,8 @@ The broader experiment is intended to test robustness and limits, not to accumul
 ## Public release and automatic deployment, 29 October 2026
 
 The user explicitly requested public GitHub source and automated deployment. The repository is now public. Runtime/model changes on main validate the 15-file bundle and all 97 saved predictions, then deploy that tested artifact and verify the live commit, model fingerprint and predictions. Pull requests validate without cloud access. GitHub OIDC uses an exact main-branch subject and an app-scoped role; the free plan has a Reader-only role. Hosting stays Free F1; a user-assigned managed identity has no extra charge. No training or scientific selection is automated. Durable run, release manifest and HTTPS evidence are recorded in `10_deployment/`.
+
+
+## Selected UI revision, 29 October 2026
+
+The student explicitly selected the first displayed visual concept after Product Design exploration. Implement the selected navy/cyan interface against the existing GPR API. Preserve the original scientific evidence; use computed numeric chart positions, explicit historical/hypothetical/stale labels, accessible controls and responsive layout. The actual implementation and hosted browser checks passed; the source/implementation comparison and fixes are documented in `design-qa.md` and `11_design/`. Frontend dependencies are locked and bundled; CI rebuilds them before the existing automated release. Hosting remains Free F1 within the authorized cap. The report, source archive and video are updated to the working interface.

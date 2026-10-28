@@ -164,5 +164,32 @@
     "status": 200,
     "content_type": "text/html",
     "bytes": 56938
+  },
+  {
+    "title": "daisyUI frontend documentation",
+    "url": "https://daisyui.com/docs/install/",
+    "role": "UI software source; pinned package versions and licences recorded in frontend source",
+    "checked_local_date": "2026-10-29",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 621354
+  },
+  {
+    "title": "Apache ECharts frontend documentation",
+    "url": "https://echarts.apache.org/en/index.html",
+    "role": "UI software source; pinned package versions and licences recorded in frontend source",
+    "checked_local_date": "2026-10-29",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 40304
+  },
+  {
+    "title": "Motion frontend documentation",
+    "url": "https://motion.dev/docs/quick-start",
+    "role": "UI software source; pinned package versions and licences recorded in frontend source",
+    "checked_local_date": "2026-10-29",
+    "status": 200,
+    "content_type": "text/html",
+    "bytes": 110470
   }
 ]

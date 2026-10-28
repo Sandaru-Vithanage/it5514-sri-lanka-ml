@@ -745,11 +745,11 @@
         },
         {
           "type": "paragraph",
-          "text": "The “Lanka Dispatch / Forecast Lab” interface accepts a target date and six demand-history summaries, using GWh for readability. Calendar features are derived from the selected date. A Python HTTP service loads the saved GPR pipeline and returns the actual model mean, observation interval, seasonal-naïve comparison and signed group-replacement sensitivities. The browser contains no mock prediction function. Recorded outcomes are displayed separately for historical replay; editing inputs never rewrites the observed outcome."
+          "text": "The “Lanka Dispatch / Forecast Lab” interface accepts a target date and six demand-history summaries in GWh. Calendar features are derived from the date. The Python API loads the original saved GPR pipeline and returns its mean, observation interval, seasonal-naïve comparison and signed group-replacement sensitivities. The browser contains no mock prediction function. Recorded outcomes remain separate during historical replay; edited inputs never rewrite the observed outcome."
         },
         {
           "type": "paragraph",
-          "text": "Users can load a historical case, edit values, generate a fresh estimate, inspect evaluation evidence, and read the source/quality notes. Negative, non-finite and out-of-range energy inputs are rejected. Out-of-development energy ranges and dates outside the evaluated period generate warnings. The original development server binds to localhost; a separate Flask/Gunicorn wrapper supports the verified HTTPS Azure review deployment described in Section 17. Credentials remain outside the source package. A captured-interface walkthrough accompanies the source; its narration is synthesized and disclosed as assistance."
+          "text": "The student selected the Ocean Observatory visual concept. Tailwind CSS/daisyUI, ECharts and Motion provide a responsive navy/cyan interface [19]; exact dependencies, Inter/Phosphor licences and editable sources are supplied. The chart computes true GWh positions, placing the 42.07 GWh actual left of the 42.33 GWh forecast. Dirty or invalid inputs explicitly preserve a labelled last valid estimate. Keyboard navigation, phone layouts, real interactions and a source-versus-rendered comparison passed design QA. Negative, non-finite and out-of-range inputs are rejected; extrapolation warnings remain visible. The same Flask/Gunicorn API supports HTTPS Azure inference without cloud retraining."
         },
         {
           "type": "subheading",
@@ -780,7 +780,7 @@
             ],
             [
               "Demonstrate",
-              "03_code/app.py; local browser interface and API checks"
+              "03_code/frontend/; generated app.html; 10_deployment/wsgi.py; real UI/API checks and design-qa.md"
             ],
             [
               "Rebuild report",
@@ -1160,15 +1160,15 @@
             ],
             [
               "Release provenance",
-              "Source commit fb13708f15b4; embedded release.json and /api/health expose the actual source and model SHA-256."
+              "Source commit dda533466157; embedded release.json and /api/health expose the actual source and model SHA-256."
             ],
             [
               "Automatic verification",
-              "9 packaged runtime cases, all 97 saved predictions, 15-file bundle and 9 live HTTPS checks passed."
+              "Pinned frontend rebuild, 9 runtime cases, all 97 saved predictions, 15-file bundle and 9 HTTPS checks passed."
             ],
             [
               "Actions run",
-              "<link href=\"https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/runs/40758348528\" color=\"#126c70\">Successful push run #2 (40758348528)</link>"
+              "<link href=\"https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/runs/40765918835\" color=\"#126c70\">Successful UI release (40765918835)</link>"
             ]
           ]
         },
@@ -1178,7 +1178,7 @@
         },
         {
           "type": "paragraph",
-          "text": "App/model changes pushed to main trigger a pinned GitHub Actions workflow; pull requests validate without Azure access. Validation installs pinned inference dependencies, checks the ZIP allowlist and reproduces every saved mean and standard deviation. Deployment consumes that same validated artifact, confirms F1 and startup settings, then waits for the exact release commit and fingerprint before checking real predictions. Documentation-only changes do not redeploy; a deliberate main-branch workflow dispatch is also available."
+          "text": "App/model or frontend-source changes pushed to main trigger a pinned GitHub Actions workflow; pull requests validate without Azure access. Node 24 rebuilds the locked frontend and checks committed HTML, then Python validation verifies the bundle and saved predictions. Deployment consumes the same tested artifact, confirms F1 and startup settings, and waits for its exact commit and fingerprint before checking real predictions. Documentation-only changes do not redeploy; deliberate main-branch dispatch is available."
         },
         {
           "type": "paragraph",
@@ -1282,6 +1282,10 @@
         },
         {
           "type": "paragraph",
+          "text": "[19] daisyUI, Apache ECharts and Motion, official frontend documentation. Available: https://daisyui.com/docs/install/ ; https://echarts.apache.org/en/index.html ; https://motion.dev/docs/quick-start . Accessed 29 Oct. 2026. Pinned versions and third-party notices accompany the code."
+        },
+        {
+          "type": "paragraph",
           "text": "Research sources were checked on 28 October 2026; automation sources on 29 October. The source register records URLs, dates and source roles. Supplied teaching materials inform course coverage; their exercises do not replace the official brief. No unverified DOI or citation placeholder is used."
         }
       ]
@@ -1296,7 +1300,7 @@
         },
         {
           "type": "paragraph",
-          "text": "OpenAI Codex assisted with reading and extracting the supplied materials, web research and source verification, dataset acquisition, experimental design, Python implementation, local execution, the extended rainfall/NGBoost experiments, result checking, visualizations, report drafting, GitHub repository preparation, public release, automated Azure deployment, the interface and demo preparation. The code was run on the student’s MacBook; reported scores come from the saved experimental outputs. The demo uses a synthesized system voice and captured states of the working interface. These contributions are disclosed so that the work is not represented as unaided authorship."
+          "text": "OpenAI Codex assisted with reading and extracting the supplied materials, web research and source verification, dataset acquisition, experimental design, Python implementation, local execution, the extended rainfall/NGBoost experiments, result checking, visualizations, report drafting, GitHub repository preparation, public release, automated Azure deployment, the interface and demo preparation. Three visual concepts were generated with the built-in image-generation tool; the student selected the first, which guided the implemented interface and browser-based design QA. The code was run on the student’s MacBook; reported scores come from the saved experimental outputs. The demo uses a synthesized system voice and captured states of the working interface. These contributions are disclosed so that the work is not represented as unaided authorship."
         },
         {
           "type": "paragraph",

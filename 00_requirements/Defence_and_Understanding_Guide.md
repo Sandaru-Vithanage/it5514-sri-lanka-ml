@@ -60,3 +60,12 @@ Use these questions to explain the work in your own words. Read the report and e
 - What triggers automatic deployment? Runtime/model changes pushed to main; documentation-only changes do not. Pull requests validate only. The manual Actions dispatch can deliberately rerun main. The successful workflow validates before deploying and checks the exact live commit, model hash, predictions and invalid requests.
 - Does CI retrain the model? No. It loads and verifies the frozen GPR. Replacing a model would require a reviewed experiment, evidence updates and then an ordinary source commit.
 - How does GitHub access Azure? Short-lived OIDC tokens, trusted only for this repository’s main branch including immutable owner/repository IDs. Website Contributor is limited to this app; Reader is limited to its F1 plan. No publish-profile password or client secret is stored.
+
+
+## Understanding the selected interface
+
+- Why does the recorded dot sit left of the forecast? The actual is 42.07 GWh and the forecast is 42.33 GWh. ECharts receives the genuine converted values; UI concept images are visual references, not numerical evidence.
+- What changes when a field is edited? It creates a hypothetical model input. The actual remains historical, and the last result is labelled stale until a new request succeeds. Invalid input preserves a labelled last valid estimate.
+- Does the frontend framework change the ML result? No. Tailwind/daisyUI styles, ECharts plotting and Motion transitions run in the browser. The saved Python GPR and feature processing remain unchanged and all 97 saved predictions reproduce.
+- Why does CI use Node while Azure runs Python? Node builds self-contained browser assets from a locked dependency file. The resulting HTML goes into the same 15-file Python inference package. No Node server, new paid resource or automatic model training is introduced.
+- Who chose and produced the design? AI generated three concepts from the previous interface, the student selected the first, and Codex implemented and checked it. The report discloses this contribution.

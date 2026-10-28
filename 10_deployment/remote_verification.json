@@ -1,7 +1,7 @@
 {
   "passed": true,
   "url": "https://lanka-dispatch-it5514-sv.azurewebsites.net",
-  "commit": "fb13708f15b44e5e51eb5e2d8a263607aa49e402",
+  "commit": "dda533466157754e643561756534748e3abd3d3e",
   "model_sha256": "d71d458270e348197a6ca32627ca642bdaba3d203ae6010e16a39211114e865e",
   "checks": [
     "embedded source commit matches",
@@ -14,7 +14,7 @@
     "invalid nan input rejected",
     "oversize request rejected"
   ],
-  "readiness_attempts": 3,
-  "elapsed_seconds": 36.92,
+  "readiness_attempts": 4,
+  "elapsed_seconds": 58.11,
   "tolerance_MWh": 1e-06
 }

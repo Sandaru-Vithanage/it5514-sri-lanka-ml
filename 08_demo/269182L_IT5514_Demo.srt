@@ -143,45 +143,45 @@ F one plan. Predictions match local inference within one millionth of a megawatt
 dollar credit cap is a maximum. Free tier quotas and cold starts limit availability.
 
 37
-00:03:30,625 --> 00:03:36,064
-This successful GitHub Actions run validates the saved model before deployment. App or model changes
+00:03:30,625 --> 00:03:36,363
+This successful GitHub Actions run rebuilds the interface and validates the saved model before
 
 38
-00:03:36,064 --> 00:03:41,503
-pushed to main rebuild the explicit bundle, check all ninety seven saved predictions, deploy to Azure,
+00:03:36,363 --> 00:03:42,101
+deployment. App or model changes pushed to main rebuild the explicit bundle, check all ninety seven saved
 
 39
-00:03:41,503 --> 00:03:46,942
-and verify nine HTTPS checks. Pull requests validate only. Short lived federated credentials access this
+00:03:42,101 --> 00:03:47,838
+predictions, deploy to Azure, and verify nine HTTPS checks. Pull requests validate only. Short lived
 
 40
-00:03:46,942 --> 00:03:52,380
-app. Deployment does not retrain the model.
+00:03:47,838 --> 00:03:53,576
+federated credentials access this app. Deployment does not retrain the model.
 
 41
-00:03:54,000 --> 00:03:59,422
+00:03:55,125 --> 00:04:00,547
 Four February, Independence Day, is a large failure: the model forecasts about forty four point three
 
 42
-00:03:59,422 --> 00:04:04,844
+00:04:00,547 --> 00:04:05,969
 seven gigawatt hours against recorded energy thirty three point seven three. Holiday indicators were
 
 43
-00:04:04,844 --> 00:04:10,266
+00:04:05,969 --> 00:04:11,391
 omitted from the frozen predictors; future redesign needs fresh evaluation. Dispatch coverage and
 
 44
-00:04:10,266 --> 00:04:15,688
+00:04:11,391 --> 00:04:16,813
 publication timing also constrain interpretation. The package includes reproducible code, pinned data,
 
 45
-00:04:15,688 --> 00:04:21,110
+00:04:16,813 --> 00:04:22,235
 both notebooks, experiments, report and deployment evidence. This walkthrough uses genuine hosted
 
 46
-00:04:21,110 --> 00:04:26,532
+00:04:22,235 --> 00:04:27,657
 interface captures, edited panning and synthesized narration. Student review and accurate assistance
 
 47
-00:04:26,532 --> 00:04:31,954
+00:04:27,657 --> 00:04:33,079
 disclosure remain essential.

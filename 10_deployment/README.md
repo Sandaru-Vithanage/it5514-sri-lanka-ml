@@ -62,3 +62,7 @@ Primary references: [Microsoft App Service GitHub deployment](https://learn.micr
 ## Verified automatic release
 
 [Successful Actions run](https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/runs/40758348528), commit `fb13708f15b44e5e51eb5e2d8a263607aa49e402`, attempt 1. Nine packaged runtime cases check all 97 saved predictions; nine HTTPS checks verify the actual release and model. Durable records: `github_actions_run.json`, `remote_verification.json` and `bundle_manifest.json`.
+
+## Selected UI release
+
+The Ocean Observatory UI passed [this main-push run](https://github.com/Sandaru-Vithanage/it5514-sri-lanka-ml/actions/runs/40765918835), commit `dda533466157754e643561756534748e3abd3d3e`. CI also rebuilds the pinned frontend with Node 24 and compares the generated HTML before the original 15-file inference release. Node is not needed on Azure at runtime. Previous manual and automated release records are retained under explicitly historical filenames.

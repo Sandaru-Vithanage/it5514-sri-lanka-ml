@@ -1,5 +1,5 @@
 {
-  "duration_seconds": 273.5,
+  "duration_seconds": 274.625,
   "frames_per_second": 8,
   "width": 1600,
   "height": 1000,
@@ -65,19 +65,19 @@
     {
       "scene": 8,
       "start_seconds": 210.625,
-      "duration_seconds": 23.375,
-      "audio_seconds": 21.75546485260771,
+      "duration_seconds": 24.5,
+      "audio_seconds": 22.951292517006802,
       "capture": "14_actions_success.png",
-      "narration": "This successful GitHub Actions run validates the saved model before deployment. App or model changes pushed to main rebuild the explicit bundle, check all ninety seven saved predictions, deploy to Azure, and verify nine HTTPS checks. Pull requests validate only. Short lived federated credentials access this app. Deployment does not retrain the model."
+      "narration": "This successful GitHub Actions run rebuilds the interface and validates the saved model before deployment. App or model changes pushed to main rebuild the explicit bundle, check all ninety seven saved predictions, deploy to Azure, and verify nine HTTPS checks. Pull requests validate only. Short lived federated credentials access this app. Deployment does not retrain the model."
     },
     {
       "scene": 9,
-      "start_seconds": 234.0,
+      "start_seconds": 235.125,
       "duration_seconds": 39.5,
       "audio_seconds": 37.954467120181405,
       "capture": "12_hosted_exceptional_day.png",
       "narration": "Four February, Independence Day, is a large failure: the model forecasts about forty four point three seven gigawatt hours against recorded energy thirty three point seven three. Holiday indicators were omitted from the frozen predictors; future redesign needs fresh evaluation. Dispatch coverage and publication timing also constrain interpretation. The package includes reproducible code, pinned data, both notebooks, experiments, report and deployment evidence. This walkthrough uses genuine hosted interface captures, edited panning and synthesized narration. Student review and accurate assistance disclosure remain essential."
     }
   ],
-  "bytes": 8418885
+  "bytes": 8828045
 }

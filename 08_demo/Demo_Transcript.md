@@ -32,7 +32,7 @@ The deployment panel shows the actual Azure address, public GitHub repository, s
 
 ## 8. Deploy automatically after validation
 
-This successful GitHub Actions run validates the saved model before deployment. App or model changes pushed to main rebuild the explicit bundle, check all ninety seven saved predictions, deploy to Azure, and verify nine HTTPS checks. Pull requests validate only. Short lived federated credentials access this app. Deployment does not retrain the model.
+This successful GitHub Actions run rebuilds the interface and validates the saved model before deployment. App or model changes pushed to main rebuild the explicit bundle, check all ninety seven saved predictions, deploy to Azure, and verify nine HTTPS checks. Pull requests validate only. Short lived federated credentials access this app. Deployment does not retrain the model.
 
 ## 9. Keep failure and limitations visible
 

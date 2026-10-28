@@ -30,5 +30,11 @@
   "browser_warnings_or_errors": [],
   "npm_audit_reported_vulnerabilities": 0,
   "QA_report": "../design-qa.md",
-  "scope": "Local browser verification before deploying the UI revision; remote release evidence is recorded separately."
+  "scope": "Local browser verification before deploying the UI revision; remote release evidence is recorded separately.",
+  "production_browser_verified": true,
+  "production_url": "https://lanka-dispatch-it5514-sv.azurewebsites.net",
+  "production_commit": "dda533466157754e643561756534748e3abd3d3e",
+  "production_historical_and_edited_values_match_local": true,
+  "production_browser_warning_or_error_entries": 0,
+  "production_demo_captures": "../08_demo/07_hosted_replay.png through 14_actions_success.png"
 }

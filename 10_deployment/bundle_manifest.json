@@ -1,5 +1,5 @@
 {
-  "release_commit": "fb13708f15b44e5e51eb5e2d8a263607aa49e402",
+  "release_commit": "dda533466157754e643561756534748e3abd3d3e",
   "files": [
     {
       "source": "02_data/processed/modelling_table.csv",
@@ -10,8 +10,8 @@
     {
       "source": "03_code/app.html",
       "deployed_path": "03_code/app.html",
-      "bytes": 19930,
-      "sha256": "ffe2974f063dbd06bff9b0b239c178c850a885096f6a45579144e98b2072cac1"
+      "bytes": 866313,
+      "sha256": "7ff784bddb0360e98ef79fc0b6cff1a3c0d11c2644867551c3ae4bb2485b0380"
     },
     {
       "source": "03_code/app.py",
@@ -71,7 +71,7 @@
       "source": "generated release metadata",
       "deployed_path": "release.json",
       "bytes": 294,
-      "sha256": "e4d14bba9de05c751cabab8ae5d2350e3e9b3cddb969d3543a7994e6aa709104"
+      "sha256": "b5ac3d3cc07b0226ed25b1c9882b96ff8ee8c0e3766b68211ae00aa181edb031"
     },
     {
       "source": "10_deployment/requirements.txt",
@@ -92,8 +92,8 @@
       "sha256": "c43d0fb175823b6ab2cbd3f4778bcc654bd4940915820cd86a806240bbe3617b"
     }
   ],
-  "zip_sha256": "1425c2fe8150849871a998ef92cdf275a807e08231824cfbd3da06e6745fadeb",
-  "zip_bytes": 1781757,
+  "zip_sha256": "889a8bdc65ee37deda72d0f81b3dc16cf66ee41f2f32b1db068100a6855902b8",
+  "zip_bytes": 2172623,
   "excluded": [
     "raw datasets",
     "lecture materials",
